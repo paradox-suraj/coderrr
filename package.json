@@ -1,0 +1,48 @@
+{
+  "name": "algojeet-pro",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prebuild": "tsx scripts/ingest-dataset.ts",
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint",
+    "ingest": "tsx scripts/ingest-dataset.ts",
+    "fetch:logos": "tsx scripts/fetch-company-logos.ts",
+    "test": "tsx tests/ingestion.test.ts && tsx tests/sm2.test.ts && tsx tests/pyodide-harness.test.ts && tsx tests/multilang.test.ts && tsx tests/dexie-migration.test.ts && tsx tests/company-detail.test.ts && tsx tests/search.test.ts && tsx tests/test-runner.test.ts"
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "@orama/orama": "^3.1.18",
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
+    "@tanstack/react-virtual": "^3.14.11",
+    "clsx": "^2.1.1",
+    "dexie": "^4.4.6",
+    "dompurify": "^3.4.15",
+    "framer-motion": "^13.2.0",
+    "lucide-react": "^1.44.0",
+    "next": "15.5.25",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-resizable-panels": "^4.12.4",
+    "tailwind-merge": "^3.6.0",
+    "three": "^0.186.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.185.4",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.25",
+    "fake-indexeddb": "^6.2.5",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.13",
+    "typescript": "^5"
+  }
+}

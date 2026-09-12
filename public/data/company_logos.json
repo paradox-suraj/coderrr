@@ -1,0 +1,3926 @@
+{
+  "Google": {
+    "company": "Google",
+    "slug": "google",
+    "localPath": "/logos/google.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/google/white"
+  },
+  "Amazon": {
+    "company": "Amazon",
+    "slug": "amazon",
+    "localPath": "/logos/amazon.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/amazon/white"
+  },
+  "Microsoft": {
+    "company": "Microsoft",
+    "slug": "microsoft",
+    "localPath": "/logos/microsoft.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/microsoft/white"
+  },
+  "Meta": {
+    "company": "Meta",
+    "slug": "meta",
+    "localPath": "/logos/meta.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/meta/white"
+  },
+  "Bloomberg": {
+    "company": "Bloomberg",
+    "slug": "bloomberg",
+    "localPath": "/logos/bloomberg.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/bloomberg/white"
+  },
+  "Uber": {
+    "company": "Uber",
+    "slug": "uber",
+    "localPath": "/logos/uber.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/uber/white"
+  },
+  "Tiktok": {
+    "company": "Tiktok",
+    "slug": "tiktok",
+    "localPath": "/logos/tiktok.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/tiktok/white"
+  },
+  "Oracle": {
+    "company": "Oracle",
+    "slug": "oracle",
+    "localPath": "/logos/oracle.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/oracle/white"
+  },
+  "Apple": {
+    "company": "Apple",
+    "slug": "apple",
+    "localPath": "/logos/apple.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/apple/white"
+  },
+  "Goldman Sachs": {
+    "company": "Goldman Sachs",
+    "slug": "goldmansachs",
+    "localPath": "/logos/goldmansachs.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/goldmansachs/white"
+  },
+  "Tcs": {
+    "company": "Tcs",
+    "slug": "tcs",
+    "localPath": "/logos/tcs.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/tcs/white"
+  },
+  "Salesforce": {
+    "company": "Salesforce",
+    "slug": "salesforce",
+    "localPath": "/logos/salesforce.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/salesforce/white"
+  },
+  "Ibm": {
+    "company": "Ibm",
+    "slug": "ibm",
+    "localPath": "/logos/ibm.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/ibm/white"
+  },
+  "Zoho": {
+    "company": "Zoho",
+    "slug": "zoho",
+    "localPath": "/logos/zoho.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/zoho/white"
+  },
+  "Infosys": {
+    "company": "Infosys",
+    "slug": "infosys",
+    "localPath": "/logos/infosys.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/infosys/white"
+  },
+  "Linkedin": {
+    "company": "Linkedin",
+    "slug": "linkedin",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/linkedin/white"
+  },
+  "Walmart Labs": {
+    "company": "Walmart Labs",
+    "slug": "walmart",
+    "localPath": "/logos/walmart.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/walmart/white"
+  },
+  "Accenture": {
+    "company": "Accenture",
+    "slug": "accenture",
+    "localPath": "/logos/accenture.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/accenture/white"
+  },
+  "Visa": {
+    "company": "Visa",
+    "slug": "visa",
+    "localPath": "/logos/visa.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/visa/white"
+  },
+  "Nvidia": {
+    "company": "Nvidia",
+    "slug": "nvidia",
+    "localPath": "/logos/nvidia.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/nvidia/white"
+  },
+  "Adobe": {
+    "company": "Adobe",
+    "slug": "adobe",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/adobe/white"
+  },
+  "Yandex": {
+    "company": "Yandex",
+    "slug": "yandex",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/yandex/white"
+  },
+  "De Shaw": {
+    "company": "De Shaw",
+    "slug": "deshaw",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/deshaw/white"
+  },
+  "Flipkart": {
+    "company": "Flipkart",
+    "slug": "flipkart",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/flipkart/white"
+  },
+  "Paypal": {
+    "company": "Paypal",
+    "slug": "paypal",
+    "localPath": "/logos/paypal.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/paypal/white"
+  },
+  "Phonepe": {
+    "company": "Phonepe",
+    "slug": "phonepe",
+    "localPath": "/logos/phonepe.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/phonepe/white"
+  },
+  "Snowflake": {
+    "company": "Snowflake",
+    "slug": "snowflake",
+    "localPath": "/logos/snowflake.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/snowflake/white"
+  },
+  "Snapchat": {
+    "company": "Snapchat",
+    "slug": "snapchat",
+    "localPath": "/logos/snapchat.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/snapchat/white"
+  },
+  "Doordash": {
+    "company": "Doordash",
+    "slug": "doordash",
+    "localPath": "/logos/doordash.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/doordash/white"
+  },
+  "Cisco": {
+    "company": "Cisco",
+    "slug": "cisco",
+    "localPath": "/logos/cisco.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/cisco/white"
+  },
+  "Citadel": {
+    "company": "Citadel",
+    "slug": "citadel",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/citadel/white"
+  },
+  "Servicenow": {
+    "company": "Servicenow",
+    "slug": "servicenow",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/servicenow/white"
+  },
+  "Intuit": {
+    "company": "Intuit",
+    "slug": "intuit",
+    "localPath": "/logos/intuit.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/intuit/white"
+  },
+  "Bytedance": {
+    "company": "Bytedance",
+    "slug": "bytedance",
+    "localPath": "/logos/bytedance.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/bytedance/white"
+  },
+  "Samsung": {
+    "company": "Samsung",
+    "slug": "samsung",
+    "localPath": "/logos/samsung.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/samsung/white"
+  },
+  "Nutanix": {
+    "company": "Nutanix",
+    "slug": "nutanix",
+    "localPath": "/logos/nutanix.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/nutanix/white"
+  },
+  "Qualcomm": {
+    "company": "Qualcomm",
+    "slug": "qualcomm",
+    "localPath": "/logos/qualcomm.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/qualcomm/white"
+  },
+  "Airbnb": {
+    "company": "Airbnb",
+    "slug": "airbnb",
+    "localPath": "/logos/airbnb.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/airbnb/white"
+  },
+  "Atlassian": {
+    "company": "Atlassian",
+    "slug": "atlassian",
+    "localPath": "/logos/atlassian.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/atlassian/white"
+  },
+  "Jpmorgan": {
+    "company": "Jpmorgan",
+    "slug": "jpmorganchase",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/jpmorganchase/white"
+  },
+  "Expedia": {
+    "company": "Expedia",
+    "slug": "expedia",
+    "localPath": "/logos/expedia.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/expedia/white"
+  },
+  "Ebay": {
+    "company": "Ebay",
+    "slug": "ebay",
+    "localPath": "/logos/ebay.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/ebay/white"
+  },
+  "Roblox": {
+    "company": "Roblox",
+    "slug": "roblox",
+    "localPath": "/logos/roblox.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/roblox/white"
+  },
+  "Wix": {
+    "company": "Wix",
+    "slug": "wix",
+    "localPath": "/logos/wix.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/wix/white"
+  },
+  "Twitter": {
+    "company": "Twitter",
+    "slug": "x",
+    "localPath": "/logos/x.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/x/white"
+  },
+  "Capital One": {
+    "company": "Capital One",
+    "slug": "capitalone",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/capitalone/white"
+  },
+  "Morgan Stanley": {
+    "company": "Morgan Stanley",
+    "slug": "morganstanley",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/morganstanley/white"
+  },
+  "Anduril": {
+    "company": "Anduril",
+    "slug": "anduril",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/anduril/white"
+  },
+  "Palo Alto Networks": {
+    "company": "Palo Alto Networks",
+    "slug": "paloaltonetworks",
+    "localPath": "/logos/paloaltonetworks.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/paloaltonetworks/white"
+  },
+  "Pinterest": {
+    "company": "Pinterest",
+    "slug": "pinterest",
+    "localPath": "/logos/pinterest.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/pinterest/white"
+  },
+  "Sap": {
+    "company": "Sap",
+    "slug": "sap",
+    "localPath": "/logos/sap.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/sap/white"
+  },
+  "Epam Systems": {
+    "company": "Epam Systems",
+    "slug": "epam",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/epam/white"
+  },
+  "Coupang": {
+    "company": "Coupang",
+    "slug": "coupang",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/coupang/white"
+  },
+  "Cognizant": {
+    "company": "Cognizant",
+    "slug": "cognizant",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cognizant/white"
+  },
+  "Agoda": {
+    "company": "Agoda",
+    "slug": "agoda",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/agoda/white"
+  },
+  "Meesho": {
+    "company": "Meesho",
+    "slug": "meesho",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/meesho/white"
+  },
+  "Swiggy": {
+    "company": "Swiggy",
+    "slug": "swiggy",
+    "localPath": "/logos/swiggy.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/swiggy/white"
+  },
+  "Tesla": {
+    "company": "Tesla",
+    "slug": "tesla",
+    "localPath": "/logos/tesla.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/tesla/white"
+  },
+  "Deloitte": {
+    "company": "Deloitte",
+    "slug": "deloitte",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/deloitte/white"
+  },
+  "Sprinklr": {
+    "company": "Sprinklr",
+    "slug": "sprinklr",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sprinklr/white"
+  },
+  "Arista Networks": {
+    "company": "Arista Networks",
+    "slug": "aristanetworks",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/aristanetworks/white"
+  },
+  "Docusign": {
+    "company": "Docusign",
+    "slug": "docusign",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/docusign/white"
+  },
+  "Turing": {
+    "company": "Turing",
+    "slug": "turing",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/turing/white"
+  },
+  "Rubrik": {
+    "company": "Rubrik",
+    "slug": "rubrik",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/rubrik/white"
+  },
+  "Autodesk": {
+    "company": "Autodesk",
+    "slug": "autodesk",
+    "localPath": "/logos/autodesk.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/autodesk/white"
+  },
+  "Databricks": {
+    "company": "Databricks",
+    "slug": "databricks",
+    "localPath": "/logos/databricks.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/databricks/white"
+  },
+  "Capgemini": {
+    "company": "Capgemini",
+    "slug": "capgemini",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/capgemini/white"
+  },
+  "Yahoo": {
+    "company": "Yahoo",
+    "slug": "yahoo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/yahoo/white"
+  },
+  "Josh Technology": {
+    "company": "Josh Technology",
+    "slug": "joshtechnology",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/joshtechnology/white"
+  },
+  "Hashedin": {
+    "company": "Hashedin",
+    "slug": "hashedin",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hashedin/white"
+  },
+  "Medianet": {
+    "company": "Medianet",
+    "slug": "medianet",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/medianet/white"
+  },
+  "Mathworks": {
+    "company": "Mathworks",
+    "slug": "mathworks",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mathworks/white"
+  },
+  "Netflix": {
+    "company": "Netflix",
+    "slug": "netflix",
+    "localPath": "/logos/netflix.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/netflix/white"
+  },
+  "Palantir": {
+    "company": "Palantir",
+    "slug": "palantir",
+    "localPath": "/logos/palantir.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/palantir/white"
+  },
+  "Paytm": {
+    "company": "Paytm",
+    "slug": "paytm",
+    "localPath": "/logos/paytm.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/paytm/white"
+  },
+  "Grammarly": {
+    "company": "Grammarly",
+    "slug": "grammarly",
+    "localPath": "/logos/grammarly.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/grammarly/white"
+  },
+  "Yelp": {
+    "company": "Yelp",
+    "slug": "yelp",
+    "localPath": "/logos/yelp.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/yelp/white"
+  },
+  "Zomato": {
+    "company": "Zomato",
+    "slug": "zomato",
+    "localPath": "/logos/zomato.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/zomato/white"
+  },
+  "Zeta": {
+    "company": "Zeta",
+    "slug": "zeta",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zeta/white"
+  },
+  "Squarepoint Capital": {
+    "company": "Squarepoint Capital",
+    "slug": "squarepointcapital",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/squarepointcapital/white"
+  },
+  "Siemens": {
+    "company": "Siemens",
+    "slug": "siemens",
+    "localPath": "/logos/siemens.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/siemens/white"
+  },
+  "American Express": {
+    "company": "American Express",
+    "slug": "americanexpress",
+    "localPath": "/logos/americanexpress.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/americanexpress/white"
+  },
+  "Lyft": {
+    "company": "Lyft",
+    "slug": "lyft",
+    "localPath": "/logos/lyft.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/lyft/white"
+  },
+  "Wells Fargo": {
+    "company": "Wells Fargo",
+    "slug": "wellsfargo",
+    "localPath": "/logos/wellsfargo.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/wellsfargo/white"
+  },
+  "Myntra": {
+    "company": "Myntra",
+    "slug": "myntra",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/myntra/white"
+  },
+  "Waymo": {
+    "company": "Waymo",
+    "slug": "waymo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/waymo/white"
+  },
+  "Zepto": {
+    "company": "Zepto",
+    "slug": "zepto",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zepto/white"
+  },
+  "Makemytrip": {
+    "company": "Makemytrip",
+    "slug": "makemytrip",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/makemytrip/white"
+  },
+  "Mongodb": {
+    "company": "Mongodb",
+    "slug": "mongodb",
+    "localPath": "/logos/mongodb.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/mongodb/white"
+  },
+  "Dropbox": {
+    "company": "Dropbox",
+    "slug": "dropbox",
+    "localPath": "/logos/dropbox.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/dropbox/white"
+  },
+  "Intel": {
+    "company": "Intel",
+    "slug": "intel",
+    "localPath": "/logos/intel.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/intel/white"
+  },
+  "Deutsche Bank": {
+    "company": "Deutsche Bank",
+    "slug": "deutschebank",
+    "localPath": "/logos/deutschebank.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/deutschebank/white"
+  },
+  "Rippling": {
+    "company": "Rippling",
+    "slug": "rippling",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/rippling/white"
+  },
+  "Tekion": {
+    "company": "Tekion",
+    "slug": "tekion",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tekion/white"
+  },
+  "Geico": {
+    "company": "Geico",
+    "slug": "geico",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/geico/white"
+  },
+  "Zenefits": {
+    "company": "Zenefits",
+    "slug": "zenefits",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zenefits/white"
+  },
+  "Okta": {
+    "company": "Okta",
+    "slug": "okta",
+    "localPath": "/logos/okta.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/okta/white"
+  },
+  "Quora": {
+    "company": "Quora",
+    "slug": "quora",
+    "localPath": "/logos/quora.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/quora/white"
+  },
+  "Accolite": {
+    "company": "Accolite",
+    "slug": "accolite",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/accolite/white"
+  },
+  "Wayfair": {
+    "company": "Wayfair",
+    "slug": "wayfair",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/wayfair/white"
+  },
+  "Two Sigma": {
+    "company": "Two Sigma",
+    "slug": "twosigma",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/twosigma/white"
+  },
+  "Verkada": {
+    "company": "Verkada",
+    "slug": "verkada",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/verkada/white"
+  },
+  "Zopsmart": {
+    "company": "Zopsmart",
+    "slug": "zopsmart",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zopsmart/white"
+  },
+  "Tinkoff": {
+    "company": "Tinkoff",
+    "slug": "tinkoff",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tinkoff/white"
+  },
+  "Amd": {
+    "company": "Amd",
+    "slug": "amd",
+    "localPath": "/logos/amd.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/amd/white"
+  },
+  "Huawei": {
+    "company": "Huawei",
+    "slug": "huawei",
+    "localPath": "/logos/huawei.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/huawei/white"
+  },
+  "Roku": {
+    "company": "Roku",
+    "slug": "roku",
+    "localPath": "/logos/roku.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/roku/white"
+  },
+  "Wipro": {
+    "company": "Wipro",
+    "slug": "wipro",
+    "localPath": "/logos/wipro.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/wipro/white"
+  },
+  "Barclays": {
+    "company": "Barclays",
+    "slug": "barclays",
+    "localPath": "/logos/barclays.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/barclays/white"
+  },
+  "Akuna Capital": {
+    "company": "Akuna Capital",
+    "slug": "akunacapital",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/akunacapital/white"
+  },
+  "Ixl": {
+    "company": "Ixl",
+    "slug": "ixl",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ixl/white"
+  },
+  "Juspay": {
+    "company": "Juspay",
+    "slug": "juspay",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/juspay/white"
+  },
+  "Hcl": {
+    "company": "Hcl",
+    "slug": "hcl",
+    "localPath": "/logos/hcl.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/hcl/white"
+  },
+  "Fractal Analytics": {
+    "company": "Fractal Analytics",
+    "slug": "fractalanalytics",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fractalanalytics/white"
+  },
+  "Mitsogo": {
+    "company": "Mitsogo",
+    "slug": "mitsogo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mitsogo/white"
+  },
+  "Sofi": {
+    "company": "Sofi",
+    "slug": "sofi",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sofi/white"
+  },
+  "Zscaler": {
+    "company": "Zscaler",
+    "slug": "zscaler",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zscaler/white"
+  },
+  "Arcesium": {
+    "company": "Arcesium",
+    "slug": "arcesium",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/arcesium/white"
+  },
+  "Bitgo": {
+    "company": "Bitgo",
+    "slug": "bitgo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bitgo/white"
+  },
+  "Bny Mellon": {
+    "company": "Bny Mellon",
+    "slug": "bnymellon",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bnymellon/white"
+  },
+  "Datadog": {
+    "company": "Datadog",
+    "slug": "datadog",
+    "localPath": "/logos/datadog.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/datadog/white"
+  },
+  "Robinhood": {
+    "company": "Robinhood",
+    "slug": "robinhood",
+    "localPath": "/logos/robinhood.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/robinhood/white"
+  },
+  "Spotify": {
+    "company": "Spotify",
+    "slug": "spotify",
+    "localPath": "/logos/spotify.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/spotify/white"
+  },
+  "Epic Systems": {
+    "company": "Epic Systems",
+    "slug": "epicsystems",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/epicsystems/white"
+  },
+  "Openai": {
+    "company": "Openai",
+    "slug": "openai",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/openai/white"
+  },
+  "Pocket Gems": {
+    "company": "Pocket Gems",
+    "slug": "pocketgems",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/pocketgems/white"
+  },
+  "Verily": {
+    "company": "Verily",
+    "slug": "verily",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/verily/white"
+  },
+  "Blackrock": {
+    "company": "Blackrock",
+    "slug": "blackrock",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/blackrock/white"
+  },
+  "Splunk": {
+    "company": "Splunk",
+    "slug": "splunk",
+    "localPath": "/logos/splunk.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/splunk/white"
+  },
+  "Grab": {
+    "company": "Grab",
+    "slug": "grab",
+    "localPath": "/logos/grab.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/grab/white"
+  },
+  "Bookingcom": {
+    "company": "Bookingcom",
+    "slug": "bookingcom",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bookingcom/white"
+  },
+  "Jane Street": {
+    "company": "Jane Street",
+    "slug": "janestreet",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/janestreet/white"
+  },
+  "Moloco": {
+    "company": "Moloco",
+    "slug": "moloco",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/moloco/white"
+  },
+  "Nuro": {
+    "company": "Nuro",
+    "slug": "nuro",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nuro/white"
+  },
+  "Dp World": {
+    "company": "Dp World",
+    "slug": "dpworld",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dpworld/white"
+  },
+  "Dream11": {
+    "company": "Dream11",
+    "slug": "dream11",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dream11/white"
+  },
+  "Nike": {
+    "company": "Nike",
+    "slug": "nike",
+    "localPath": "/logos/nike.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/nike/white"
+  },
+  "Vk": {
+    "company": "Vk",
+    "slug": "vk",
+    "localPath": "/logos/vk.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/vk/white"
+  },
+  "Coinbase": {
+    "company": "Coinbase",
+    "slug": "coinbase",
+    "localPath": "/logos/coinbase.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/coinbase/white"
+  },
+  "Hubspot": {
+    "company": "Hubspot",
+    "slug": "hubspot",
+    "localPath": "/logos/hubspot.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/hubspot/white"
+  },
+  "Razorpay": {
+    "company": "Razorpay",
+    "slug": "razorpay",
+    "localPath": "/logos/razorpay.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/razorpay/white"
+  },
+  "Sigmoid": {
+    "company": "Sigmoid",
+    "slug": "sigmoid",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sigmoid/white"
+  },
+  "Whatnot": {
+    "company": "Whatnot",
+    "slug": "whatnot",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/whatnot/white"
+  },
+  "Karat": {
+    "company": "Karat",
+    "slug": "karat",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/karat/white"
+  },
+  "Square": {
+    "company": "Square",
+    "slug": "square",
+    "localPath": "/logos/square.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/square/white"
+  },
+  "Uipath": {
+    "company": "Uipath",
+    "slug": "uipath",
+    "localPath": "/logos/uipath.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/uipath/white"
+  },
+  "Baidu": {
+    "company": "Baidu",
+    "slug": "baidu",
+    "localPath": "/logos/baidu.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/baidu/white"
+  },
+  "Applied Intuition": {
+    "company": "Applied Intuition",
+    "slug": "appliedintuition",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/appliedintuition/white"
+  },
+  "Aurora": {
+    "company": "Aurora",
+    "slug": "aurora",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/aurora/white"
+  },
+  "Bcg": {
+    "company": "Bcg",
+    "slug": "bcg",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bcg/white"
+  },
+  "1Kosmos": {
+    "company": "1Kosmos",
+    "slug": "1kosmos",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/1kosmos/white"
+  },
+  "6Sense": {
+    "company": "6Sense",
+    "slug": "6sense",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/6sense/white"
+  },
+  "Accelya": {
+    "company": "Accelya",
+    "slug": "accelya",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/accelya/white"
+  },
+  "Acko": {
+    "company": "Acko",
+    "slug": "acko",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/acko/white"
+  },
+  "Acorns": {
+    "company": "Acorns",
+    "slug": "acorns",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/acorns/white"
+  },
+  "Activision": {
+    "company": "Activision",
+    "slug": "activision",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/activision/white"
+  },
+  "Adp": {
+    "company": "Adp",
+    "slug": "adp",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/adp/white"
+  },
+  "Aetion": {
+    "company": "Aetion",
+    "slug": "aetion",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/aetion/white"
+  },
+  "Affinity": {
+    "company": "Affinity",
+    "slug": "affinity",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/affinity/white"
+  },
+  "Affirm": {
+    "company": "Affirm",
+    "slug": "affirm",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/affirm/white"
+  },
+  "Airbus": {
+    "company": "Airbus",
+    "slug": "airbus",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/airbus/white"
+  },
+  "Airtel": {
+    "company": "Airtel",
+    "slug": "airtel",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/airtel/white"
+  },
+  "Airwallex": {
+    "company": "Airwallex",
+    "slug": "airwallex",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/airwallex/white"
+  },
+  "Akamai": {
+    "company": "Akamai",
+    "slug": "akamai",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/akamai/white"
+  },
+  "Alibaba": {
+    "company": "Alibaba",
+    "slug": "alibaba",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/alibaba/white"
+  },
+  "Allincall": {
+    "company": "Allincall",
+    "slug": "allincall",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/allincall/white"
+  },
+  "Alphonso": {
+    "company": "Alphonso",
+    "slug": "alphonso",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/alphonso/white"
+  },
+  "Alten": {
+    "company": "Alten",
+    "slug": "alten",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/alten/white"
+  },
+  "Altimetrik": {
+    "company": "Altimetrik",
+    "slug": "altimetrik",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/altimetrik/white"
+  },
+  "Amadeus": {
+    "company": "Amadeus",
+    "slug": "amadeus",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/amadeus/white"
+  },
+  "Amdocs": {
+    "company": "Amdocs",
+    "slug": "amdocs",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/amdocs/white"
+  },
+  "American Airlines": {
+    "company": "American Airlines",
+    "slug": "americanairlines",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/americanairlines/white"
+  },
+  "Amplitude": {
+    "company": "Amplitude",
+    "slug": "amplitude",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/amplitude/white"
+  },
+  "Analytics Quotient": {
+    "company": "Analytics Quotient",
+    "slug": "analyticsquotient",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/analyticsquotient/white"
+  },
+  "Andela": {
+    "company": "Andela",
+    "slug": "andela",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/andela/white"
+  },
+  "Anthropic": {
+    "company": "Anthropic",
+    "slug": "anthropic",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/anthropic/white"
+  },
+  "Anyscale": {
+    "company": "Anyscale",
+    "slug": "anyscale",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/anyscale/white"
+  },
+  "Aon": {
+    "company": "Aon",
+    "slug": "aon",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/aon/white"
+  },
+  "Apolloio": {
+    "company": "Apolloio",
+    "slug": "apolloio",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/apolloio/white"
+  },
+  "Appdynamics": {
+    "company": "Appdynamics",
+    "slug": "appdynamics",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/appdynamics/white"
+  },
+  "Appfolio": {
+    "company": "Appfolio",
+    "slug": "appfolio",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/appfolio/white"
+  },
+  "Aqr Capital Management": {
+    "company": "Aqr Capital Management",
+    "slug": "aqrcapitalmanagement",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/aqrcapitalmanagement/white"
+  },
+  "Argo Ai": {
+    "company": "Argo Ai",
+    "slug": "argoai",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/argoai/white"
+  },
+  "Asana": {
+    "company": "Asana",
+    "slug": "asana",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/asana/white"
+  },
+  "Ascend": {
+    "company": "Ascend",
+    "slug": "ascend",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ascend/white"
+  },
+  "Athenahealth": {
+    "company": "Athenahealth",
+    "slug": "athenahealth",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/athenahealth/white"
+  },
+  "Att": {
+    "company": "Att",
+    "slug": "att",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/att/white"
+  },
+  "Attentive": {
+    "company": "Attentive",
+    "slug": "attentive",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/attentive/white"
+  },
+  "Audible": {
+    "company": "Audible",
+    "slug": "audible",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/audible/white"
+  },
+  "Auriga": {
+    "company": "Auriga",
+    "slug": "auriga",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/auriga/white"
+  },
+  "Avalara": {
+    "company": "Avalara",
+    "slug": "avalara",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/avalara/white"
+  },
+  "Avito": {
+    "company": "Avito",
+    "slug": "avito",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/avito/white"
+  },
+  "Axis Bank": {
+    "company": "Axis Bank",
+    "slug": "axisbank",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/axisbank/white"
+  },
+  "Axon": {
+    "company": "Axon",
+    "slug": "axon",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/axon/white"
+  },
+  "Bank Of America": {
+    "company": "Bank Of America",
+    "slug": "bankofamerica",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bankofamerica/white"
+  },
+  "Bending Spoons": {
+    "company": "Bending Spoons",
+    "slug": "bendingspoons",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bendingspoons/white"
+  },
+  "Bill Com": {
+    "company": "Bill Com",
+    "slug": "billcom",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/billcom/white"
+  },
+  "Blackbuck": {
+    "company": "Blackbuck",
+    "slug": "blackbuck",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/blackbuck/white"
+  },
+  "Blackstone": {
+    "company": "Blackstone",
+    "slug": "blackstone",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/blackstone/white"
+  },
+  "Blend": {
+    "company": "Blend",
+    "slug": "blend",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/blend/white"
+  },
+  "Blinkit": {
+    "company": "Blinkit",
+    "slug": "blinkit",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/blinkit/white"
+  },
+  "Bloomreach": {
+    "company": "Bloomreach",
+    "slug": "bloomreach",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bloomreach/white"
+  },
+  "Blue Origin": {
+    "company": "Blue Origin",
+    "slug": "blueorigin",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/blueorigin/white"
+  },
+  "Bnp Paribas": {
+    "company": "Bnp Paribas",
+    "slug": "bnpparibas",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bnpparibas/white"
+  },
+  "Boeing": {
+    "company": "Boeing",
+    "slug": "boeing",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/boeing/white"
+  },
+  "Bolt": {
+    "company": "Bolt",
+    "slug": "bolt",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bolt/white"
+  },
+  "Box": {
+    "company": "Box",
+    "slug": "box",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/box/white"
+  },
+  "Bp": {
+    "company": "Bp",
+    "slug": "bp",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bp/white"
+  },
+  "Braze": {
+    "company": "Braze",
+    "slug": "braze",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/braze/white"
+  },
+  "Bridgewater Associates": {
+    "company": "Bridgewater Associates",
+    "slug": "bridgewaterassociates",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/bridgewaterassociates/white"
+  },
+  "Brillio": {
+    "company": "Brillio",
+    "slug": "brillio",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/brillio/white"
+  },
+  "Broadcom": {
+    "company": "Broadcom",
+    "slug": "broadcom",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/broadcom/white"
+  },
+  "Browserstack": {
+    "company": "Browserstack",
+    "slug": "browserstack",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/browserstack/white"
+  },
+  "Bt Group": {
+    "company": "Bt Group",
+    "slug": "btgroup",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/btgroup/white"
+  },
+  "Buyhatke": {
+    "company": "Buyhatke",
+    "slug": "buyhatke",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/buyhatke/white"
+  },
+  "C3 Ai": {
+    "company": "C3 Ai",
+    "slug": "c3ai",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/c3ai/white"
+  },
+  "Cadence": {
+    "company": "Cadence",
+    "slug": "cadence",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cadence/white"
+  },
+  "Canonical": {
+    "company": "Canonical",
+    "slug": "canonical",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/canonical/white"
+  },
+  "Canva": {
+    "company": "Canva",
+    "slug": "canva",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/canva/white"
+  },
+  "Careem": {
+    "company": "Careem",
+    "slug": "careem",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/careem/white"
+  },
+  "Cars24": {
+    "company": "Cars24",
+    "slug": "cars24",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cars24/white"
+  },
+  "Carwale": {
+    "company": "Carwale",
+    "slug": "carwale",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/carwale/white"
+  },
+  "Cashfree": {
+    "company": "Cashfree",
+    "slug": "cashfree",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cashfree/white"
+  },
+  "Caterpillar": {
+    "company": "Caterpillar",
+    "slug": "caterpillar",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/caterpillar/white"
+  },
+  "Cerner": {
+    "company": "Cerner",
+    "slug": "cerner",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cerner/white"
+  },
+  "Chalo": {
+    "company": "Chalo",
+    "slug": "chalo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/chalo/white"
+  },
+  "Chargebee": {
+    "company": "Chargebee",
+    "slug": "chargebee",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/chargebee/white"
+  },
+  "Checkpoint": {
+    "company": "Checkpoint",
+    "slug": "checkpoint",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/checkpoint/white"
+  },
+  "Chewy": {
+    "company": "Chewy",
+    "slug": "chewy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/chewy/white"
+  },
+  "Chime": {
+    "company": "Chime",
+    "slug": "chime",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/chime/white"
+  },
+  "Chubb": {
+    "company": "Chubb",
+    "slug": "chubb",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/chubb/white"
+  },
+  "Ciena": {
+    "company": "Ciena",
+    "slug": "ciena",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ciena/white"
+  },
+  "Circle": {
+    "company": "Circle",
+    "slug": "circle",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/circle/white"
+  },
+  "Citi": {
+    "company": "Citi",
+    "slug": "citi",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/citi/white"
+  },
+  "Citrix": {
+    "company": "Citrix",
+    "slug": "citrix",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/citrix/white"
+  },
+  "Clari": {
+    "company": "Clari",
+    "slug": "clari",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/clari/white"
+  },
+  "Cleartrip": {
+    "company": "Cleartrip",
+    "slug": "cleartrip",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cleartrip/white"
+  },
+  "Clevertap": {
+    "company": "Clevertap",
+    "slug": "clevertap",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/clevertap/white"
+  },
+  "Cloudera": {
+    "company": "Cloudera",
+    "slug": "cloudera",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cloudera/white"
+  },
+  "Cloudflare": {
+    "company": "Cloudflare",
+    "slug": "cloudflare",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cloudflare/white"
+  },
+  "Clutter": {
+    "company": "Clutter",
+    "slug": "clutter",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/clutter/white"
+  },
+  "Cme Group": {
+    "company": "Cme Group",
+    "slug": "cmegroup",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cmegroup/white"
+  },
+  "Cockroach Labs": {
+    "company": "Cockroach Labs",
+    "slug": "cockroachlabs",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cockroachlabs/white"
+  },
+  "Code Studio": {
+    "company": "Code Studio",
+    "slug": "codestudio",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/codestudio/white"
+  },
+  "Coditas": {
+    "company": "Coditas",
+    "slug": "coditas",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/coditas/white"
+  },
+  "Cohesity": {
+    "company": "Cohesity",
+    "slug": "cohesity",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cohesity/white"
+  },
+  "Coindcx": {
+    "company": "Coindcx",
+    "slug": "coindcx",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/coindcx/white"
+  },
+  "Coinswitch Kuber": {
+    "company": "Coinswitch Kuber",
+    "slug": "coinswitchkuber",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/coinswitchkuber/white"
+  },
+  "Comcast": {
+    "company": "Comcast",
+    "slug": "comcast",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/comcast/white"
+  },
+  "Commvault": {
+    "company": "Commvault",
+    "slug": "commvault",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/commvault/white"
+  },
+  "Compass": {
+    "company": "Compass",
+    "slug": "compass",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/compass/white"
+  },
+  "Confluent": {
+    "company": "Confluent",
+    "slug": "confluent",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/confluent/white"
+  },
+  "Couchbase": {
+    "company": "Couchbase",
+    "slug": "couchbase",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/couchbase/white"
+  },
+  "Coupa": {
+    "company": "Coupa",
+    "slug": "coupa",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/coupa/white"
+  },
+  "Coursera": {
+    "company": "Coursera",
+    "slug": "coursera",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/coursera/white"
+  },
+  "Coveo": {
+    "company": "Coveo",
+    "slug": "coveo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/coveo/white"
+  },
+  "Cred": {
+    "company": "Cred",
+    "slug": "cred",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cred/white"
+  },
+  "Criteo": {
+    "company": "Criteo",
+    "slug": "criteo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/criteo/white"
+  },
+  "Crowdstrike": {
+    "company": "Crowdstrike",
+    "slug": "crowdstrike",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/crowdstrike/white"
+  },
+  "Cruise Automation": {
+    "company": "Cruise Automation",
+    "slug": "cruiseautomation",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cruiseautomation/white"
+  },
+  "Ctc": {
+    "company": "Ctc",
+    "slug": "ctc",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ctc/white"
+  },
+  "Curefit": {
+    "company": "Curefit",
+    "slug": "curefit",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/curefit/white"
+  },
+  "Cvent": {
+    "company": "Cvent",
+    "slug": "cvent",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cvent/white"
+  },
+  "Cyntexa": {
+    "company": "Cyntexa",
+    "slug": "cyntexa",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cyntexa/white"
+  },
+  "Cyware": {
+    "company": "Cyware",
+    "slug": "cyware",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/cyware/white"
+  },
+  "Dailyhunt": {
+    "company": "Dailyhunt",
+    "slug": "dailyhunt",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dailyhunt/white"
+  },
+  "Darwinbox": {
+    "company": "Darwinbox",
+    "slug": "darwinbox",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/darwinbox/white"
+  },
+  "Dassault Sysetmes": {
+    "company": "Dassault Sysetmes",
+    "slug": "dassaultsysetmes",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dassaultsysetmes/white"
+  },
+  "Dataart": {
+    "company": "Dataart",
+    "slug": "dataart",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dataart/white"
+  },
+  "Dataminr": {
+    "company": "Dataminr",
+    "slug": "dataminr",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dataminr/white"
+  },
+  "Deepmind": {
+    "company": "Deepmind",
+    "slug": "google",
+    "localPath": "/logos/google.svg",
+    "cdnUrl": "https://cdn.simpleicons.org/google/white"
+  },
+  "Delhivery": {
+    "company": "Delhivery",
+    "slug": "delhivery",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/delhivery/white"
+  },
+  "Deliveroo": {
+    "company": "Deliveroo",
+    "slug": "deliveroo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/deliveroo/white"
+  },
+  "Dell": {
+    "company": "Dell",
+    "slug": "dell",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dell/white"
+  },
+  "Deltax": {
+    "company": "Deltax",
+    "slug": "deltax",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/deltax/white"
+  },
+  "Devrev": {
+    "company": "Devrev",
+    "slug": "devrev",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/devrev/white"
+  },
+  "Dialpad": {
+    "company": "Dialpad",
+    "slug": "dialpad",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dialpad/white"
+  },
+  "Directi": {
+    "company": "Directi",
+    "slug": "directi",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/directi/white"
+  },
+  "Discord": {
+    "company": "Discord",
+    "slug": "discord",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/discord/white"
+  },
+  "Discovery": {
+    "company": "Discovery",
+    "slug": "discovery",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/discovery/white"
+  },
+  "Disney": {
+    "company": "Disney",
+    "slug": "disney",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/disney/white"
+  },
+  "Dji": {
+    "company": "Dji",
+    "slug": "dji",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dji/white"
+  },
+  "Drawbridge": {
+    "company": "Drawbridge",
+    "slug": "drawbridge",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/drawbridge/white"
+  },
+  "Druva": {
+    "company": "Druva",
+    "slug": "druva",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/druva/white"
+  },
+  "Drw": {
+    "company": "Drw",
+    "slug": "drw",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/drw/white"
+  },
+  "Dtcc": {
+    "company": "Dtcc",
+    "slug": "dtcc",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dtcc/white"
+  },
+  "Dunzo": {
+    "company": "Dunzo",
+    "slug": "dunzo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/dunzo/white"
+  },
+  "Duolingo": {
+    "company": "Duolingo",
+    "slug": "duolingo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/duolingo/white"
+  },
+  "Earnin": {
+    "company": "Earnin",
+    "slug": "earnin",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/earnin/white"
+  },
+  "Edelweiss": {
+    "company": "Edelweiss",
+    "slug": "edelweiss",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/edelweiss/white"
+  },
+  "Electronic Arts": {
+    "company": "Electronic Arts",
+    "slug": "ea",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ea/white"
+  },
+  "Elitmus": {
+    "company": "Elitmus",
+    "slug": "elitmus",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/elitmus/white"
+  },
+  "Envoy": {
+    "company": "Envoy",
+    "slug": "envoy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/envoy/white"
+  },
+  "Epic Games": {
+    "company": "Epic Games",
+    "slug": "epicgames",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/epicgames/white"
+  },
+  "Epifi": {
+    "company": "Epifi",
+    "slug": "epifi",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/epifi/white"
+  },
+  "Equinix": {
+    "company": "Equinix",
+    "slug": "equinix",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/equinix/white"
+  },
+  "Ericsson": {
+    "company": "Ericsson",
+    "slug": "ericsson",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ericsson/white"
+  },
+  "Etsy": {
+    "company": "Etsy",
+    "slug": "etsy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/etsy/white"
+  },
+  "Exl": {
+    "company": "Exl",
+    "slug": "exl",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/exl/white"
+  },
+  "Ey": {
+    "company": "Ey",
+    "slug": "ey",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ey/white"
+  },
+  "F5 Networks": {
+    "company": "F5 Networks",
+    "slug": "f5networks",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/f5networks/white"
+  },
+  "Factset": {
+    "company": "Factset",
+    "slug": "factset",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/factset/white"
+  },
+  "Faire": {
+    "company": "Faire",
+    "slug": "faire",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/faire/white"
+  },
+  "Fallible": {
+    "company": "Fallible",
+    "slug": "fallible",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fallible/white"
+  },
+  "Fanatics": {
+    "company": "Fanatics",
+    "slug": "fanatics",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fanatics/white"
+  },
+  "Fast": {
+    "company": "Fast",
+    "slug": "fast",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fast/white"
+  },
+  "Fastenal": {
+    "company": "Fastenal",
+    "slug": "fastenal",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fastenal/white"
+  },
+  "Fico": {
+    "company": "Fico",
+    "slug": "fico",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fico/white"
+  },
+  "Fidelity": {
+    "company": "Fidelity",
+    "slug": "fidelity",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fidelity/white"
+  },
+  "Fidessa": {
+    "company": "Fidessa",
+    "slug": "fidessa",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fidessa/white"
+  },
+  "Figma": {
+    "company": "Figma",
+    "slug": "figma",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/figma/white"
+  },
+  "Fiverr": {
+    "company": "Fiverr",
+    "slug": "fiverr",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fiverr/white"
+  },
+  "Fivetran": {
+    "company": "Fivetran",
+    "slug": "fivetran",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fivetran/white"
+  },
+  "Flatiron Health": {
+    "company": "Flatiron Health",
+    "slug": "flatironhealth",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/flatironhealth/white"
+  },
+  "Fleetx": {
+    "company": "Fleetx",
+    "slug": "fleetx",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fleetx/white"
+  },
+  "Flexera": {
+    "company": "Flexera",
+    "slug": "flexera",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/flexera/white"
+  },
+  "Flexport": {
+    "company": "Flexport",
+    "slug": "flexport",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/flexport/white"
+  },
+  "Fortinet": {
+    "company": "Fortinet",
+    "slug": "fortinet",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fortinet/white"
+  },
+  "Forusall": {
+    "company": "Forusall",
+    "slug": "forusall",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/forusall/white"
+  },
+  "Fourkites": {
+    "company": "Fourkites",
+    "slug": "fourkites",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fourkites/white"
+  },
+  "Fpt": {
+    "company": "Fpt",
+    "slug": "fpt",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fpt/white"
+  },
+  "Freecharge": {
+    "company": "Freecharge",
+    "slug": "freecharge",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/freecharge/white"
+  },
+  "Freshworks": {
+    "company": "Freshworks",
+    "slug": "freshworks",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/freshworks/white"
+  },
+  "Fynd": {
+    "company": "Fynd",
+    "slug": "fynd",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/fynd/white"
+  },
+  "Gainsight": {
+    "company": "Gainsight",
+    "slug": "gainsight",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gainsight/white"
+  },
+  "Gameskraft": {
+    "company": "Gameskraft",
+    "slug": "gameskraft",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gameskraft/white"
+  },
+  "Garena": {
+    "company": "Garena",
+    "slug": "garena",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/garena/white"
+  },
+  "Garmin": {
+    "company": "Garmin",
+    "slug": "garmin",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/garmin/white"
+  },
+  "Gartner": {
+    "company": "Gartner",
+    "slug": "gartner",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gartner/white"
+  },
+  "Ge Digital": {
+    "company": "Ge Digital",
+    "slug": "gedigital",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gedigital/white"
+  },
+  "Ge Healthcare": {
+    "company": "Ge Healthcare",
+    "slug": "gehealthcare",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gehealthcare/white"
+  },
+  "General Electric": {
+    "company": "General Electric",
+    "slug": "generalelectric",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/generalelectric/white"
+  },
+  "General Motors": {
+    "company": "General Motors",
+    "slug": "generalmotors",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/generalmotors/white"
+  },
+  "Gilt Groupe": {
+    "company": "Gilt Groupe",
+    "slug": "giltgroupe",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/giltgroupe/white"
+  },
+  "Github": {
+    "company": "Github",
+    "slug": "github",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/github/white"
+  },
+  "Glassdoor": {
+    "company": "Glassdoor",
+    "slug": "glassdoor",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/glassdoor/white"
+  },
+  "Globallogic": {
+    "company": "Globallogic",
+    "slug": "globallogic",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/globallogic/white"
+  },
+  "Glovo": {
+    "company": "Glovo",
+    "slug": "glovo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/glovo/white"
+  },
+  "Godaddy": {
+    "company": "Godaddy",
+    "slug": "godaddy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/godaddy/white"
+  },
+  "Gojek": {
+    "company": "Gojek",
+    "slug": "gojek",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gojek/white"
+  },
+  "Gopuff": {
+    "company": "Gopuff",
+    "slug": "gopuff",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gopuff/white"
+  },
+  "Goto": {
+    "company": "Goto",
+    "slug": "goto",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/goto/white"
+  },
+  "Graviton": {
+    "company": "Graviton",
+    "slug": "graviton",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/graviton/white"
+  },
+  "Groupon": {
+    "company": "Groupon",
+    "slug": "groupon",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/groupon/white"
+  },
+  "Groww": {
+    "company": "Groww",
+    "slug": "groww",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/groww/white"
+  },
+  "Grubhub": {
+    "company": "Grubhub",
+    "slug": "grubhub",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/grubhub/white"
+  },
+  "Gsa Capital": {
+    "company": "Gsa Capital",
+    "slug": "gsacapital",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gsacapital/white"
+  },
+  "Gsn Games": {
+    "company": "Gsn Games",
+    "slug": "gsngames",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gsngames/white"
+  },
+  "Guidewire": {
+    "company": "Guidewire",
+    "slug": "guidewire",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/guidewire/white"
+  },
+  "Gusto": {
+    "company": "Gusto",
+    "slug": "gusto",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/gusto/white"
+  },
+  "Harness": {
+    "company": "Harness",
+    "slug": "harness",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/harness/white"
+  },
+  "Hbo": {
+    "company": "Hbo",
+    "slug": "hbo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hbo/white"
+  },
+  "Helix": {
+    "company": "Helix",
+    "slug": "helix",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/helix/white"
+  },
+  "Highspot": {
+    "company": "Highspot",
+    "slug": "highspot",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/highspot/white"
+  },
+  "Hilabs": {
+    "company": "Hilabs",
+    "slug": "hilabs",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hilabs/white"
+  },
+  "Hive": {
+    "company": "Hive",
+    "slug": "hive",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hive/white"
+  },
+  "Honey": {
+    "company": "Honey",
+    "slug": "honey",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/honey/white"
+  },
+  "Honeywell": {
+    "company": "Honeywell",
+    "slug": "honeywell",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/honeywell/white"
+  },
+  "Hopper": {
+    "company": "Hopper",
+    "slug": "hopper",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hopper/white"
+  },
+  "Hotstar": {
+    "company": "Hotstar",
+    "slug": "hotstar",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hotstar/white"
+  },
+  "Houzz": {
+    "company": "Houzz",
+    "slug": "houzz",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/houzz/white"
+  },
+  "Hp": {
+    "company": "Hp",
+    "slug": "hp",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hp/white"
+  },
+  "Hpe": {
+    "company": "Hpe",
+    "slug": "hpe",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hpe/white"
+  },
+  "Hrt": {
+    "company": "Hrt",
+    "slug": "hrt",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hrt/white"
+  },
+  "Hsbc": {
+    "company": "Hsbc",
+    "slug": "hsbc",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hsbc/white"
+  },
+  "Htc": {
+    "company": "Htc",
+    "slug": "htc",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/htc/white"
+  },
+  "Hulu": {
+    "company": "Hulu",
+    "slug": "hulu",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/hulu/white"
+  },
+  "Iit Bombay": {
+    "company": "Iit Bombay",
+    "slug": "iitbombay",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/iitbombay/white"
+  },
+  "Imc": {
+    "company": "Imc",
+    "slug": "imc",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/imc/white"
+  },
+  "Impact Analytics": {
+    "company": "Impact Analytics",
+    "slug": "impactanalytics",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/impactanalytics/white"
+  },
+  "Impetus": {
+    "company": "Impetus",
+    "slug": "impetus",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/impetus/white"
+  },
+  "Increff": {
+    "company": "Increff",
+    "slug": "increff",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/increff/white"
+  },
+  "Indeed": {
+    "company": "Indeed",
+    "slug": "indeed",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/indeed/white"
+  },
+  "Info Edge": {
+    "company": "Info Edge",
+    "slug": "infoedge",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/infoedge/white"
+  },
+  "Informatica": {
+    "company": "Informatica",
+    "slug": "informatica",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/informatica/white"
+  },
+  "Inmobi": {
+    "company": "Inmobi",
+    "slug": "inmobi",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/inmobi/white"
+  },
+  "Innovaccer": {
+    "company": "Innovaccer",
+    "slug": "innovaccer",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/innovaccer/white"
+  },
+  "Instabase": {
+    "company": "Instabase",
+    "slug": "instabase",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/instabase/white"
+  },
+  "Instacart": {
+    "company": "Instacart",
+    "slug": "instacart",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/instacart/white"
+  },
+  "Interactive Brokers": {
+    "company": "Interactive Brokers",
+    "slug": "interactivebrokers",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/interactivebrokers/white"
+  },
+  "Intercom": {
+    "company": "Intercom",
+    "slug": "intercom",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/intercom/white"
+  },
+  "Ivp": {
+    "company": "Ivp",
+    "slug": "ivp",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ivp/white"
+  },
+  "Ixigo": {
+    "company": "Ixigo",
+    "slug": "ixigo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ixigo/white"
+  },
+  "Jd": {
+    "company": "Jd",
+    "slug": "jd",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/jd/white"
+  },
+  "Jeavio": {
+    "company": "Jeavio",
+    "slug": "jeavio",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/jeavio/white"
+  },
+  "Jingchi": {
+    "company": "Jingchi",
+    "slug": "jingchi",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/jingchi/white"
+  },
+  "Jio": {
+    "company": "Jio",
+    "slug": "jio",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/jio/white"
+  },
+  "Jtg": {
+    "company": "Jtg",
+    "slug": "jtg",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/jtg/white"
+  },
+  "Jump Trading": {
+    "company": "Jump Trading",
+    "slug": "jumptrading",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/jumptrading/white"
+  },
+  "Kakao": {
+    "company": "Kakao",
+    "slug": "kakao",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/kakao/white"
+  },
+  "Kickdrum": {
+    "company": "Kickdrum",
+    "slug": "kickdrum",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/kickdrum/white"
+  },
+  "Kla": {
+    "company": "Kla",
+    "slug": "kla",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/kla/white"
+  },
+  "Kla Tencor": {
+    "company": "Kla Tencor",
+    "slug": "klatencor",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/klatencor/white"
+  },
+  "Kotak Mahindra Bank": {
+    "company": "Kotak Mahindra Bank",
+    "slug": "kotakmahindrabank",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/kotakmahindrabank/white"
+  },
+  "Kpmg": {
+    "company": "Kpmg",
+    "slug": "kpmg",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/kpmg/white"
+  },
+  "Larsen Toubro": {
+    "company": "Larsen Toubro",
+    "slug": "larsentoubro",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/larsentoubro/white"
+  },
+  "Leap Motion": {
+    "company": "Leap Motion",
+    "slug": "leapmotion",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/leapmotion/white"
+  },
+  "Lendingkart": {
+    "company": "Lendingkart",
+    "slug": "lendingkart",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/lendingkart/white"
+  },
+  "Lenskart": {
+    "company": "Lenskart",
+    "slug": "lenskart",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/lenskart/white"
+  },
+  "Lg Electronics": {
+    "company": "Lg Electronics",
+    "slug": "lgelectronics",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/lgelectronics/white"
+  },
+  "Liberty Mutual": {
+    "company": "Liberty Mutual",
+    "slug": "libertymutual",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/libertymutual/white"
+  },
+  "Liftoff": {
+    "company": "Liftoff",
+    "slug": "liftoff",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/liftoff/white"
+  },
+  "Lime": {
+    "company": "Lime",
+    "slug": "lime",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/lime/white"
+  },
+  "Line": {
+    "company": "Line",
+    "slug": "line",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/line/white"
+  },
+  "Liveramp": {
+    "company": "Liveramp",
+    "slug": "liveramp",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/liveramp/white"
+  },
+  "Livspace": {
+    "company": "Livspace",
+    "slug": "livspace",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/livspace/white"
+  },
+  "Lowe": {
+    "company": "Lowe",
+    "slug": "lowe",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/lowe/white"
+  },
+  "Lti": {
+    "company": "Lti",
+    "slug": "lti",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/lti/white"
+  },
+  "Lucid": {
+    "company": "Lucid",
+    "slug": "lucid",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/lucid/white"
+  },
+  "Luxoft": {
+    "company": "Luxoft",
+    "slug": "luxoft",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/luxoft/white"
+  },
+  "Machine Zone": {
+    "company": "Machine Zone",
+    "slug": "machinezone",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/machinezone/white"
+  },
+  "Machinezone": {
+    "company": "Machinezone",
+    "slug": "machinezone",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/machinezone/white"
+  },
+  "Maersk": {
+    "company": "Maersk",
+    "slug": "maersk",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/maersk/white"
+  },
+  "Mapbox": {
+    "company": "Mapbox",
+    "slug": "mapbox",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mapbox/white"
+  },
+  "Maq Software": {
+    "company": "Maq Software",
+    "slug": "maqsoftware",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/maqsoftware/white"
+  },
+  "Marqeta": {
+    "company": "Marqeta",
+    "slug": "marqeta",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/marqeta/white"
+  },
+  "Mastercard": {
+    "company": "Mastercard",
+    "slug": "mastercard",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mastercard/white"
+  },
+  "Mcafee": {
+    "company": "Mcafee",
+    "slug": "mcafee",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mcafee/white"
+  },
+  "Mcdonalds": {
+    "company": "Mcdonalds",
+    "slug": "mcdonalds",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mcdonalds/white"
+  },
+  "Mckinsey": {
+    "company": "Mckinsey",
+    "slug": "mckinsey",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mckinsey/white"
+  },
+  "Meituan": {
+    "company": "Meituan",
+    "slug": "meituan",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/meituan/white"
+  },
+  "Mercari": {
+    "company": "Mercari",
+    "slug": "mercari",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mercari/white"
+  },
+  "Micro1": {
+    "company": "Micro1",
+    "slug": "micro1",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/micro1/white"
+  },
+  "Microstrategy": {
+    "company": "Microstrategy",
+    "slug": "microstrategy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/microstrategy/white"
+  },
+  "Millennium": {
+    "company": "Millennium",
+    "slug": "millennium",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/millennium/white"
+  },
+  "Mindtickle": {
+    "company": "Mindtickle",
+    "slug": "mindtickle",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mindtickle/white"
+  },
+  "Mindtree": {
+    "company": "Mindtree",
+    "slug": "mindtree",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mindtree/white"
+  },
+  "Mishipay": {
+    "company": "Mishipay",
+    "slug": "mishipay",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mishipay/white"
+  },
+  "Mixpanel": {
+    "company": "Mixpanel",
+    "slug": "mixpanel",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mixpanel/white"
+  },
+  "Mobileye": {
+    "company": "Mobileye",
+    "slug": "mobileye",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mobileye/white"
+  },
+  "Mobisy": {
+    "company": "Mobisy",
+    "slug": "mobisy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mobisy/white"
+  },
+  "Moengage": {
+    "company": "Moengage",
+    "slug": "moengage",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/moengage/white"
+  },
+  "Moneylion": {
+    "company": "Moneylion",
+    "slug": "moneylion",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/moneylion/white"
+  },
+  "Motive": {
+    "company": "Motive",
+    "slug": "motive",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/motive/white"
+  },
+  "Moveworks": {
+    "company": "Moveworks",
+    "slug": "moveworks",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/moveworks/white"
+  },
+  "Mphasis": {
+    "company": "Mphasis",
+    "slug": "mphasis",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mphasis/white"
+  },
+  "Msci": {
+    "company": "Msci",
+    "slug": "msci",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/msci/white"
+  },
+  "Murex": {
+    "company": "Murex",
+    "slug": "murex",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/murex/white"
+  },
+  "Mykaarma": {
+    "company": "Mykaarma",
+    "slug": "mykaarma",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/mykaarma/white"
+  },
+  "Nagarro": {
+    "company": "Nagarro",
+    "slug": "nagarro",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nagarro/white"
+  },
+  "Nasdaq": {
+    "company": "Nasdaq",
+    "slug": "nasdaq",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nasdaq/white"
+  },
+  "National Instruments": {
+    "company": "National Instruments",
+    "slug": "nationalinstruments",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nationalinstruments/white"
+  },
+  "National Payments Coorperation India": {
+    "company": "National Payments Coorperation India",
+    "slug": "nationalpaymentscoorperationindia",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nationalpaymentscoorperationindia/white"
+  },
+  "Natwest": {
+    "company": "Natwest",
+    "slug": "natwest",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/natwest/white"
+  },
+  "Navan": {
+    "company": "Navan",
+    "slug": "navan",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/navan/white"
+  },
+  "Naver": {
+    "company": "Naver",
+    "slug": "naver",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/naver/white"
+  },
+  "Navi": {
+    "company": "Navi",
+    "slug": "navi",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/navi/white"
+  },
+  "Ncr": {
+    "company": "Ncr",
+    "slug": "ncr",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ncr/white"
+  },
+  "Nerdwallet": {
+    "company": "Nerdwallet",
+    "slug": "nerdwallet",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nerdwallet/white"
+  },
+  "Netapp": {
+    "company": "Netapp",
+    "slug": "netapp",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/netapp/white"
+  },
+  "Netcracker Technology": {
+    "company": "Netcracker Technology",
+    "slug": "netcrackertechnology",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/netcrackertechnology/white"
+  },
+  "Netease": {
+    "company": "Netease",
+    "slug": "netease",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/netease/white"
+  },
+  "Netskope": {
+    "company": "Netskope",
+    "slug": "netskope",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/netskope/white"
+  },
+  "Netsuite": {
+    "company": "Netsuite",
+    "slug": "netsuite",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/netsuite/white"
+  },
+  "Newsbreak": {
+    "company": "Newsbreak",
+    "slug": "newsbreak",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/newsbreak/white"
+  },
+  "Nextdoor": {
+    "company": "Nextdoor",
+    "slug": "nextdoor",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nextdoor/white"
+  },
+  "Nextjump": {
+    "company": "Nextjump",
+    "slug": "nextjump",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nextjump/white"
+  },
+  "Niantic": {
+    "company": "Niantic",
+    "slug": "niantic",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/niantic/white"
+  },
+  "Nielsen": {
+    "company": "Nielsen",
+    "slug": "nielsen",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nielsen/white"
+  },
+  "Nokia": {
+    "company": "Nokia",
+    "slug": "nokia",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nokia/white"
+  },
+  "Noon": {
+    "company": "Noon",
+    "slug": "noon",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/noon/white"
+  },
+  "Nordstrom": {
+    "company": "Nordstrom",
+    "slug": "nordstrom",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nordstrom/white"
+  },
+  "Notion": {
+    "company": "Notion",
+    "slug": "notion",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/notion/white"
+  },
+  "Npci": {
+    "company": "Npci",
+    "slug": "npci",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/npci/white"
+  },
+  "Nykaa": {
+    "company": "Nykaa",
+    "slug": "nykaa",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/nykaa/white"
+  },
+  "Observeai": {
+    "company": "Observeai",
+    "slug": "observeai",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/observeai/white"
+  },
+  "Odoo": {
+    "company": "Odoo",
+    "slug": "odoo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/odoo/white"
+  },
+  "Okx": {
+    "company": "Okx",
+    "slug": "okx",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/okx/white"
+  },
+  "Olx": {
+    "company": "Olx",
+    "slug": "olx",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/olx/white"
+  },
+  "Opentext": {
+    "company": "Opentext",
+    "slug": "opentext",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/opentext/white"
+  },
+  "Oppo": {
+    "company": "Oppo",
+    "slug": "oppo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/oppo/white"
+  },
+  "Optiver": {
+    "company": "Optiver",
+    "slug": "optiver",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/optiver/white"
+  },
+  "Optum": {
+    "company": "Optum",
+    "slug": "optum",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/optum/white"
+  },
+  "Oscar Health": {
+    "company": "Oscar Health",
+    "slug": "oscarhealth",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/oscarhealth/white"
+  },
+  "Otterai": {
+    "company": "Otterai",
+    "slug": "otterai",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/otterai/white"
+  },
+  "Oyo": {
+    "company": "Oyo",
+    "slug": "oyo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/oyo/white"
+  },
+  "Ozon": {
+    "company": "Ozon",
+    "slug": "ozon",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ozon/white"
+  },
+  "Park": {
+    "company": "Park",
+    "slug": "park",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/park/white"
+  },
+  "Patreon": {
+    "company": "Patreon",
+    "slug": "patreon",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/patreon/white"
+  },
+  "Paycom": {
+    "company": "Paycom",
+    "slug": "paycom",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/paycom/white"
+  },
+  "Paypay": {
+    "company": "Paypay",
+    "slug": "paypay",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/paypay/white"
+  },
+  "Payu": {
+    "company": "Payu",
+    "slug": "payu",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/payu/white"
+  },
+  "Peak6": {
+    "company": "Peak6",
+    "slug": "peak6",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/peak6/white"
+  },
+  "Pega": {
+    "company": "Pega",
+    "slug": "pega",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/pega/white"
+  },
+  "Peloton": {
+    "company": "Peloton",
+    "slug": "peloton",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/peloton/white"
+  },
+  "Persistent Systems": {
+    "company": "Persistent Systems",
+    "slug": "persistentsystems",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/persistentsystems/white"
+  },
+  "Philips": {
+    "company": "Philips",
+    "slug": "philips",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/philips/white"
+  },
+  "Pickrr": {
+    "company": "Pickrr",
+    "slug": "pickrr",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/pickrr/white"
+  },
+  "Plaid": {
+    "company": "Plaid",
+    "slug": "plaid",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/plaid/white"
+  },
+  "Playsimple": {
+    "company": "Playsimple",
+    "slug": "playsimple",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/playsimple/white"
+  },
+  "Point72": {
+    "company": "Point72",
+    "slug": "point72",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/point72/white"
+  },
+  "Polar": {
+    "company": "Polar",
+    "slug": "polar",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/polar/white"
+  },
+  "Ponyai": {
+    "company": "Ponyai",
+    "slug": "ponyai",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ponyai/white"
+  },
+  "Pornhub": {
+    "company": "Pornhub",
+    "slug": "pornhub",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/pornhub/white"
+  },
+  "Porter": {
+    "company": "Porter",
+    "slug": "porter",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/porter/white"
+  },
+  "Poshmark": {
+    "company": "Poshmark",
+    "slug": "poshmark",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/poshmark/white"
+  },
+  "Postman": {
+    "company": "Postman",
+    "slug": "postman",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/postman/white"
+  },
+  "Postmates": {
+    "company": "Postmates",
+    "slug": "postmates",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/postmates/white"
+  },
+  "Poynt": {
+    "company": "Poynt",
+    "slug": "poynt",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/poynt/white"
+  },
+  "Practo": {
+    "company": "Practo",
+    "slug": "practo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/practo/white"
+  },
+  "Publicis Sapient": {
+    "company": "Publicis Sapient",
+    "slug": "publicissapient",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/publicissapient/white"
+  },
+  "Pubmatic": {
+    "company": "Pubmatic",
+    "slug": "pubmatic",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/pubmatic/white"
+  },
+  "Pure": {
+    "company": "Pure",
+    "slug": "pure",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/pure/white"
+  },
+  "Pure Storage": {
+    "company": "Pure Storage",
+    "slug": "purestorage",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/purestorage/white"
+  },
+  "Purplle": {
+    "company": "Purplle",
+    "slug": "purplle",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/purplle/white"
+  },
+  "Pwc": {
+    "company": "Pwc",
+    "slug": "pwc",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/pwc/white"
+  },
+  "Qualtrics": {
+    "company": "Qualtrics",
+    "slug": "qualtrics",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/qualtrics/white"
+  },
+  "Qualys": {
+    "company": "Qualys",
+    "slug": "qualys",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/qualys/white"
+  },
+  "Quantcast": {
+    "company": "Quantcast",
+    "slug": "quantcast",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/quantcast/white"
+  },
+  "Quantiphi": {
+    "company": "Quantiphi",
+    "slug": "quantiphi",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/quantiphi/white"
+  },
+  "Quince": {
+    "company": "Quince",
+    "slug": "quince",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/quince/white"
+  },
+  "Rackspace": {
+    "company": "Rackspace",
+    "slug": "rackspace",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/rackspace/white"
+  },
+  "Radius": {
+    "company": "Radius",
+    "slug": "radius",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/radius/white"
+  },
+  "Rakuten": {
+    "company": "Rakuten",
+    "slug": "rakuten",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/rakuten/white"
+  },
+  "Rally Health": {
+    "company": "Rally Health",
+    "slug": "rallyhealth",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/rallyhealth/white"
+  },
+  "Ramp 2": {
+    "company": "Ramp 2",
+    "slug": "ramp2",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ramp2/white"
+  },
+  "Rbc": {
+    "company": "Rbc",
+    "slug": "rbc",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/rbc/white"
+  },
+  "Redbus": {
+    "company": "Redbus",
+    "slug": "redbus",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/redbus/white"
+  },
+  "Reddit": {
+    "company": "Reddit",
+    "slug": "reddit",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/reddit/white"
+  },
+  "Redfin": {
+    "company": "Redfin",
+    "slug": "redfin",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/redfin/white"
+  },
+  "Reliance Retails": {
+    "company": "Reliance Retails",
+    "slug": "relianceretails",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/relianceretails/white"
+  },
+  "Remitly": {
+    "company": "Remitly",
+    "slug": "remitly",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/remitly/white"
+  },
+  "Retailmenot": {
+    "company": "Retailmenot",
+    "slug": "retailmenot",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/retailmenot/white"
+  },
+  "Revolut": {
+    "company": "Revolut",
+    "slug": "revolut",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/revolut/white"
+  },
+  "Riot Games": {
+    "company": "Riot Games",
+    "slug": "riotgames",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/riotgames/white"
+  },
+  "Ripple": {
+    "company": "Ripple",
+    "slug": "ripple",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ripple/white"
+  },
+  "Rivian": {
+    "company": "Rivian",
+    "slug": "rivian",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/rivian/white"
+  },
+  "Rokt": {
+    "company": "Rokt",
+    "slug": "rokt",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/rokt/white"
+  },
+  "Sambanova": {
+    "company": "Sambanova",
+    "slug": "sambanova",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sambanova/white"
+  },
+  "Samsara": {
+    "company": "Samsara",
+    "slug": "samsara",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/samsara/white"
+  },
+  "Scale Ai": {
+    "company": "Scale Ai",
+    "slug": "scaleai",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/scaleai/white"
+  },
+  "Scaler": {
+    "company": "Scaler",
+    "slug": "scaler",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/scaler/white"
+  },
+  "Schlumberger": {
+    "company": "Schlumberger",
+    "slug": "schlumberger",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/schlumberger/white"
+  },
+  "Schneider Electric": {
+    "company": "Schneider Electric",
+    "slug": "schneiderelectric",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/schneiderelectric/white"
+  },
+  "Schrodinger": {
+    "company": "Schrodinger",
+    "slug": "schrodinger",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/schrodinger/white"
+  },
+  "Sentry": {
+    "company": "Sentry",
+    "slug": "sentry",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sentry/white"
+  },
+  "Sharechat": {
+    "company": "Sharechat",
+    "slug": "sharechat",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sharechat/white"
+  },
+  "Shift Technology": {
+    "company": "Shift Technology",
+    "slug": "shifttechnology",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/shifttechnology/white"
+  },
+  "Shipsy": {
+    "company": "Shipsy",
+    "slug": "shipsy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/shipsy/white"
+  },
+  "Shopback": {
+    "company": "Shopback",
+    "slug": "shopback",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/shopback/white"
+  },
+  "Shopee": {
+    "company": "Shopee",
+    "slug": "shopee",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/shopee/white"
+  },
+  "Shopify": {
+    "company": "Shopify",
+    "slug": "shopify",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/shopify/white"
+  },
+  "Shopup": {
+    "company": "Shopup",
+    "slug": "shopup",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/shopup/white"
+  },
+  "Sig": {
+    "company": "Sig",
+    "slug": "sig",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sig/white"
+  },
+  "Singlestore": {
+    "company": "Singlestore",
+    "slug": "singlestore",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/singlestore/white"
+  },
+  "Sixt": {
+    "company": "Sixt",
+    "slug": "sixt",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sixt/white"
+  },
+  "Slice": {
+    "company": "Slice",
+    "slug": "slice",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/slice/white"
+  },
+  "Smartnews": {
+    "company": "Smartnews",
+    "slug": "smartnews",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/smartnews/white"
+  },
+  "Smartsheet": {
+    "company": "Smartsheet",
+    "slug": "smartsheet",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/smartsheet/white"
+  },
+  "Snapdeal": {
+    "company": "Snapdeal",
+    "slug": "snapdeal",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/snapdeal/white"
+  },
+  "Societe Generale": {
+    "company": "Societe Generale",
+    "slug": "societegenerale",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/societegenerale/white"
+  },
+  "Softwire": {
+    "company": "Softwire",
+    "slug": "softwire",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/softwire/white"
+  },
+  "Sonatus": {
+    "company": "Sonatus",
+    "slug": "sonatus",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sonatus/white"
+  },
+  "Sony": {
+    "company": "Sony",
+    "slug": "sony",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sony/white"
+  },
+  "Soti": {
+    "company": "Soti",
+    "slug": "soti",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/soti/white"
+  },
+  "Soundhound": {
+    "company": "Soundhound",
+    "slug": "soundhound",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/soundhound/white"
+  },
+  "Spacex": {
+    "company": "Spacex",
+    "slug": "spacex",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/spacex/white"
+  },
+  "Spinny": {
+    "company": "Spinny",
+    "slug": "spinny",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/spinny/white"
+  },
+  "Squarespace": {
+    "company": "Squarespace",
+    "slug": "squarespace",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/squarespace/white"
+  },
+  "Stackadapt": {
+    "company": "Stackadapt",
+    "slug": "stackadapt",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/stackadapt/white"
+  },
+  "Stackline": {
+    "company": "Stackline",
+    "slug": "stackline",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/stackline/white"
+  },
+  "Starbucks": {
+    "company": "Starbucks",
+    "slug": "starbucks",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/starbucks/white"
+  },
+  "State Farm": {
+    "company": "State Farm",
+    "slug": "statefarm",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/statefarm/white"
+  },
+  "Strava": {
+    "company": "Strava",
+    "slug": "strava",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/strava/white"
+  },
+  "Stripe": {
+    "company": "Stripe",
+    "slug": "stripe",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/stripe/white"
+  },
+  "Sumologic": {
+    "company": "Sumologic",
+    "slug": "sumologic",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/sumologic/white"
+  },
+  "Syfe": {
+    "company": "Syfe",
+    "slug": "syfe",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/syfe/white"
+  },
+  "Symantec": {
+    "company": "Symantec",
+    "slug": "symantec",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/symantec/white"
+  },
+  "Synopsys": {
+    "company": "Synopsys",
+    "slug": "synopsys",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/synopsys/white"
+  },
+  "Ta Digital": {
+    "company": "Ta Digital",
+    "slug": "tadigital",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tadigital/white"
+  },
+  "Tableau": {
+    "company": "Tableau",
+    "slug": "tableau",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tableau/white"
+  },
+  "Tanium": {
+    "company": "Tanium",
+    "slug": "tanium",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tanium/white"
+  },
+  "Target": {
+    "company": "Target",
+    "slug": "target",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/target/white"
+  },
+  "Tech Mahindra": {
+    "company": "Tech Mahindra",
+    "slug": "techmahindra",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/techmahindra/white"
+  },
+  "Tencent": {
+    "company": "Tencent",
+    "slug": "tencent",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tencent/white"
+  },
+  "Teradata": {
+    "company": "Teradata",
+    "slug": "teradata",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/teradata/white"
+  },
+  "Tesco": {
+    "company": "Tesco",
+    "slug": "tesco",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tesco/white"
+  },
+  "Texas Instruments": {
+    "company": "Texas Instruments",
+    "slug": "texasinstruments",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/texasinstruments/white"
+  },
+  "The Trade Desk": {
+    "company": "The Trade Desk",
+    "slug": "thetradedesk",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/thetradedesk/white"
+  },
+  "Thomson Reuters": {
+    "company": "Thomson Reuters",
+    "slug": "thomsonreuters",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/thomsonreuters/white"
+  },
+  "Thoughtspot": {
+    "company": "Thoughtspot",
+    "slug": "thoughtspot",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/thoughtspot/white"
+  },
+  "Thoughtworks": {
+    "company": "Thoughtworks",
+    "slug": "thoughtworks",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/thoughtworks/white"
+  },
+  "Thousandeyes": {
+    "company": "Thousandeyes",
+    "slug": "thousandeyes",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/thousandeyes/white"
+  },
+  "Thumbtack": {
+    "company": "Thumbtack",
+    "slug": "thumbtack",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/thumbtack/white"
+  },
+  "Tiaa": {
+    "company": "Tiaa",
+    "slug": "tiaa",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tiaa/white"
+  },
+  "Tiger Analytics": {
+    "company": "Tiger Analytics",
+    "slug": "tigeranalytics",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tigeranalytics/white"
+  },
+  "Tinder": {
+    "company": "Tinder",
+    "slug": "tinder",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tinder/white"
+  },
+  "Toast": {
+    "company": "Toast",
+    "slug": "toast",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/toast/white"
+  },
+  "Tokopedia": {
+    "company": "Tokopedia",
+    "slug": "tokopedia",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tokopedia/white"
+  },
+  "Tomtom": {
+    "company": "Tomtom",
+    "slug": "tomtom",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tomtom/white"
+  },
+  "Toptal": {
+    "company": "Toptal",
+    "slug": "toptal",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/toptal/white"
+  },
+  "Tower Research": {
+    "company": "Tower Research",
+    "slug": "towerresearch",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/towerresearch/white"
+  },
+  "Tracxn": {
+    "company": "Tracxn",
+    "slug": "tracxn",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tracxn/white"
+  },
+  "Traveloka": {
+    "company": "Traveloka",
+    "slug": "traveloka",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/traveloka/white"
+  },
+  "Trend Micro": {
+    "company": "Trend Micro",
+    "slug": "trendmicro",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/trendmicro/white"
+  },
+  "Trexquant": {
+    "company": "Trexquant",
+    "slug": "trexquant",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/trexquant/white"
+  },
+  "Trilogy": {
+    "company": "Trilogy",
+    "slug": "trilogy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/trilogy/white"
+  },
+  "Tripactions": {
+    "company": "Tripactions",
+    "slug": "tripactions",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tripactions/white"
+  },
+  "Tripadvisor": {
+    "company": "Tripadvisor",
+    "slug": "tripadvisor",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tripadvisor/white"
+  },
+  "Triplebyte": {
+    "company": "Triplebyte",
+    "slug": "triplebyte",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/triplebyte/white"
+  },
+  "Turvo": {
+    "company": "Turvo",
+    "slug": "turvo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/turvo/white"
+  },
+  "Tusimple": {
+    "company": "Tusimple",
+    "slug": "tusimple",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/tusimple/white"
+  },
+  "Twilio": {
+    "company": "Twilio",
+    "slug": "twilio",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/twilio/white"
+  },
+  "Twitch": {
+    "company": "Twitch",
+    "slug": "twitch",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/twitch/white"
+  },
+  "Ubisoft": {
+    "company": "Ubisoft",
+    "slug": "ubisoft",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ubisoft/white"
+  },
+  "Ubs": {
+    "company": "Ubs",
+    "slug": "ubs",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ubs/white"
+  },
+  "Udemy": {
+    "company": "Udemy",
+    "slug": "udemy",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/udemy/white"
+  },
+  "Ukg": {
+    "company": "Ukg",
+    "slug": "ukg",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ukg/white"
+  },
+  "Unbxd": {
+    "company": "Unbxd",
+    "slug": "unbxd",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/unbxd/white"
+  },
+  "Unity": {
+    "company": "Unity",
+    "slug": "unity",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/unity/white"
+  },
+  "Unstop": {
+    "company": "Unstop",
+    "slug": "unstop",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/unstop/white"
+  },
+  "Upstart": {
+    "company": "Upstart",
+    "slug": "upstart",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/upstart/white"
+  },
+  "Urban Company": {
+    "company": "Urban Company",
+    "slug": "urbancompany",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/urbancompany/white"
+  },
+  "Valve": {
+    "company": "Valve",
+    "slug": "valve",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/valve/white"
+  },
+  "Veeva": {
+    "company": "Veeva",
+    "slug": "veeva",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/veeva/white"
+  },
+  "Veritas": {
+    "company": "Veritas",
+    "slug": "veritas",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/veritas/white"
+  },
+  "Verizon": {
+    "company": "Verizon",
+    "slug": "verizon",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/verizon/white"
+  },
+  "Viasat": {
+    "company": "Viasat",
+    "slug": "viasat",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/viasat/white"
+  },
+  "Vimeo": {
+    "company": "Vimeo",
+    "slug": "vimeo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/vimeo/white"
+  },
+  "Virtu": {
+    "company": "Virtu",
+    "slug": "virtu",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/virtu/white"
+  },
+  "Virtusa": {
+    "company": "Virtusa",
+    "slug": "virtusa",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/virtusa/white"
+  },
+  "Vmware": {
+    "company": "Vmware",
+    "slug": "vmware",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/vmware/white"
+  },
+  "Warnermedia": {
+    "company": "Warnermedia",
+    "slug": "warnermedia",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/warnermedia/white"
+  },
+  "Wayve": {
+    "company": "Wayve",
+    "slug": "wayve",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/wayve/white"
+  },
+  "Wealthfront": {
+    "company": "Wealthfront",
+    "slug": "wealthfront",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/wealthfront/white"
+  },
+  "Weride": {
+    "company": "Weride",
+    "slug": "weride",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/weride/white"
+  },
+  "Western Digital": {
+    "company": "Western Digital",
+    "slug": "westerndigital",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/westerndigital/white"
+  },
+  "Whatfix": {
+    "company": "Whatfix",
+    "slug": "whatfix",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/whatfix/white"
+  },
+  "Winzo": {
+    "company": "Winzo",
+    "slug": "winzo",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/winzo/white"
+  },
+  "Wise": {
+    "company": "Wise",
+    "slug": "wise",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/wise/white"
+  },
+  "Wish": {
+    "company": "Wish",
+    "slug": "wish",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/wish/white"
+  },
+  "Wissen": {
+    "company": "Wissen",
+    "slug": "wissen",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/wissen/white"
+  },
+  "Workday": {
+    "company": "Workday",
+    "slug": "workday",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/workday/white"
+  },
+  "Works Applications": {
+    "company": "Works Applications",
+    "slug": "worksapplications",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/worksapplications/white"
+  },
+  "Worldquant": {
+    "company": "Worldquant",
+    "slug": "worldquant",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/worldquant/white"
+  },
+  "Woven By Toyota": {
+    "company": "Woven By Toyota",
+    "slug": "wovenbytoyota",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/wovenbytoyota/white"
+  },
+  "Xing": {
+    "company": "Xing",
+    "slug": "xing",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/xing/white"
+  },
+  "Yatra": {
+    "company": "Yatra",
+    "slug": "yatra",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/yatra/white"
+  },
+  "Yugabyte": {
+    "company": "Yugabyte",
+    "slug": "yugabyte",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/yugabyte/white"
+  },
+  "Zalando": {
+    "company": "Zalando",
+    "slug": "zalando",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zalando/white"
+  },
+  "Zappos": {
+    "company": "Zappos",
+    "slug": "zappos",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zappos/white"
+  },
+  "Zemoso": {
+    "company": "Zemoso",
+    "slug": "zemoso",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zemoso/white"
+  },
+  "Zendesk": {
+    "company": "Zendesk",
+    "slug": "zendesk",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zendesk/white"
+  },
+  "Zeta Suite": {
+    "company": "Zeta Suite",
+    "slug": "zetasuite",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zetasuite/white"
+  },
+  "Zillow": {
+    "company": "Zillow",
+    "slug": "zillow",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zillow/white"
+  },
+  "Zip": {
+    "company": "Zip",
+    "slug": "zip",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zip/white"
+  },
+  "Ziprecruiter": {
+    "company": "Ziprecruiter",
+    "slug": "ziprecruiter",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/ziprecruiter/white"
+  },
+  "Zluri": {
+    "company": "Zluri",
+    "slug": "zluri",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zluri/white"
+  },
+  "Zocdoc": {
+    "company": "Zocdoc",
+    "slug": "zocdoc",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zocdoc/white"
+  },
+  "Zoom": {
+    "company": "Zoom",
+    "slug": "zoom",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zoom/white"
+  },
+  "Zoox": {
+    "company": "Zoox",
+    "slug": "zoox",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zoox/white"
+  },
+  "Zs Associates": {
+    "company": "Zs Associates",
+    "slug": "zsassociates",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zsassociates/white"
+  },
+  "Zulily": {
+    "company": "Zulily",
+    "slug": "zulily",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zulily/white"
+  },
+  "Zynga": {
+    "company": "Zynga",
+    "slug": "zynga",
+    "localPath": null,
+    "cdnUrl": "https://cdn.simpleicons.org/zynga/white"
+  }
+}
