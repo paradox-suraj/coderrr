@@ -39,6 +39,8 @@ pnpm-debug.log*
 
 # temporary test files
 test_crop.png
+/playwright-report/
+/test-results/
 
 # local agent and assistant skills
 .agents/

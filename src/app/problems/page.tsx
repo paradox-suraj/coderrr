@@ -464,6 +464,7 @@ function ProblemsDirectoryContent() {
             </label>
             <div className="relative">
               <select
+                aria-label="Filter by pattern"
                 value={selectedPattern}
                 onChange={(e) => setSelectedPattern(e.target.value)}
                 className="w-full bg-black/40 border border-white/[0.08] text-neutral-200 text-xs rounded-xl px-3 py-2 appearance-none pr-8 cursor-pointer focus:outline-none focus:border-emerald-500/50 hover:border-white/20 transition-colors truncate"
@@ -488,6 +489,7 @@ function ProblemsDirectoryContent() {
             </label>
             <div className="relative">
               <select
+                aria-label="Filter by topic tag"
                 value={selectedTopic}
                 onChange={(e) => setSelectedTopic(e.target.value)}
                 className="w-full bg-black/40 border border-white/[0.08] text-neutral-200 text-xs rounded-xl px-3 py-2 appearance-none pr-8 cursor-pointer focus:outline-none focus:border-emerald-500/50 hover:border-white/20 transition-colors truncate"
@@ -512,6 +514,7 @@ function ProblemsDirectoryContent() {
             </label>
             <div className="relative">
               <select
+                aria-label="Filter by learning track"
                 value={selectedTrack}
                 onChange={(e) => setSelectedTrack(e.target.value)}
                 className="w-full bg-black/40 border border-white/[0.08] text-neutral-200 text-xs rounded-xl px-3 py-2 appearance-none pr-8 cursor-pointer focus:outline-none focus:border-emerald-500/50 hover:border-white/20 transition-colors truncate"
@@ -536,6 +539,7 @@ function ProblemsDirectoryContent() {
             </label>
             <div className="relative">
               <select
+                aria-label="Sort order"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
                 className="w-full bg-black/40 border border-white/[0.08] text-neutral-200 text-xs rounded-xl px-3 py-2 appearance-none pr-8 cursor-pointer focus:outline-none focus:border-emerald-500/50 hover:border-white/20 transition-colors truncate"
@@ -570,6 +574,7 @@ function ProblemsDirectoryContent() {
             </label>
             <div className="relative">
               <select
+                aria-label="Problems per page"
                 value={pageSize}
                 onChange={(e) => setPageSize(parseInt(e.target.value, 10))}
                 className="w-full bg-black/40 border border-white/[0.08] text-neutral-200 text-xs rounded-xl px-3 py-2 appearance-none pr-8 cursor-pointer focus:outline-none focus:border-emerald-500/50 hover:border-white/20 transition-colors"

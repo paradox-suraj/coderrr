@@ -35,20 +35,28 @@ test.describe('JavaScript Web Worker Solve Flow', () => {
 
   test('should switch to JavaScript and accept a correct solution', async ({ page }) => {
     // Switch to JavaScript
-    const langSelector = page.getByRole('button', { name: /Python 3/i });
+    const langSelector = page.getByRole('button', { name: /Python 3/i }).first();
     await langSelector.click();
     await page.getByRole('button', { name: /JavaScript/i }).first().click();
 
-    // Type solution
-    const editor = page.locator('.monaco-editor .inputarea');
-    await editor.click();
-    await page.keyboard.press('Control+a');
-    await page.keyboard.type(JS_TWO_SUM);
+    // Set solution directly into Monaco editor model
+    await page.waitForFunction(() => {
+      const monaco = (window as any).monaco;
+      const models = monaco?.editor?.getModels?.();
+      return models && models.some((m: any) => m.getLanguageId() === 'javascript');
+    }, { timeout: 20_000 });
+
+    await page.evaluate((c: string) => {
+      const monaco = (window as any).monaco;
+      const models = monaco.editor.getModels();
+      const jsModel = models.find((m: any) => m.getLanguageId() === 'javascript') || models[models.length - 1];
+      jsModel.setValue(c);
+    }, JS_TWO_SUM);
 
     // Submit
-    await page.getByRole('button', { name: /Submit/i }).click();
+    await page.getByRole('button', { name: /Submit/i }).first().click();
 
-    // JS worker is instant — 5s timeout is sufficient
-    await expect(page.getByText('Accepted')).toBeVisible({ timeout: 10_000 });
+    // JS worker is instant — 10s timeout is sufficient
+    await expect(page.getByText('Accepted').first()).toBeVisible({ timeout: 10_000 });
   });
 });

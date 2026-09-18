@@ -32,9 +32,9 @@ export default defineConfig({
   ],
   // Auto-start dev server for local runs
   webServer: {
-    command: `pnpm dev -p ${PORT}`,
+    command: process.env.E2E_PROD ? `pnpm next start -H 0.0.0.0 -p ${PORT}` : `pnpm dev -p ${PORT}`,
     url: BASE_URL,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
     timeout: 120_000,
   },
 });

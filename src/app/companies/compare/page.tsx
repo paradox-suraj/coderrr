@@ -354,6 +354,7 @@ function ComparatorContent() {
         <div className="flex items-center gap-3 w-full md:w-auto justify-end">
           {/* Learning Track Filter */}
           <select
+            aria-label="Filter by learning track"
             value={selectedTrack}
             onChange={(e) => setSelectedTrack(e.target.value)}
             className="px-3 py-1.5 rounded-xl bg-black/40 border border-white/[0.08] text-xs text-neutral-200 focus:outline-none focus:border-emerald-500/50 max-w-[200px] truncate"
