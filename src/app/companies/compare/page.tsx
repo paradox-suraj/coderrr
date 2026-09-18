@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useRef, Suspense } from 'react';
+import { useState, useMemo, useRef, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useVirtualizer } from '@tanstack/react-virtual';
@@ -17,16 +17,35 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import companiesData from '../../../../public/data/companies.json';
-import problemsData from '../../../../public/data/problems.json';
-import mappingsData from '../../../../public/data/company_mappings.json';
-import type { ProblemDoc } from '@/lib/workers/search.worker';
+
+export interface ProblemMetaDoc {
+  id: string;
+  title: string;
+  slug: string;
+  difficulty: string;
+  problemType: string;
+  corePattern: string;
+  learningTrack: string;
+  companiesCount: number;
+  avgAcceptance: number;
+  priorityBucket: string;
+}
+
+export interface CompanyMappingDoc {
+  company: string;
+  problemId: string;
+  frequencyPct: number;
+}
 
 interface CompareProblemRow {
-  problem: ProblemDoc;
+  problem: ProblemMetaDoc;
   companyFrequencies: Record<string, number>;
   totalScore: number;
   matchCount: number;
 }
+
+let cachedMetadata: ProblemMetaDoc[] | null = null;
+let cachedMappings: CompanyMappingDoc[] | null = null;
 
 function ComparatorContent() {
   const searchParams = useSearchParams();
@@ -75,14 +94,50 @@ function ComparatorContent() {
     router.replace(`/companies/compare?companies=${encodeURIComponent(updated.join(','))}`);
   };
 
+  const [problemsList, setProblemsList] = useState<ProblemMetaDoc[]>(cachedMetadata || []);
+  const [mappingsList, setMappingsList] = useState<CompanyMappingDoc[]>(cachedMappings || []);
+  const [isLoading, setIsLoading] = useState(!cachedMetadata || !cachedMappings);
+
+  useEffect(() => {
+    let mounted = true;
+    if (cachedMetadata && cachedMappings) {
+      setIsLoading(false);
+      return;
+    }
+
+    Promise.all([
+      fetch('/data/problems_metadata.json').then((r) =>
+        r.ok ? r.json() : fetch('/data/problems.json').then((res) => res.json())
+      ),
+      fetch('/data/company_mappings.json').then((r) => r.json()),
+    ])
+      .then(([problems, mappings]) => {
+        cachedMetadata = problems;
+        cachedMappings = mappings;
+        if (mounted) {
+          setProblemsList(problems);
+          setMappingsList(mappings);
+          setIsLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.error('Failed to load comparison dataset:', err);
+        if (mounted) setIsLoading(false);
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   // Pre-index mappings by company and problemId
   const { problemsMap, companyProblemFreqMap } = useMemo(() => {
-    const pMap = new Map<string, ProblemDoc>();
-    (problemsData as ProblemDoc[]).forEach((p) => pMap.set(p.id, p));
+    const pMap = new Map<string, ProblemMetaDoc>();
+    problemsList.forEach((p) => pMap.set(p.id, p));
 
     // Map: Company -> Map(problemId -> frequencyPct)
     const cfMap = new Map<string, Map<string, number>>();
-    (mappingsData as Array<{ company: string; problemId: string; frequencyPct: number }>).forEach((m) => {
+    mappingsList.forEach((m) => {
       let map = cfMap.get(m.company);
       if (!map) {
         map = new Map<string, number>();
@@ -92,7 +147,7 @@ function ComparatorContent() {
     });
 
     return { problemsMap: pMap, companyProblemFreqMap: cfMap };
-  }, []);
+  }, [problemsList, mappingsList]);
 
   // Compute Intersection and Union Sets
   const comparedRows: CompareProblemRow[] = useMemo(() => {
@@ -168,9 +223,9 @@ function ComparatorContent() {
 
   // Distinct tracks for filter dropdown
   const tracksList = useMemo(() => {
-    const set = new Set((problemsData as ProblemDoc[]).map((p) => p.learningTrack));
+    const set = new Set(problemsList.map((p) => p.learningTrack));
     return ['All', ...Array.from(set).sort()];
-  }, []);
+  }, [problemsList]);
 
   // Virtualizer Setup for 60 FPS scrolling
   const parentRef = useRef<HTMLDivElement>(null);
@@ -342,8 +397,16 @@ function ComparatorContent() {
           <div className="col-span-1 text-right">Action</div>
         </div>
 
+        {/* Loading state */}
+        {isLoading && (
+          <div className="py-20 flex flex-col items-center justify-center gap-3 text-neutral-400">
+            <div className="w-6 h-6 border-2 border-emerald-500/30 border-t-emerald-500 rounded-full animate-spin" />
+            <span className="text-xs font-mono">Loading problem overlap catalog...</span>
+          </div>
+        )}
+
         {/* Empty state */}
-        {comparedRows.length === 0 && (
+        {!isLoading && comparedRows.length === 0 && (
           <div className="py-16 text-center text-neutral-500 text-xs font-mono">
             No overlapping questions found for this combination and filter.
           </div>

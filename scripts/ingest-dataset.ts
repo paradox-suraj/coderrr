@@ -365,6 +365,19 @@ function main() {
 
   console.log('\n🔹 Writing output files...');
   write('problems.json', problems);
+  const problemsMetadata = problems.map((p) => ({
+    id: p.id,
+    title: p.title,
+    slug: p.slug,
+    difficulty: p.difficulty,
+    problemType: p.problemType,
+    corePattern: p.corePattern,
+    learningTrack: p.learningTrack,
+    companiesCount: p.companiesCount,
+    avgAcceptance: p.avgAcceptance,
+    priorityBucket: p.priorityBucket,
+  }));
+  write('problems_metadata.json', problemsMetadata);
   write('company_mappings.json', companyMappings);
   write('companies.json', companies);
 
