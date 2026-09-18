@@ -4,6 +4,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import Sidebar from '@/components/navigation/Sidebar';
 import CommandPalette from '@/components/dashboard/CommandPalette';
 import GridPattern from '@/components/canvas/GridPattern';
+import ServiceWorkerRegister from '@/components/pwa/ServiceWorkerRegister';
 
 export const metadata: Metadata = {
   title: 'AlgoJeet Pro — Technical Interview Preparation Platform',
@@ -32,6 +33,7 @@ export default function RootLayout({
             {children}
           </main>
           <CommandPalette />
+          <ServiceWorkerRegister />
         </ClerkProvider>
       </body>
     </html>

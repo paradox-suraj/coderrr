@@ -48,10 +48,19 @@ async function initPyodide(): Promise<any> {
   isLoading = true;
 
   try {
-    importScripts('https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js');
-    pyodideInstance = await loadPyodide({
-      indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/',
-    });
+    // Attempt loading self-hosted distribution first for offline capability
+    try {
+      importScripts('/pyodide/pyodide.js');
+      pyodideInstance = await loadPyodide({
+        indexURL: '/pyodide/',
+      });
+    } catch (localErr) {
+      console.warn('[PyodideWorker] Local Pyodide assets unreachable, attempting CDN fallback:', localErr);
+      importScripts('https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js');
+      pyodideInstance = await loadPyodide({
+        indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/',
+      });
+    }
 
     self.postMessage({
       type: 'ready',
@@ -62,7 +71,7 @@ async function initPyodide(): Promise<any> {
   } catch (err: any) {
     self.postMessage({
       type: 'error',
-      error: err.message || 'Failed to initialize Pyodide from CDN',
+      error: err.message || 'Failed to initialize Pyodide runtime',
     } as PyodideWorkerResult);
     throw err;
   } finally {

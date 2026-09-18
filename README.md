@@ -58,8 +58,7 @@ Simulate realistic technical interview conditions with countdown presets, disabl
   - **C++ & Java**: Supported via a resilient server-side execution pipeline with circuit breakers, rate limiting, and Piston sandboxing.
 - **Spaced Repetition (SM-2)**: Automatically schedules reviews based on your recall quality ratings (Again, Hard, Good, Easy) to lock patterns into long-term memory.
 - **Daily Focus Sprint**: 25-minute Pomodoro focus timer with a curated 5-problem queue prioritized by due reviews and company frequencies.
-- **Strict Interview Mode**: Optional timer-linked environment that disables copy/cut/paste shortcuts and tracks tab switches to simulate realistic interview conditions.
-- **Local-First & Private**: Progress, code buffers, and notes persist offline in your browser's IndexedDB. Sign in with Clerk to optionally sync across devices via Supabase.
+- **Local-First & Private**: Problem datasets, code buffers, spaced repetition reviews, Monaco editor distribution, and in-browser Python (Pyodide WASM) execute offline via service worker caching and IndexedDB. Sign in with Clerk to optionally sync across devices via Supabase.
 
 ---
 
@@ -105,7 +104,7 @@ Simulate realistic technical interview conditions with countdown presets, disabl
    ```bash
    cp .env.local.example .env.local
    ```
-   *Note: AlgoJeet Pro works completely offline out-of-the-box with Dexie IndexedDB. Clerk and Supabase variables are only required if you want cross-device cloud sync.*
+   *Note: AlgoJeet Pro is architected local-first. Core problem solving, Monaco editor, in-browser Python execution, and Dexie IndexedDB storage work without internet connectivity once cached. Remote code execution (C++/Java via Piston) and cross-device sync (Clerk/Supabase) require active internet connectivity.*
 
 4. **Start the development server**:
    ```bash

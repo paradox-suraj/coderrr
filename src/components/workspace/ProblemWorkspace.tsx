@@ -56,6 +56,7 @@ import WorkspaceTimer from './WorkspaceTimer';
 import { useStrictInterviewMode } from '@/lib/hooks/useStrictInterviewMode';
 import type { ProblemDoc } from '@/lib/workers/search.worker';
 import type { CompanyMappingDoc } from '@/lib/data/problems';
+import '@/lib/monaco/config';
 
 // Dynamic import for Monaco Editor to avoid SSR hydration mismatch
 const MonacoEditor = dynamic(() => import('@monaco-editor/react'), {
