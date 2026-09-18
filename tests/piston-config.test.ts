@@ -27,7 +27,7 @@ import { validatePistonUrl, isPistonConfigured, getPistonEndpoint } from "../src
 // Case A: Undefined or empty
 const emptyRes = validatePistonUrl(undefined);
 assert(!emptyRes.isValid, "Undefined PISTON_URL must be marked invalid");
-assert(emptyRes.reason.includes("not configured"), "Undefined PISTON_URL must explain it is not configured");
+assert(Boolean(emptyRes.reason?.includes("not configured")), "Undefined PISTON_URL must explain it is not configured");
 
 // Case B: Invalid URL format
 const invalidRes = validatePistonUrl("not-a-url");
@@ -36,7 +36,7 @@ assert(!invalidRes.isValid, "Malformed PISTON_URL must be marked invalid");
 // Case C: Deprecated emkc.org without key
 const emkcNoKey = validatePistonUrl("https://emkc.org/api/v2/piston/execute");
 assert(!emkcNoKey.isValid, "Public emkc.org without PISTON_KEY must be rejected as deprecated");
-assert(emkcNoKey.reason.includes("deprecated"), "emkc.org rejection must cite deprecation / auth requirement");
+assert(Boolean(emkcNoKey.reason?.includes("deprecated")), "emkc.org rejection must cite deprecation / auth requirement");
 
 // Case D: Deprecated emkc.org WITH key
 const emkcWithKey = validatePistonUrl("https://emkc.org/api/v2/piston/execute", "test-key-123");

@@ -28,8 +28,8 @@ async function runTests() {
   assert(nodeReq === false, "requestStoragePersistence in non-browser must safely return false");
 
   // Mock navigator.storage in globalThis
-  let persistCalled = false;
-  let isPersistedState = false;
+  let persistCalled: boolean = false;
+  let isPersistedState: boolean = false;
 
   Object.defineProperty(globalThis, 'window', {
     value: {},
@@ -60,7 +60,7 @@ async function runTests() {
   assert(browserCheck.usageMb === 12, `Usage must be converted to MB (got: ${browserCheck.usageMb})`);
 
   const reqResult = await requestStoragePersistence();
-  assert(persistCalled === true, "requestStoragePersistence must invoke navigator.storage.persist()");
+  assert(Boolean(persistCalled), "requestStoragePersistence must invoke navigator.storage.persist()");
   assert(reqResult === true, "requestStoragePersistence must return true when granted");
 
   const postCheck = await checkStoragePersistence();
