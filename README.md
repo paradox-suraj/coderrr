@@ -30,6 +30,16 @@ Filter and explore interview question frequencies across 654 top technology comp
 
 ![AlgoJeet Pro Company Directory](screenshots/companies.png)
 
+### 4. Company Overlap Comparator & High-Yield Intersections
+Compare multiple target companies (e.g. Google, Amazon, Meta) simultaneously to identify the highest-frequency shared interview questions and maximize prep ROI.
+
+![AlgoJeet Pro Company Overlap Comparator](screenshots/compare.png)
+
+### 5. Spaced Repetition Review Queue (SM-2)
+Structured retention mode scheduling automated review sessions with recall difficulty rating (Again, Hard, Good, Easy) for long-term algorithmic mastery.
+
+![AlgoJeet Pro Spaced Review Mode](screenshots/review.png)
+
 ---
 
 ## Core Features
