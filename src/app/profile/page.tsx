@@ -3,8 +3,8 @@
 import { UserProfile, useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle2, BrainCircuit, Flame, KeyRound } from 'lucide-react';
-import { db } from '@/lib/db';
+import { ArrowLeft, CheckCircle2, BrainCircuit, Flame, KeyRound, Download, Upload, Database } from 'lucide-react';
+import { db, downloadDatabaseBackup, importDatabaseFromJson } from '@/lib/db';
 import { SpotlightCard } from '@/components/core/SpotlightCard';
 import { isClerkConfigured } from '@/lib/auth/clerkConfig';
 
@@ -52,21 +52,49 @@ function UnconfiguredClerkNotice() {
 
 export default function ProfilePage() {
   const [stats, setStats] = useState({ solved: 0, due: 0, totalSprints: 0 });
+  const [isExporting, setIsExporting] = useState(false);
+  const [importStatus, setImportStatus] = useState<string | null>(null);
   const isAuthReady = isClerkConfigured();
 
+  async function loadStats() {
+    const progress = await db.userProgress.toArray();
+    const solved = progress.filter((p) => p.status === 'solved').length;
+    const nowIso = new Date().toISOString();
+    const due = progress.filter(
+      (p) => p.status === 'solved' && p.nextReviewDate && p.nextReviewDate <= nowIso
+    ).length;
+    const sprints = await db.sprints.count();
+    setStats({ solved, due, totalSprints: sprints });
+  }
+
   useEffect(() => {
-    async function loadStats() {
-      const progress = await db.userProgress.toArray();
-      const solved = progress.filter((p) => p.status === 'solved').length;
-      const nowIso = new Date().toISOString();
-      const due = progress.filter(
-        (p) => p.status === 'solved' && p.nextReviewDate && p.nextReviewDate <= nowIso
-      ).length;
-      const sprints = await db.sprints.count();
-      setStats({ solved, due, totalSprints: sprints });
-    }
     loadStats();
   }, []);
+
+  const handleExport = async () => {
+    try {
+      setIsExporting(true);
+      await downloadDatabaseBackup();
+    } catch (err: any) {
+      alert('Failed to export data: ' + (err?.message || String(err)));
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
+  const handleImportFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      setImportStatus('Importing backup...');
+      const text = await file.text();
+      const res = await importDatabaseFromJson(text);
+      setImportStatus(`✅ Successfully restored ${res.progressCount} progress records, ${res.codeCount} code drafts, and ${res.sprintCount} sprints!`);
+      await loadStats();
+    } catch (err: any) {
+      setImportStatus(`❌ Import failed: ${err?.message || String(err)}`);
+    }
+  };
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8 flex flex-col gap-8">
@@ -117,6 +145,49 @@ export default function ProfilePage() {
             {stats.totalSprints}
           </span>
         </SpotlightCard>
+      </div>
+
+      {/* Data Backup & Portability Section */}
+      <div className="glass-card p-6 rounded-2xl border border-white/[0.08] flex flex-col gap-4">
+        <div className="flex items-center gap-3">
+          <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+            <Database className="w-5 h-5" />
+          </div>
+          <div className="flex flex-col">
+            <h2 className="text-sm font-semibold text-white">Data Portability & Offline Backup</h2>
+            <p className="text-xs text-neutral-400">
+              Export your entire local solve history, code notes, and SM-2 flashcard schedules to JSON or restore from a backup.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 pt-2">
+          <button
+            onClick={handleExport}
+            disabled={isExporting}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 hover:bg-primary/20 text-primary text-xs font-semibold border border-primary/20 transition-all cursor-pointer"
+          >
+            <Download className="w-3.5 h-3.5" />
+            {isExporting ? 'Exporting...' : 'Export My Data (.json)'}
+          </button>
+
+          <label className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.08] text-white text-xs font-semibold border border-white/[0.1] transition-all cursor-pointer">
+            <Upload className="w-3.5 h-3.5" />
+            Import Backup
+            <input
+              type="file"
+              accept=".json,application/json"
+              onChange={handleImportFile}
+              className="hidden"
+            />
+          </label>
+        </div>
+
+        {importStatus && (
+          <p className="text-xs font-mono text-neutral-300 bg-white/[0.04] p-3 rounded-lg border border-white/[0.06]">
+            {importStatus}
+          </p>
+        )}
       </div>
 
       {/* Account Section */}

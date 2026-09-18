@@ -1,4 +1,8 @@
 import { Dexie, type EntityTable } from 'dexie';
+import { broadcastTabMessage, emergencyQuarantine } from './coordination';
+
+export * from './exportImport';
+export * from './coordination';
 
 export type ProblemStatus = 'unsolved' | 'attempted' | 'solved';
 export type SupportedLanguage = 'python' | 'cpp' | 'java' | 'javascript';
@@ -85,36 +89,83 @@ export class AlgoJeetDB extends Dexie {
           // Temp table may already be cleared
         }
       });
+
+    // Multi-tab coordination listeners: unblock migrations without destructive resets
+    this.on('versionchange', () => {
+      console.warn('[db] Another tab requested a version change. Closing connection to avoid blocking.');
+      this.close();
+      broadcastTabMessage('DB_VERSION_CHANGE', { reason: 'versionchange' });
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('algojeet:db-versionchange'));
+      }
+    });
+
+    this.on('blocked', () => {
+      console.warn('[db] Database upgrade blocked by another open tab. Please close other open tabs.');
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('algojeet:db-blocked'));
+      }
+    });
   }
 }
 
 export const db = new AlgoJeetDB();
 
+const MAX_REOPEN_RETRIES = 3;
+
 /**
- * Ensure database is open and auto-recover from any transient UpgradeError or DatabaseClosedError
+ * Ensure database is open with bounded retry and specialized error handling.
+ * NEVER deletes user data as an error-recovery strategy.
  */
 export async function ensureDbReady(): Promise<AlgoJeetDB> {
-  try {
-    if (!db.isOpen()) {
-      await db.open();
-    }
-    return db;
-  } catch (err: any) {
-    if (
-      err.name === 'UpgradeError' ||
-      err.name === 'DatabaseClosedError' ||
-      (err.message && err.message.includes('primary key'))
-    ) {
-      console.warn('⚠️ Dexie schema conflict or UpgradeError detected. Re-initializing database...', err);
-      try {
-        await Dexie.delete('AlgoJeetDB');
-        await db.open();
-      } catch (recoveryErr) {
-        console.error('Failed to recover Dexie DB:', recoveryErr);
-      }
-    }
+  if (db.isOpen()) {
     return db;
   }
+
+  let attempt = 0;
+  while (attempt < MAX_REOPEN_RETRIES) {
+    try {
+      await db.open();
+      return db;
+    } catch (err: any) {
+      attempt++;
+      console.warn(`[db] ensureDbReady open attempt ${attempt} failed with ${err?.name || 'Error'}:`, err?.message);
+
+      if (err?.name === 'DatabaseClosedError') {
+        // Transient closure from tab transition or idle unload: retry with exponential backoff
+        if (attempt < MAX_REOPEN_RETRIES) {
+          await new Promise((resolve) => setTimeout(resolve, attempt * 50));
+          continue;
+        }
+      } else if (err?.name === 'VersionError') {
+        // Another tab is running a newer schema version: prompt user to reload without touching data
+        console.warn('[db] VersionError: Another tab has upgraded the schema. Please reload this tab.');
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('algojeet:db-version-mismatch'));
+        }
+        return db;
+      } else if (err?.name === 'BlockedError') {
+        // Another tab holds an older lock: prompt user to close other tabs
+        console.warn('[db] BlockedError: Another tab is holding an older database version open.');
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(new CustomEvent('algojeet:db-blocked'));
+        }
+        return db;
+      } else if (err?.name === 'UpgradeError') {
+        // Genuine schema issue: quarantine and backup data, NEVER delete
+        console.error('[db] UpgradeError: Schema migration issue encountered. Quarantining data safely.');
+        await emergencyQuarantine(err);
+        return db;
+      }
+
+      if (attempt >= MAX_REOPEN_RETRIES) {
+        console.error('[db] Failed to open database after retries without deleting data:', err);
+        return db;
+      }
+    }
+  }
+
+  return db;
 }
 
 // Helper Queries & Mutation Functions
