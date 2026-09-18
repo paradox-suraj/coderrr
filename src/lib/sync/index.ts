@@ -20,11 +20,10 @@ export interface ServerSyncPayload {
  * Pull server state and merge into local Dexie.
  * Called once on sign-in.
  */
-export async function pullAndMerge(userId: string): Promise<void> {
+export async function pullAndMerge(): Promise<void> {
   try {
     const res = await fetch('/api/sync', {
       method: 'GET',
-      headers: { 'x-user-id': userId },
     });
 
     if (!res.ok) {
@@ -81,7 +80,7 @@ export async function pullAndMerge(userId: string): Promise<void> {
  * Push local Dexie state to the server.
  * Called after each successful solve or on sign-in.
  */
-export async function pushToServer(userId: string): Promise<void> {
+export async function pushToServer(): Promise<void> {
   try {
     const [userProgress, userCode, sprints] = await Promise.all([
       db.userProgress.toArray(),
@@ -100,7 +99,6 @@ export async function pushToServer(userId: string): Promise<void> {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-user-id': userId,
       },
       body: JSON.stringify(payload),
     });

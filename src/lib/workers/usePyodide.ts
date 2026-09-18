@@ -82,7 +82,14 @@ export function usePyodide(): UsePyodideReturn {
       clearWatchdog();
       setIsLoading(false);
       setIsRunning(false);
-      setError(err.message || 'Pyodide Worker runtime error');
+      setIsReady(false);
+      setError(err.message || 'Pyodide Worker runtime error (crashed). Recovering...');
+      if (workerRef.current) {
+        workerRef.current.terminate();
+        workerRef.current = null;
+      }
+      // Auto-recover Pyodide worker for subsequent executions
+      spawnWorker();
     };
 
     worker.postMessage({ type: 'init' });
@@ -100,7 +107,11 @@ export function usePyodide(): UsePyodideReturn {
   }, [spawnWorker, clearWatchdog]);
 
   const runCode = useCallback((code: string, testCases?: Array<{ id?: string; input: string; expectedOutput?: string }>) => {
-    if (!workerRef.current) return;
+    if (!workerRef.current) {
+      spawnWorker();
+      setError('Python runtime was reloading. Please click Run again in a moment.');
+      return;
+    }
     clearWatchdog();
 
     setIsRunning(true);
@@ -119,7 +130,7 @@ export function usePyodide(): UsePyodideReturn {
       setIsRunning(false);
       setPassed(false);
       setExecutionTimeMs(WATCHDOG_TIMEOUT_MS);
-      setMemoryUsageMb(18.5);
+      setMemoryUsageMb(undefined);
       const timeoutMsg = 'Time Limit Exceeded: Execution timed out (5000ms limit). Your code may contain an infinite loop or excessive recursion.';
       setStderr(timeoutMsg);
       setError('Time Limit Exceeded');

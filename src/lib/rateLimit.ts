@@ -13,6 +13,12 @@ const rateLimiter = new Map<string, number[]>();
 
 const BURST_WINDOW_MS = 5_000;  // 5 seconds
 const BURST_MAX = 5;            // max 5 requests per burst window
+const MAX_MAP_ENTRIES = 10_000; // Hard ceiling to prevent memory leaks from unbounded key creation
+let operationCounter = 0;
+
+export function getRateLimiterSize(): number {
+  return rateLimiter.size;
+}
 
 export function checkRateLimit(
   key: string,
@@ -20,6 +26,12 @@ export function checkRateLimit(
   windowMs: number
 ): { allowed: boolean; retryAfterMs: number } {
   const now = Date.now();
+
+  // Periodic proactive eviction every 1,000 checks or when nearing capacity
+  operationCounter++;
+  if (operationCounter % 1_000 === 0 || rateLimiter.size >= MAX_MAP_ENTRIES) {
+    cleanup(now);
+  }
 
   // ── 1. Sustained window ────────────────────────────────────────────────────
   const sustainedResult = _checkWindow(`sustained:${key}`, maxRequests, windowMs, now);
@@ -50,23 +62,43 @@ function _checkWindow(
     return { allowed: false, retryAfterMs };
   }
 
+  // Enforce bounded memory ceiling: evict oldest entry if capacity reached
+  if (rateLimiter.size >= MAX_MAP_ENTRIES && !rateLimiter.has(storeKey)) {
+    const oldestKey = rateLimiter.keys().next().value;
+    if (oldestKey) rateLimiter.delete(oldestKey);
+  }
+
   timestamps.push(now);
   rateLimiter.set(storeKey, timestamps);
   return { allowed: true, retryAfterMs: 0 };
 }
 
-export function cleanup(): void {
-  const now = Date.now();
+export function cleanup(now = Date.now()): void {
+  // Evict entries where all timestamps are older than 60 seconds (max window)
+  const cutoff = now - 60_000;
   for (const [key, timestamps] of rateLimiter.entries()) {
-    const valid = timestamps.filter((ts) => ts > now - 3_600_000);
+    const valid = timestamps.filter((ts) => ts > cutoff);
     if (valid.length === 0) {
       rateLimiter.delete(key);
     } else {
       rateLimiter.set(key, valid);
     }
   }
+
+  // If still above capacity during active traffic spike, trim down to 80% capacity
+  if (rateLimiter.size >= MAX_MAP_ENTRIES) {
+    const targetSize = Math.floor(MAX_MAP_ENTRIES * 0.8);
+    const toRemove = rateLimiter.size - targetSize;
+    let count = 0;
+    for (const key of rateLimiter.keys()) {
+      rateLimiter.delete(key);
+      count++;
+      if (count >= toRemove) break;
+    }
+  }
 }
 
 export function resetRateLimiter(): void {
   rateLimiter.clear();
+  operationCounter = 0;
 }
