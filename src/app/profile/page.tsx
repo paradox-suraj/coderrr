@@ -3,10 +3,12 @@
 import { UserProfile, useUser } from '@clerk/nextjs';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle2, BrainCircuit, Flame, KeyRound, Download, Upload, Database } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, BrainCircuit, Flame, KeyRound, Download, Upload, Database, ShieldAlert, ShieldCheck } from 'lucide-react';
 import { db, downloadDatabaseBackup, importDatabaseFromJson } from '@/lib/db';
 import { SpotlightCard } from '@/components/core/SpotlightCard';
 import { isClerkConfigured } from '@/lib/auth/clerkConfig';
+import { checkStoragePersistence, requestStoragePersistence, type StorageStatus } from '@/lib/storage/persistence';
+import { cn } from '@/lib/utils';
 
 function ClerkUserProfileSection() {
   const { user, isLoaded } = useUser();
@@ -54,6 +56,11 @@ export default function ProfilePage() {
   const [stats, setStats] = useState({ solved: 0, due: 0, totalSprints: 0 });
   const [isExporting, setIsExporting] = useState(false);
   const [importStatus, setImportStatus] = useState<string | null>(null);
+  const [storageStatus, setStorageStatus] = useState<StorageStatus>({
+    isSupported: false,
+    isPersisted: false,
+  });
+  const [isRequestingPersist, setIsRequestingPersist] = useState(false);
   const isAuthReady = isClerkConfigured();
 
   async function loadStats() {
@@ -69,7 +76,16 @@ export default function ProfilePage() {
 
   useEffect(() => {
     loadStats();
+    checkStoragePersistence().then(setStorageStatus);
   }, []);
+
+  const handleRequestPersistence = async () => {
+    setIsRequestingPersist(true);
+    await requestStoragePersistence();
+    const updated = await checkStoragePersistence();
+    setStorageStatus(updated);
+    setIsRequestingPersist(false);
+  };
 
   const handleExport = async () => {
     try {
@@ -159,6 +175,58 @@ export default function ProfilePage() {
               Export your entire local solve history, code notes, and SM-2 flashcard schedules to JSON or restore from a backup.
             </p>
           </div>
+        </div>
+
+        {/* Storage Persistence Status Badge & Action */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+          <div className="flex items-center gap-2.5">
+            {storageStatus.isPersisted ? (
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+            ) : (
+              <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0" />
+            )}
+            <div className="flex flex-col">
+              <span className="text-xs font-semibold text-neutral-200 flex items-center gap-2">
+                Persistent Storage:
+                <span
+                  className={cn(
+                    'px-2 py-0.5 rounded text-[10px] font-mono font-bold',
+                    storageStatus.isPersisted
+                      ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
+                      : 'bg-amber-500/15 text-amber-400 border border-amber-500/30'
+                  )}
+                >
+                  {storageStatus.isPersisted ? 'Active (Protected)' : 'Best-Effort'}
+                </span>
+              </span>
+              <span className="text-[11px] text-neutral-400">
+                {storageStatus.isPersisted
+                  ? `Browser eviction shield active. Storage usage: ~${storageStatus.usageMb || 0} MB.`
+                  : 'Storage may be evicted by the browser if disk is low or after 7 days on Safari.'}
+              </span>
+            </div>
+          </div>
+
+          {!storageStatus.isPersisted && storageStatus.isSupported && (
+            <button
+              onClick={handleRequestPersistence}
+              disabled={isRequestingPersist}
+              className="px-3 py-1.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 text-xs font-semibold border border-amber-500/30 transition-all cursor-pointer whitespace-nowrap"
+            >
+              {isRequestingPersist ? 'Requesting...' : 'Enable Persistent Storage'}
+            </button>
+          )}
+        </div>
+
+        {/* Safari 7-Day Purge Advisory */}
+        <div className="p-3.5 rounded-xl bg-amber-500/5 border border-amber-500/20 text-xs text-amber-200/90 flex flex-col gap-1">
+          <span className="font-semibold flex items-center gap-1.5 text-amber-300">
+            <ShieldAlert className="w-3.5 h-3.5" />
+            Apple Safari & iOS WebKit 7-Day Storage Purge Notice
+          </span>
+          <p className="text-[11px] text-neutral-400 leading-relaxed">
+            Safari and WebKit browsers automatically purge IndexedDB data after 7 days without user interaction unless persistent storage is granted or the app is installed as a PWA on your home screen. Export your data to JSON regularly or sign in for cloud sync.
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3 pt-2">

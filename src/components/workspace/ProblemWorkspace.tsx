@@ -56,6 +56,7 @@ import WorkspaceTimer from './WorkspaceTimer';
 import { useStrictInterviewMode } from '@/lib/hooks/useStrictInterviewMode';
 import type { ProblemDoc } from '@/lib/workers/search.worker';
 import type { CompanyMappingDoc } from '@/lib/data/problems';
+import { requestStoragePersistence } from '@/lib/storage/persistence';
 import '@/lib/monaco/config';
 
 // Dynamic import for Monaco Editor to avoid SSR hydration mismatch
@@ -416,6 +417,7 @@ export default function ProblemWorkspace({ problem, companyMappings, reviewMode 
     async (codeToSave = codeByLanguage[currentLanguage], notesToSave = notes) => {
       await saveProblemCode(problem.id, codeToSave, currentLanguage, notesToSave);
       setIsSaved(true);
+      requestStoragePersistence().catch(() => {});
     },
     [problem.id, codeByLanguage, currentLanguage, notes]
   );
