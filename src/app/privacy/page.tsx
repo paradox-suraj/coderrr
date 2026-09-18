@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy & Data Notice — AlgoJeet Pro',
-  description: 'What data AlgoJeet Pro collects, how it is stored, and what our interview anti-cheat system does (and does not) capture.',
+  description: 'What data AlgoJeet Pro collects, how it is stored, and what our interview simulation mode does (and does not) capture.',
 };
 
 export default function PrivacyPage() {
@@ -21,36 +21,34 @@ export default function PrivacyPage() {
         </p>
       </Section>
 
-      <Section title="Interview Mode &amp; Anti-Cheat System">
+      <Section title="Interview Simulation Mode">
         <p>
-          When you enable <strong>Strict Interview Mode</strong> (the shield icon in the timer
-          widget), the app activates a set of local constraints designed to simulate a real
-          interview environment:
+          When you enable <strong>Interview Simulation Mode</strong> (the shield icon in the timer
+          widget), the app provides optional practice tools to simulate proctored coding assessments:
         </p>
         <ul className="list-disc list-inside space-y-1 mt-3">
           <li>
-            <strong>Clipboard blocking</strong> — copy, cut, and paste keyboard shortcuts are
-            intercepted and cancelled inside the code editor.
+            <strong>Focus switch tracking</strong> — logs when you switch to another browser tab or
+            minimize the window. A 750ms grace period filters out momentary OS notifications or
+            window manager workspace changes.
           </li>
           <li>
-            <strong>Context-menu blocking</strong> — the right-click menu is disabled in the editor
-            area.
-          </li>
-          <li>
-            <strong>Tab/window visibility tracking</strong> — if you switch to another browser tab or
-            minimize the window, a warning counter is incremented and a toast notification is shown.
+            <strong>Optional paste restriction</strong> — an explicit opt-in setting that simulates
+            environments like HackerRank or CodeSignal by disabling paste and copy shortcuts so you
+            can practice writing solutions from scratch. This is disabled by default to respect
+            accessibility and personal workflows.
           </li>
         </ul>
         <p className="mt-4 font-semibold">
           ⚠️ None of this data ever leaves your browser.
         </p>
         <p className="mt-2">
-          The violation counter is stored only in React component state. It is reset when you
+          The focus switch counter is stored only in ephemeral React component state. It is reset when you
           navigate away or reload the page. It is never sent to any server, logged, or associated
           with your account.
         </p>
         <p className="mt-2">
-          Strict Interview Mode is <strong>opt-in</strong> and only activates when the timer is
+          Interview Simulation Mode is <strong>opt-in</strong> and only activates when the timer is
           running. You can disable it at any time via the shield toggle in the timer widget.
         </p>
       </Section>

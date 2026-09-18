@@ -124,12 +124,14 @@ export default function ProblemWorkspace({ problem, companyMappings, reviewMode 
     }
   }, [showOverflowMenu]);
 
-  // ─── Timer & Strict Interview Mode State ─────────────────────────────────
+  // ─── Timer & Interview Simulation Mode State ─────────────────────────────
   const [strictModeEnabled, setStrictModeEnabled] = useState<boolean>(true);
+  const [blockClipboard, setBlockClipboard] = useState<boolean>(false);
   const [isTimerRunning, setIsTimerRunning] = useState<boolean>(false);
 
   const { tabSwitchCount, activeWarning, dismissWarning, resetViolations } = useStrictInterviewMode({
     enabled: strictModeEnabled && isTimerRunning,
+    blockClipboard,
   });
 
   // ─── Test Cases & Submission State ───────────────────────────────────────
@@ -854,18 +856,20 @@ export default function ProblemWorkspace({ problem, companyMappings, reviewMode 
 
   return (
     <div className="flex-1 flex flex-col h-screen overflow-hidden bg-background text-foreground relative problem-workspace-content">
-      {/* Strict Anti-Cheat Mode Violation Alert Toast */}
+      {/* Interview Simulation Note Toast - Polite notification */}
       {activeWarning && (
         <div
-          role="alert"
-          className="absolute top-16 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-rose-950/95 border border-rose-500/60 text-rose-200 shadow-2xl shadow-rose-950/60 backdrop-blur-md animate-in fade-in slide-in-from-top-3 duration-200 text-xs font-semibold"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          className="absolute top-16 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-amber-950/95 border border-amber-500/60 text-amber-200 shadow-2xl shadow-amber-950/60 backdrop-blur-md animate-in fade-in slide-in-from-top-3 duration-200 text-xs font-semibold"
         >
-          <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping shrink-0" />
+          <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping shrink-0" />
           <span>{activeWarning.message}</span>
           <button
             onClick={dismissWarning}
-            className="ml-2 p-1 rounded-md hover:bg-white/10 text-rose-300 hover:text-white transition-colors cursor-pointer"
-            aria-label="Dismiss warning"
+            className="ml-2 p-1 rounded-md hover:bg-white/10 text-amber-300 hover:text-white transition-colors cursor-pointer"
+            aria-label="Dismiss notification"
           >
             <X className="w-3.5 h-3.5" />
           </button>
@@ -1026,7 +1030,7 @@ export default function ProblemWorkspace({ problem, companyMappings, reviewMode 
                   </button>
                 </div>
 
-                {/* Interview Timer & Strict Controls */}
+                {/* Interview Timer & Simulation Controls */}
                 <div className="p-2.5 rounded-lg bg-neutral-950/80 border border-white/5 flex flex-col gap-2">
                   <div className="flex items-center justify-between text-[11px] text-neutral-300 font-medium">
                     <span className="flex items-center gap-1.5">
@@ -1035,14 +1039,16 @@ export default function ProblemWorkspace({ problem, companyMappings, reviewMode 
                     </span>
                     {strictModeEnabled && (
                       <span className="text-[10px] text-amber-400 bg-amber-400/10 px-1.5 py-0.2 rounded font-mono">
-                        Strict Active
+                        Simulation Active
                       </span>
                     )}
                   </div>
                   <WorkspaceTimer
                     tabSwitchCount={tabSwitchCount}
                     strictModeEnabled={strictModeEnabled}
+                    blockClipboard={blockClipboard}
                     onToggleStrictMode={setStrictModeEnabled}
+                    onToggleBlockClipboard={setBlockClipboard}
                     onTimerRunningChange={setIsTimerRunning}
                     onResetViolations={resetViolations}
                   />
@@ -1474,7 +1480,7 @@ export default function ProblemWorkspace({ problem, companyMappings, reviewMode 
                 bracketPairColorization: { enabled: true },
                 automaticLayout: true,
                 padding: { top: 12, bottom: 12 },
-                contextmenu: !(strictModeEnabled && isTimerRunning),
+                contextmenu: !(strictModeEnabled && isTimerRunning && blockClipboard),
               }}
             />
           </div>

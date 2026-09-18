@@ -12,7 +12,7 @@
     "lint": "eslint",
     "ingest": "tsx scripts/ingest-dataset.ts",
     "fetch:logos": "tsx scripts/fetch-company-logos.ts",
-    "test": "tsx tests/ingestion.test.ts && tsx tests/sm2.test.ts && tsx tests/pyodide-harness.test.ts && tsx tests/multilang.test.ts && tsx tests/dexie-migration.test.ts && tsx tests/company-detail.test.ts && tsx tests/search.test.ts && tsx tests/test-runner.test.ts && tsx tests/interview-mode.test.ts && tsx tests/execution-pipeline.test.ts && tsx tests/playwright-config.test.ts && tsx tests/production-boot.test.ts && tsx tests/data-loss-prevention.test.ts && tsx tests/rate-limit-bypass.test.ts && tsx tests/offline-assets.test.ts && tsx tests/bundle-size.test.ts && tsx tests/piston-config.test.ts && tsx tests/real-metrics.test.ts && tsx tests/storage-persistence.test.ts",
+    "test": "tsx tests/ingestion.test.ts && tsx tests/sm2.test.ts && tsx tests/pyodide-harness.test.ts && tsx tests/multilang.test.ts && tsx tests/dexie-migration.test.ts && tsx tests/company-detail.test.ts && tsx tests/search.test.ts && tsx tests/test-runner.test.ts && tsx tests/interview-mode.test.ts && tsx tests/execution-pipeline.test.ts && tsx tests/playwright-config.test.ts && tsx tests/production-boot.test.ts && tsx tests/data-loss-prevention.test.ts && tsx tests/rate-limit-bypass.test.ts && tsx tests/offline-assets.test.ts && tsx tests/bundle-size.test.ts && tsx tests/piston-config.test.ts && tsx tests/real-metrics.test.ts && tsx tests/storage-persistence.test.ts && tsx tests/strict-mode-ergonomics.test.ts",
     "e2e": "playwright test",
     "e2e:ui": "playwright test --ui",
     "e2e:report": "playwright show-report"

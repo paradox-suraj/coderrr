@@ -9,18 +9,81 @@ export interface StrictModeWarning {
   timestamp: number;
 }
 
-interface UseStrictInterviewModeOptions {
+export interface UseStrictInterviewModeOptions {
   enabled: boolean;
+  blockClipboard?: boolean;
+  gracePeriodMs?: number;
   onViolation?: (warning: StrictModeWarning) => void;
+}
+
+export interface FocusSwitchEvaluationParams {
+  blurDurationMs: number;
+  gracePeriodMs?: number;
+  lastAlertElapsedMs?: number;
+}
+
+/**
+ * Pure evaluation function for window/tab focus switches.
+ * Enforces a grace period (>= 500ms, default 750ms) to filter out OS notifications,
+ * window manager workspace switches, and alt-tab previews.
+ * Also debounces rapid successive events (< 1000ms).
+ */
+export function evaluateFocusSwitch({
+  blurDurationMs,
+  gracePeriodMs = 750,
+  lastAlertElapsedMs = Infinity,
+}: FocusSwitchEvaluationParams): { shouldAlert: boolean; elapsedSeconds: number } {
+  const elapsedSeconds = Math.max(1, Math.round(blurDurationMs / 1000));
+  if (blurDurationMs < gracePeriodMs) {
+    return { shouldAlert: false, elapsedSeconds };
+  }
+  if (lastAlertElapsedMs < 1000) {
+    return { shouldAlert: false, elapsedSeconds };
+  }
+  return { shouldAlert: true, elapsedSeconds };
+}
+
+/**
+ * Check if clipboard operations should be blocked.
+ * By default, clipboard blocking is opt-in (false) even when interview mode is active,
+ * preserving accessibility and workflow unless explicitly simulating environments like HackerRank.
+ */
+export function isClipboardBlocked({
+  strictModeEnabled,
+  blockClipboard = false,
+}: {
+  strictModeEnabled: boolean;
+  blockClipboard?: boolean;
+}): boolean {
+  return Boolean(strictModeEnabled && blockClipboard);
+}
+
+/**
+ * Formats non-punitive, professional simulation feedback messages.
+ */
+export function formatSimulationWarning(
+  type: 'copy-paste' | 'tab-switch',
+  context?: { count?: number; durationMs?: number }
+): string {
+  if (type === 'tab-switch') {
+    const duration = context?.durationMs ? `${Math.round(context.durationMs / 1000)}s` : 'briefly';
+    const count = context?.count ?? 1;
+    return `Focus switch logged: returned to editor after ${duration} (${count} ${count === 1 ? 'time' : 'times'}).`;
+  }
+  return 'Clipboard shortcut restricted in simulation mode (HackerRank paste-blocking simulation active).';
 }
 
 export function useStrictInterviewMode({
   enabled,
+  blockClipboard = false,
+  gracePeriodMs = 750,
   onViolation,
 }: UseStrictInterviewModeOptions) {
   const [tabSwitchCount, setTabSwitchCount] = useState(0);
   const [activeWarning, setActiveWarning] = useState<StrictModeWarning | null>(null);
   const warningTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const blurTimestampRef = useRef<number | null>(null);
+  const lastAlertTimestampRef = useRef<number>(0);
 
   const triggerWarning = useCallback(
     (type: 'copy-paste' | 'tab-switch', message: string) => {
@@ -56,19 +119,14 @@ export function useStrictInterviewMode({
     dismissWarning();
   }, [dismissWarning]);
 
-  // 1. Intercept clipboard copy, cut, paste, and context menu
+  // 1. Intercept clipboard copy, cut, paste, and context menu ONLY if blockClipboard is opted in
   useEffect(() => {
-    if (!enabled) return;
+    if (!isClipboardBlocked({ strictModeEnabled: enabled, blockClipboard })) return;
 
     const handleCopyCutPaste = (e: ClipboardEvent) => {
       e.preventDefault();
       e.stopPropagation();
-
-      const action = e.type === 'paste' ? 'Paste' : 'Copy/Cut';
-      triggerWarning(
-        'copy-paste',
-        `🚫 ${action} is disabled during strict interview mode!`
-      );
+      triggerWarning('copy-paste', formatSimulationWarning('copy-paste'));
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -80,11 +138,7 @@ export function useStrictInterviewMode({
         if (!e.shiftKey) {
           e.preventDefault();
           e.stopPropagation();
-          const action = key === 'v' ? 'Paste (Ctrl+V)' : 'Copy (Ctrl+C)';
-          triggerWarning(
-            'copy-paste',
-            `🚫 ${action} shortcut is disabled in strict mode!`
-          );
+          triggerWarning('copy-paste', formatSimulationWarning('copy-paste'));
         }
       }
     };
@@ -96,7 +150,7 @@ export function useStrictInterviewMode({
         e.stopPropagation();
         triggerWarning(
           'copy-paste',
-          '🚫 Context menu is disabled in strict interview mode!'
+          'Context menu is disabled in clipboard-restricted simulation mode.'
         );
       }
     };
@@ -114,46 +168,57 @@ export function useStrictInterviewMode({
       window.removeEventListener('keydown', handleKeyDown, true);
       document.removeEventListener('contextmenu', handleContextMenu, true);
     };
-  }, [enabled, triggerWarning]);
+  }, [enabled, blockClipboard, triggerWarning]);
 
-  // 2. Detect tab and window switching
+  // 2. Detect tab and window switching with grace period debouncing
   useEffect(() => {
     if (!enabled) return;
 
-    let hasSwitchedOut = false;
+    const handleLeaving = () => {
+      if (!blurTimestampRef.current) {
+        blurTimestampRef.current = Date.now();
+      }
+    };
 
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        hasSwitchedOut = true;
-      } else if (hasSwitchedOut) {
-        hasSwitchedOut = false;
+    const handleReturning = () => {
+      if (!blurTimestampRef.current) return;
+      const blurDurationMs = Date.now() - blurTimestampRef.current;
+      blurTimestampRef.current = null;
+
+      const lastAlertElapsedMs = Date.now() - lastAlertTimestampRef.current;
+      const evalResult = evaluateFocusSwitch({
+        blurDurationMs,
+        gracePeriodMs,
+        lastAlertElapsedMs,
+      });
+
+      if (evalResult.shouldAlert) {
+        lastAlertTimestampRef.current = Date.now();
         setTabSwitchCount((prev) => {
           const newCount = prev + 1;
           triggerWarning(
             'tab-switch',
-            `⚠️ Tab switch detected! You left the test window (${newCount} ${newCount === 1 ? 'time' : 'times'}).`
+            formatSimulationWarning('tab-switch', { count: newCount, durationMs: blurDurationMs })
           );
           return newCount;
         });
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        handleLeaving();
+      } else {
+        handleReturning();
       }
     };
 
     const handleWindowBlur = () => {
-      hasSwitchedOut = true;
+      handleLeaving();
     };
 
     const handleWindowFocus = () => {
-      if (hasSwitchedOut) {
-        hasSwitchedOut = false;
-        setTabSwitchCount((prev) => {
-          const newCount = prev + 1;
-          triggerWarning(
-            'tab-switch',
-            `⚠️ Window switch detected! You focused outside the editor window (${newCount} ${newCount === 1 ? 'time' : 'times'}).`
-          );
-          return newCount;
-        });
-      }
+      handleReturning();
     };
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
@@ -165,7 +230,7 @@ export function useStrictInterviewMode({
       window.removeEventListener('blur', handleWindowBlur);
       window.removeEventListener('focus', handleWindowFocus);
     };
-  }, [enabled, triggerWarning]);
+  }, [enabled, gracePeriodMs, triggerWarning]);
 
   return {
     tabSwitchCount,
@@ -174,3 +239,4 @@ export function useStrictInterviewMode({
     resetViolations,
   };
 }
+

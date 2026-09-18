@@ -21,7 +21,9 @@ export type TimerMode = 'stopwatch' | 'countdown';
 interface WorkspaceTimerProps {
   tabSwitchCount: number;
   strictModeEnabled: boolean;
+  blockClipboard?: boolean;
   onToggleStrictMode: (enabled: boolean) => void;
+  onToggleBlockClipboard?: (enabled: boolean) => void;
   onTimerRunningChange?: (isRunning: boolean) => void;
   onResetViolations?: () => void;
 }
@@ -36,7 +38,9 @@ const PRESET_DURATIONS = [
 export default function WorkspaceTimer({
   tabSwitchCount,
   strictModeEnabled,
+  blockClipboard = false,
   onToggleStrictMode,
+  onToggleBlockClipboard,
   onTimerRunningChange,
   onResetViolations,
 }: WorkspaceTimerProps) {
@@ -187,7 +191,7 @@ export default function WorkspaceTimer({
           </span>
         )}
 
-        {/* Strict Anti-Cheat Icon */}
+        {/* Interview Simulation Icon */}
         <button
           onClick={() => onToggleStrictMode(!strictModeEnabled)}
           className={cn(
@@ -198,8 +202,8 @@ export default function WorkspaceTimer({
           )}
           title={
             strictModeEnabled
-              ? 'Strict Mode ON: Copy/paste & tab switching disabled'
-              : 'Strict Mode OFF: Click to enable anti-cheat protection'
+              ? 'Interview Simulation ON: Focus tracking active (>750ms grace window)'
+              : 'Interview Simulation OFF: Click to enable focus tracking'
           }
         >
           {strictModeEnabled ? (
@@ -233,11 +237,11 @@ export default function WorkspaceTimer({
 
       {/* Dropdown Menu */}
       {showSettings && (
-        <div className="absolute top-full left-0 mt-2 w-64 rounded-2xl bg-[#111113] border border-white/[0.12] p-3 shadow-2xl backdrop-blur-xl z-50 flex flex-col gap-3 animate-in fade-in zoom-in-95 duration-150 font-sans">
+        <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-[#111113] border border-white/[0.12] p-3 shadow-2xl backdrop-blur-xl z-50 flex flex-col gap-3 animate-in fade-in zoom-in-95 duration-150 font-sans">
           <div className="flex items-center justify-between pb-2 border-b border-white/[0.08]">
             <div className="flex items-center gap-1.5 text-xs font-semibold text-white">
               <Clock className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Timer & Interview Mode</span>
+              <span>Timer & Interview Simulation</span>
             </div>
           </div>
 
@@ -280,16 +284,16 @@ export default function WorkspaceTimer({
             </button>
           </div>
 
-          {/* Strict Mode Toggle Section */}
-          <div className="pt-2 border-t border-white/[0.08] flex flex-col gap-2">
+          {/* Simulation Mode Toggle Section */}
+          <div className="pt-2 border-t border-white/[0.08] flex flex-col gap-2.5">
             <div className="flex items-start justify-between gap-2">
               <div className="flex flex-col">
                 <span className="text-xs font-semibold text-white flex items-center gap-1">
                   <ShieldAlert className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Strict Anti-Cheat</span>
+                  <span>Focus Tracking Simulation</span>
                 </span>
                 <span className="text-[10px] text-neutral-400 leading-tight mt-0.5">
-                  Disables copy/paste and alerts on tab switching
+                  Logs tab/window focus switches (>750ms grace window for OS popups)
                 </span>
               </div>
               <button
@@ -298,6 +302,7 @@ export default function WorkspaceTimer({
                   'w-9 h-5 rounded-full p-0.5 transition-colors cursor-pointer shrink-0',
                   strictModeEnabled ? 'bg-amber-500' : 'bg-neutral-800 border border-white/[0.1]'
                 )}
+                aria-label="Toggle focus tracking simulation"
               >
                 <div
                   className={cn(
@@ -308,11 +313,40 @@ export default function WorkspaceTimer({
               </button>
             </div>
 
+            {/* Opt-in Clipboard Restriction */}
+            {strictModeEnabled && (
+              <div className="flex items-start justify-between gap-2 pl-2 border-l-2 border-amber-500/30 py-1">
+                <div className="flex flex-col">
+                  <span className="text-xs font-medium text-neutral-200">
+                    HackerRank Paste Restriction
+                  </span>
+                  <span className="text-[10px] text-neutral-400 leading-tight mt-0.5">
+                    Blocks copy/paste shortcuts to practice typing solutions from scratch
+                  </span>
+                </div>
+                <button
+                  onClick={() => onToggleBlockClipboard?.(!blockClipboard)}
+                  className={cn(
+                    'w-8 h-4.5 rounded-full p-0.5 transition-colors cursor-pointer shrink-0 mt-0.5',
+                    blockClipboard ? 'bg-amber-500' : 'bg-neutral-800 border border-white/[0.1]'
+                  )}
+                  aria-label="Toggle paste restriction"
+                >
+                  <div
+                    className={cn(
+                      'w-3.5 h-3.5 rounded-full bg-white transition-transform shadow-xs',
+                      blockClipboard ? 'translate-x-3.5' : 'translate-x-0'
+                    )}
+                  />
+                </button>
+              </div>
+            )}
+
             {tabSwitchCount > 0 && (
-              <div className="flex items-center justify-between p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 text-xs">
-                <span className="text-[11px] text-rose-300 flex items-center gap-1.5">
-                  <AlertTriangle className="w-3 h-3 text-rose-400" />
-                  <span>{tabSwitchCount} tab switch events</span>
+              <div className="flex items-center justify-between p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-xs">
+                <span className="text-[11px] text-amber-300 flex items-center gap-1.5">
+                  <AlertTriangle className="w-3 h-3 text-amber-400" />
+                  <span>{tabSwitchCount} focus switch events</span>
                 </span>
                 <button
                   onClick={onResetViolations}
