@@ -2,9 +2,9 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { isClerkConfigured } from '@/lib/auth/clerkConfig';
 
-// Routes that require authentication
+// Routes that require server-side authentication redirect
 const isProtectedRoute = createRouteMatcher([
-  '/profile(.*)',
+  // Profile handles signed-out states gracefully via Clerk's <SignedOut> and local IndexedDB controls
 ]);
 
 export default function middleware(req: NextRequest, event: any) {
