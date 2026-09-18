@@ -20,7 +20,21 @@ export default function LanguageSelector({
 }: LanguageSelectorProps) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
+  const [pistonConfigured, setPistonConfigured] = React.useState<boolean>(true);
   const currentConfig = LANGUAGE_CONFIGS[currentLanguage];
+
+  React.useEffect(() => {
+    fetch('/api/health/execution')
+      .then((r) => r.json())
+      .then((data) => {
+        if (data?.piston && typeof data.piston.configured === 'boolean') {
+          setPistonConfigured(data.piston.configured);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const isCurrentUnconfigured = currentConfig.runtimeType !== 'wasm' && !pistonConfigured;
 
   return (
     <div className="relative inline-block text-left">
@@ -45,6 +59,8 @@ export default function LanguageSelector({
             'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold font-mono border',
             currentConfig.runtimeType === 'wasm'
               ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30'
+              : isCurrentUnconfigured
+              ? 'bg-amber-500/10 text-amber-400 border-amber-500/30'
               : 'bg-sky-500/10 text-sky-400 border-sky-500/30'
           )}
         >
@@ -53,7 +69,7 @@ export default function LanguageSelector({
           ) : (
             <Cloud className="w-3 h-3" />
           )}
-          <span>{currentConfig.runtimeLabel}</span>
+          <span>{isCurrentUnconfigured ? 'Setup Needed' : currentConfig.runtimeLabel}</span>
         </span>
 
         {/* Sandbox Settings Trigger for Cloud Runners */}
@@ -61,7 +77,12 @@ export default function LanguageSelector({
           <button
             type="button"
             onClick={() => setIsSettingsOpen(true)}
-            className="p-1 rounded-md bg-secondary/60 hover:bg-secondary text-neutral-400 hover:text-white transition-colors cursor-pointer border border-border/60"
+            className={cn(
+              "p-1 rounded-md transition-colors cursor-pointer border",
+              isCurrentUnconfigured
+                ? "bg-amber-500/20 text-amber-300 border-amber-500/40 hover:bg-amber-500/30"
+                : "bg-secondary/60 hover:bg-secondary text-neutral-400 hover:text-white border-border/60"
+            )}
             title="Configure Cloud Sandbox / Piston Cluster"
           >
             <Settings className="w-3 h-3" />
@@ -88,6 +109,7 @@ export default function LanguageSelector({
             {(Object.keys(LANGUAGE_CONFIGS) as SupportedLanguage[]).map((langKey) => {
               const cfg = LANGUAGE_CONFIGS[langKey];
               const isSelected = langKey === currentLanguage;
+              const isCloudUnconfigured = cfg.runtimeType !== 'wasm' && !pistonConfigured;
 
               return (
                 <button
@@ -95,6 +117,9 @@ export default function LanguageSelector({
                   onClick={() => {
                     onLanguageChange(langKey);
                     setIsOpen(false);
+                    if (isCloudUnconfigured) {
+                      setIsSettingsOpen(true);
+                    }
                   }}
                   className={cn(
                     'flex items-center justify-between px-2.5 py-2 rounded-lg text-xs transition-colors cursor-pointer text-left',
@@ -116,10 +141,16 @@ export default function LanguageSelector({
                         'text-[9px] px-1.5 py-0.5 rounded font-mono',
                         cfg.runtimeType === 'wasm'
                           ? 'bg-emerald-500/10 text-emerald-400'
+                          : isCloudUnconfigured
+                          ? 'bg-amber-500/15 text-amber-300 border border-amber-500/30'
                           : 'bg-sky-500/10 text-sky-400'
                       )}
                     >
-                      {cfg.runtimeType === 'wasm' ? 'WASM' : 'Cloud'}
+                      {cfg.runtimeType === 'wasm'
+                        ? 'WASM'
+                        : isCloudUnconfigured
+                        ? 'Setup Needed'
+                        : 'Cloud'}
                     </span>
                     {isSelected && <Check className="w-3.5 h-3.5 text-primary" />}
                   </div>

@@ -52,10 +52,10 @@ Simulate realistic technical interview conditions with countdown presets, disabl
 - **3,358 Curated Problems**: Comprehensive problem descriptions, constraints, examples, and edge cases across 10 structured learning tracks (Two Pointers, Sliding Window, Trees & Graphs, Dynamic Programming, Greedy, Design, etc.).
 - **654 Company Archives**: Real frequency ratings for questions asked by Google, Meta, Amazon, Microsoft, Apple, Netflix, Citadel, Stripe, Uber, and hundreds more.
 - **Company Overlap Comparator**: Compare 2–5 target companies to find the highest-yield intersection problems, maximizing interview prep ROI.
-- **In-Browser Code Execution**:
-  - **Python 3**: Runs client-side via Pyodide (WebAssembly) with custom test harness assertion normalization.
-  - **JavaScript**: Executes in isolated Web Workers.
-  - **C++ & Java**: Supported via a resilient server-side execution pipeline with circuit breakers, rate limiting, and Piston sandboxing.
+- **In-Browser & Cloud Code Execution**:
+  - **Python 3**: Runs 100% client-side via Pyodide (WebAssembly) with custom assertion normalization. Zero network required.
+  - **JavaScript**: Executes 100% client-side in isolated Web Workers. Zero network required.
+  - **C++ & Java**: Supported via a server-side execution pipeline with circuit breakers, rate limiting, and Piston sandboxing (requires configured `PISTON_URL` or self-hosted Docker runner; workspace displays setup badge when runner configuration is required).
 - **Spaced Repetition (SM-2)**: Automatically schedules reviews based on your recall quality ratings (Again, Hard, Good, Easy) to lock patterns into long-term memory.
 - **Daily Focus Sprint**: 25-minute Pomodoro focus timer with a curated 5-problem queue prioritized by due reviews and company frequencies.
 - **Local-First & Private**: Problem datasets, code buffers, spaced repetition reviews, Monaco editor distribution, and in-browser Python (Pyodide WASM) execute offline via service worker caching and IndexedDB. Sign in with Clerk to optionally sync across devices via Supabase.

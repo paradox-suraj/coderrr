@@ -158,9 +158,21 @@ const PISTON_LANGUAGE_MAP: Record<string, { language: string; version: string }>
   java: { language: 'java', version: '15.0.2' },
 };
 
+import { getPistonEndpoint, getPistonStatus } from '@/lib/execution/pistonConfig';
+
 async function callPiston(job: ExecutionJob): Promise<PistonExecutionResult> {
   const pistonConfig = PISTON_LANGUAGE_MAP[job.language];
-  const endpoint = process.env.PISTON_URL || 'https://emkc.org/api/v2/piston/execute';
+  const endpoint = getPistonEndpoint();
+  if (!endpoint) {
+    const status = getPistonStatus();
+    return {
+      run: {
+        stdout: '',
+        stderr: `Remote execution environment not configured: ${status.reason || 'PISTON_URL missing'}. C++ and Java require a configured Piston runner.`,
+        code: 1,
+      },
+    };
+  }
   const apiKey = process.env.PISTON_KEY;
 
   const headers: Record<string, string> = { 'Content-Type': 'application/json' };

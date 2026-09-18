@@ -14,6 +14,7 @@ import { checkRateLimit } from '@/lib/rateLimit';
 import { enqueueJob, getQueueDepth } from '@/lib/execution/queue';
 import { getCorrelationId, createLogger } from '@/lib/logger';
 import { resolveCallerIdentity } from '@/lib/execution/identity';
+import { isPistonConfigured, getPistonStatus } from '@/lib/execution/pistonConfig';
 
 const MAX_CODE_SIZE = 64 * 1024;       // 64 KB
 const MAX_TEST_CASES = 20;
@@ -28,6 +29,19 @@ export async function POST(req: Request) {
     log.warn('execute.kill_switch_active');
     return NextResponse.json(
       { error: 'Remote code execution is temporarily disabled.' },
+      { status: 503 }
+    );
+  }
+
+  // ── Piston Readiness Check ────────────────────────────────────────────────
+  if (!isPistonConfigured()) {
+    const status = getPistonStatus();
+    log.warn('execute.piston_not_configured', { reason: status.reason });
+    return NextResponse.json(
+      {
+        error: `Remote execution environment not configured: ${status.reason || 'PISTON_URL missing'}. C++ and Java require a configured Piston runner.`,
+        configured: false,
+      },
       { status: 503 }
     );
   }

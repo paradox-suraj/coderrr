@@ -434,21 +434,21 @@ export async function executeCodeUniversal(
 
       if (!submitRes.ok) {
         let errMsg = `HTTP ${submitRes.status}`;
+        let isUnconfigured = false;
         try {
           const errBody = await submitRes.json();
           errMsg = errBody.error || errMsg;
+          isUnconfigured = errBody.configured === false;
         } catch { /* ignore */ }
 
-        if (submitRes.status === 401) {
+        if (isUnconfigured || submitRes.status === 401) {
           return {
             stdout: '',
             stderr: [
-              `⚠️ Cloud Sandbox API Error (HTTP 401 Unauthorized):`,
-              ``,
-              `"Public Piston API is now whitelist only as of 2/15/2026."`,
+              `⚠️ Cloud Sandbox Runner Not Configured (${errMsg}):`,
               ``,
               `📌 Why this happened:`,
-              `The public Piston execution cluster (emkc.org) disabled unauthenticated public access on February 15, 2026 to prevent free-tier abuse, bot traffic, and crypto mining.`,
+              `C++ and Java require a configured Piston execution backend. The default public Piston cluster (emkc.org) disabled unauthenticated public access.`,
               ``,
               `🚀 How to solve & run your code immediately:`,
               `1. Switch to Python 3 or JavaScript:`,
@@ -459,13 +459,13 @@ export async function executeCodeUniversal(
               `   Then open Sandbox Settings (⚙️ icon next to the language dropdown) and set your URL to:`,
               `   http://localhost:2000/api/v2/execute`,
               ``,
-              `3. Use a Whitelisted API Key:`,
-              `   If you have a Piston key from engineer-man/piston, enter it in Sandbox Settings (⚙️ icon).`,
+              `3. Use a Whitelisted API Key or Custom Endpoint:`,
+              `   If your team has a private Piston instance or key, set PISTON_URL and PISTON_KEY in your server environment or client Sandbox Settings (⚙️).`,
             ].join('\n'),
             executionTimeMs: elapsedMs(),
             passed: false,
-            submissionStatus: 'Compile Error',
-            error: errMsg,
+            submissionStatus: 'Runtime Error',
+            error: isUnconfigured ? 'Remote runner not configured' : 'Piston 401 Unauthorized',
           };
         }
 
