@@ -8,9 +8,12 @@
  */
 
 import { NextResponse } from 'next/server';
+import { auth } from '@clerk/nextjs/server';
+import { isClerkConfigured } from '@/lib/auth/clerkConfig';
 import { checkRateLimit } from '@/lib/rateLimit';
 import { enqueueJob, getQueueDepth } from '@/lib/execution/queue';
 import { getCorrelationId, createLogger } from '@/lib/logger';
+import { resolveCallerIdentity } from '@/lib/execution/identity';
 
 const MAX_CODE_SIZE = 64 * 1024;       // 64 KB
 const MAX_TEST_CASES = 20;
@@ -20,20 +23,47 @@ export async function POST(req: Request) {
   const correlationId = getCorrelationId(req.headers);
   const log = createLogger(correlationId);
 
-  // ── Identity & Rate Limiting ───────────────────────────────────────────────
-  const userId = req.headers.get('x-user-id') ?? undefined;
-  const ip = req.headers.get('x-forwarded-for') || '127.0.0.1';
-  const rateLimitKey = userId ? `exec:user:${userId}` : `exec:ip:${ip}`;
+  // ── Kill Switch ────────────────────────────────────────────────────────────
+  if (process.env.EXECUTE_KILL_SWITCH === 'true' || process.env.DISABLE_EXECUTE_API === 'true') {
+    log.warn('execute.kill_switch_active');
+    return NextResponse.json(
+      { error: 'Remote code execution is temporarily disabled.' },
+      { status: 503 }
+    );
+  }
 
-  // Sustained limit: 20 req/min for auth users, 8 for anon
+  // ── Identity & Rate Limiting ───────────────────────────────────────────────
+  let verifiedUserId: string | null = null;
+  if (isClerkConfigured()) {
+    try {
+      const session = await auth();
+      verifiedUserId = session.userId;
+    } catch {
+      // Unauthenticated session
+    }
+  }
+
+  const caller = resolveCallerIdentity(req, verifiedUserId);
+
+  // Global concurrency / flood protection: 200 req/min system-wide
+  const globalCheck = checkRateLimit('exec:global:ceiling', 200, 60_000);
+  if (!globalCheck.allowed) {
+    log.warn('rate_limit.global_ceiling_exceeded');
+    return NextResponse.json(
+      { error: 'Execution system is under heavy load. Please retry in a few seconds.' },
+      { status: 429, headers: { 'Retry-After': '5' } }
+    );
+  }
+
+  // Caller rate limit: 20 req/min for authenticated user, 8 req/min for IP
   const { allowed, retryAfterMs } = checkRateLimit(
-    rateLimitKey,
-    userId ? 20 : 8,
+    caller.rateLimitKey,
+    caller.limitPerMinute,
     60_000
   );
 
   if (!allowed) {
-    log.warn('rate_limit.exceeded', { key: rateLimitKey, retryAfterMs });
+    log.warn('rate_limit.exceeded', { key: caller.rateLimitKey, retryAfterMs });
     return NextResponse.json(
       { error: 'Too Many Requests — please slow down and retry shortly.' },
       {
@@ -117,7 +147,7 @@ export async function POST(req: Request) {
       language: language as 'cpp' | 'java',
       code: code as string,
       testCases: testCases as unknown[] | undefined,
-      userId,
+      userId: caller.userId,
       correlationId,
     });
   } catch (err: unknown) {
