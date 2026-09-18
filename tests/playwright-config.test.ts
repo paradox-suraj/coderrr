@@ -17,7 +17,7 @@ const configPath = path.resolve(__dirname, '../playwright.config.ts');
 function loadConfigWithEnv(env: Record<string, string>) {
   const runnerScript = `
     import rawConfig from '${configPath}';
-    const config = (rawConfig as any).default || rawConfig;
+    const config = rawConfig?.default || rawConfig;
     console.log(JSON.stringify({
       baseURL: config.use?.baseURL,
       webServerCommand: config.webServer?.command,
