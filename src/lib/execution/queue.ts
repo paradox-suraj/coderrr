@@ -166,11 +166,12 @@ async function callPiston(job: ExecutionJob): Promise<PistonExecutionResult> {
   if (!endpoint) {
     const status = getPistonStatus();
     return {
-      run: {
-        stdout: '',
-        stderr: `Remote execution environment not configured: ${status.reason || 'PISTON_URL missing'}. C++ and Java require a configured Piston runner.`,
-        code: 1,
-      },
+      stdout: '',
+      stderr: `Remote execution environment not configured: ${status.reason || 'PISTON_URL missing'}. C++ and Java require a configured Piston runner.`,
+      executionTimeMs: 0,
+      passed: false,
+      submissionStatus: 'Runtime Error',
+      error: status.reason || 'Remote execution environment not configured',
     };
   }
   const apiKey = process.env.PISTON_KEY;

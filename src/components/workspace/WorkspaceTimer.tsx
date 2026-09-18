@@ -293,7 +293,7 @@ export default function WorkspaceTimer({
                   <span>Focus Tracking Simulation</span>
                 </span>
                 <span className="text-[10px] text-neutral-400 leading-tight mt-0.5">
-                  Logs tab/window focus switches (>750ms grace window for OS popups)
+                  Logs tab/window focus switches (&gt;750ms grace window for OS popups)
                 </span>
               </div>
               <button
