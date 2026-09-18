@@ -301,6 +301,18 @@ json.dumps({
     const rawResultJson = await pyodideInstance.runPythonAsync(harness);
     const parsed = JSON.parse(rawResultJson);
 
+    let realWasmMemoryMb: number | undefined = undefined;
+    try {
+      const bufferBytes =
+        pyodideInstance._module?.wasmMemory?.buffer?.byteLength ||
+        pyodideInstance._module?.HEAPU8?.buffer?.byteLength;
+      if (typeof bufferBytes === 'number' && bufferBytes > 0) {
+        realWasmMemoryMb = Math.round((bufferBytes / (1024 * 1024)) * 10) / 10;
+      }
+    } catch {
+      // WASM memory buffer inaccessible
+    }
+
     self.postMessage({
       type: 'result',
       id,
@@ -310,6 +322,7 @@ json.dumps({
       passed: Boolean(parsed.passed),
       testResults: parsed.testResults || [],
       error: parsed.error || undefined,
+      memoryUsageMb: realWasmMemoryMb,
     } as PyodideWorkerResult);
   } catch (err: any) {
     self.postMessage({

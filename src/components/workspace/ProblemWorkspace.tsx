@@ -1528,8 +1528,12 @@ export default function ProblemWorkspace({ problem, companyMappings, reviewMode 
                   <span className="px-2 py-0.5 rounded bg-black/50 border border-white/10 text-neutral-300 font-mono text-[10px] flex items-center gap-1.5">
                     <span className="text-primary font-semibold">⚡ Execution:</span>
                     <span>{executionTimeMs}ms</span>
-                    <span className="text-neutral-500">|</span>
-                    <span className="text-neutral-400">Memory: ~{memoryUsageMb ? memoryUsageMb.toFixed(1) : '12.4'}MB</span>
+                    {typeof memoryUsageMb === 'number' && memoryUsageMb > 0 ? (
+                      <>
+                        <span className="text-neutral-500">|</span>
+                        <span className="text-neutral-400">WASM Memory: ~{memoryUsageMb.toFixed(1)}MB</span>
+                      </>
+                    ) : null}
                   </span>
                 )}
                 <button

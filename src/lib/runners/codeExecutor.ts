@@ -334,7 +334,6 @@ export async function executeCodeUniversal(
             passed: false,
             submissionStatus: 'Time Limit Exceeded',
             error: 'Time Limit Exceeded (5000ms)',
-            memoryUsageMb: 16.5,
           });
         }, 5000);
 
@@ -356,7 +355,6 @@ export async function executeCodeUniversal(
               ? 'Runtime Error'
               : 'Wrong Answer',
             error: data.error,
-            memoryUsageMb: 12.8,
           });
         };
 
@@ -370,7 +368,6 @@ export async function executeCodeUniversal(
             passed: false,
             submissionStatus: 'Runtime Error',
             error: err.message,
-            memoryUsageMb: 12.4,
           });
         };
 
@@ -383,7 +380,6 @@ export async function executeCodeUniversal(
           passed: false,
           submissionStatus: 'Runtime Error',
           error: err.message,
-          memoryUsageMb: 0,
         });
       }
     });

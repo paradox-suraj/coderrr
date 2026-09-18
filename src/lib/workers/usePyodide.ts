@@ -10,7 +10,7 @@ export interface UsePyodideReturn {
   stdout: string;
   stderr: string;
   executionTimeMs: number;
-  memoryUsageMb: number;
+  memoryUsageMb?: number;
   passed?: boolean;
   testResults: PyodideTestCaseResult[];
   error?: string;
@@ -27,7 +27,7 @@ export function usePyodide(): UsePyodideReturn {
   const [stdout, setStdout] = useState('');
   const [stderr, setStderr] = useState('');
   const [executionTimeMs, setExecutionTimeMs] = useState(0);
-  const [memoryUsageMb, setMemoryUsageMb] = useState<number>(14.2);
+  const [memoryUsageMb, setMemoryUsageMb] = useState<number | undefined>(undefined);
   const [passed, setPassed] = useState<boolean | undefined>(undefined);
   const [testResults, setTestResults] = useState<PyodideTestCaseResult[]>([]);
   const [error, setError] = useState<string | undefined>(undefined);
@@ -66,7 +66,7 @@ export function usePyodide(): UsePyodideReturn {
         setStdout(data.stdout || '');
         setStderr(data.stderr || '');
         setExecutionTimeMs(data.executionTimeMs || 0);
-        setMemoryUsageMb(data.memoryUsageMb || 14.8);
+        setMemoryUsageMb(data.memoryUsageMb);
         setPassed(data.passed);
         setTestResults(data.testResults || []);
         setError(data.error);
@@ -144,7 +144,7 @@ export function usePyodide(): UsePyodideReturn {
     setPassed(undefined);
     setTestResults([]);
     setExecutionTimeMs(0);
-    setMemoryUsageMb(14.2);
+    setMemoryUsageMb(undefined);
   }, [clearWatchdog]);
 
   return {
