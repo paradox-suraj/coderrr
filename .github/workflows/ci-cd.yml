@@ -68,6 +68,10 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL || '' }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || '' }}
           PISTON_URL: 'https://emkc.org/api/v2/piston/execute'
+      - name: Verify Build Artifacts (CRIT-01 & HIGH-01)
+        run: |
+          pnpm tsx tests/production-boot.test.ts
+          pnpm tsx tests/bundle-size.test.ts
 
   # ── Health Check (staging) ────────────────────────────────────────────────
   # Uncomment and configure STAGING_URL when a staging deployment exists.
