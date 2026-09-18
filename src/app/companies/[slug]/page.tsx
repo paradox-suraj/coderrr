@@ -8,14 +8,11 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const revalidate = 86400; // 24h ISR
+
 export async function generateStaticParams() {
   const companies = getCompanies();
-  // Prerender the top 40 most active companies for instant SSR performance
-  const topCompanies = [...companies]
-    .sort((a, b) => b.questionCount - a.questionCount)
-    .slice(0, 40);
-
-  return topCompanies.map((c) => ({
+  return companies.map((c) => ({
     slug: companyToSlug(c.name),
   }));
 }
@@ -33,6 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${company.name} LeetCode Interview Questions (${company.questionCount.toLocaleString()}) — AlgoJeet Pro`,
     description: `Master ${company.name}'s verified LeetCode question distribution. View ${company.questionCount} interview questions ranked by frequency.`,
+    openGraph: {
+      title: `${company.name} LeetCode Interview Questions (${company.questionCount.toLocaleString()}) — AlgoJeet Pro`,
+      description: `Master ${company.name}'s verified LeetCode question distribution. View ${company.questionCount} interview questions ranked by frequency.`,
+      type: 'website',
+    },
   };
 }
 

@@ -9,14 +9,14 @@ export default function NotFound() {
       </div>
       <h1 className="text-3xl font-extrabold tracking-tight mb-2">404 — Not Found</h1>
       <p className="text-sm text-muted-foreground max-w-md mb-6">
-        The problem or company page you are looking for does not exist in our algorithmic intelligence catalog.
+        The problem or company page you are looking for does not exist or may have been moved.
       </p>
       <Link
         href="/"
         className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-semibold hover:bg-primary/90 transition-all shadow-sm"
       >
         <ArrowLeft className="w-4 h-4" />
-        <span>Return to Cockpit</span>
+        <span>Back to Dashboard</span>
       </Link>
     </div>
   );

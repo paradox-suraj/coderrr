@@ -111,6 +111,9 @@ interface Company {
   name: string;
   questionCount: number;
   avgFrequency: number;
+  easyCount: number;
+  mediumCount: number;
+  hardCount: number;
 }
 
 // ─── Main Ingestion ─────────────────────────────────────────────────────────────
@@ -130,8 +133,8 @@ function main() {
   }
 
   // Load descriptions catalog if available
-  let hfDescriptionsBySlug = new Map<string, any>();
-  let hfDescriptionsById = new Map<string, any>();
+  const hfDescriptionsBySlug = new Map<string, any>();
+  const hfDescriptionsById = new Map<string, any>();
   if (fs.existsSync(HF_DESCRIPTIONS_PATH)) {
     console.log('📚 Loading problem statements catalog from:', HF_DESCRIPTIONS_PATH);
     try {
@@ -147,8 +150,8 @@ function main() {
   }
 
   // Load premium descriptions catalog if available
-  let premiumDescriptionsBySlug = new Map<string, any>();
-  let premiumDescriptionsById = new Map<string, any>();
+  const premiumDescriptionsBySlug = new Map<string, any>();
+  const premiumDescriptionsById = new Map<string, any>();
 
   // Check temp_premium_repo for on-the-fly ingestion
   if (fs.existsSync(TEMP_PREMIUM_REPO_PATH)) {
@@ -309,17 +312,29 @@ function main() {
   // ─── 3. Derive Companies List ──────────────────────────────────────────────
 
   console.log('\n🔹 Deriving companies list...');
-  const companyAgg = new Map<string, { count: number; freqSum: number }>();
+  const problemDifficultyMap = new Map<string, string>(problems.map((p) => [p.id, p.difficulty]));
+  const companyAgg = new Map<string, { count: number; freqSum: number; easy: number; medium: number; hard: number }>();
 
   for (const mapping of companyMappings) {
+    const diff = problemDifficultyMap.get(mapping.problemId);
+    const isEasy = diff === 'Easy';
+    const isMedium = diff === 'Medium';
+    const isHard = diff === 'Hard';
+
     const existing = companyAgg.get(mapping.company);
     if (existing) {
       existing.count++;
       existing.freqSum += mapping.frequencyPct;
+      if (isEasy) existing.easy++;
+      else if (isMedium) existing.medium++;
+      else if (isHard) existing.hard++;
     } else {
       companyAgg.set(mapping.company, {
         count: 1,
         freqSum: mapping.frequencyPct,
+        easy: isEasy ? 1 : 0,
+        medium: isMedium ? 1 : 0,
+        hard: isHard ? 1 : 0,
       });
     }
   }
@@ -329,6 +344,9 @@ function main() {
       name,
       questionCount: data.count,
       avgFrequency: Math.round((data.freqSum / data.count) * 1000) / 1000,
+      easyCount: data.easy,
+      mediumCount: data.medium,
+      hardCount: data.hard,
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 

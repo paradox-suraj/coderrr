@@ -1,7 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Trophy, AlertCircle, Sparkles, Flame, Clock, RefreshCw, ArrowRight, ExternalLink } from 'lucide-react';
+import { 
+  CheckCircle2, 
+  XCircle, 
+  AlertTriangle, 
+  Clock, 
+  Sparkles, 
+  BrainCircuit, 
+  ArrowRight, 
+  Terminal 
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface SubmissionBannerData {
@@ -39,21 +48,21 @@ export default function SubmissionBanner({
     <motion.div
       initial={
         isWrongAnswer
-          ? { opacity: 0, x: -10 }
-          : { opacity: 0, scale: 0.96, y: -6 }
+          ? { opacity: 0, x: -8 }
+          : { opacity: 0, scale: 0.98, y: -4 }
       }
       animate={
         isWrongAnswer
           ? {
               opacity: 1,
-              x: [-10, 10, -8, 8, -4, 4, 0],
-              transition: { duration: 0.48, ease: 'easeInOut' },
+              x: [-8, 8, -5, 5, -2, 2, 0],
+              transition: { duration: 0.35, ease: 'easeInOut' },
             }
           : {
               opacity: 1,
               scale: 1,
               y: 0,
-              transition: { type: 'spring', stiffness: 350, damping: 22 },
+              transition: { type: 'spring', stiffness: 350, damping: 24 },
             }
       }
       className={cn(
@@ -68,7 +77,7 @@ export default function SubmissionBanner({
           'bg-gradient-to-r from-amber-950/40 via-yellow-950/20 to-neutral-950/40 border-amber-500/35 text-amber-200 shadow-[0_0_35px_rgba(245,158,11,0.18)]'
       )}
     >
-      {/* Background Accent Glow */}
+      {/* Subtle Background Accent Glow */}
       <div
         className={cn(
           'absolute -right-8 -top-8 w-32 h-32 rounded-full blur-2xl pointer-events-none opacity-20',
@@ -82,30 +91,30 @@ export default function SubmissionBanner({
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 relative z-10">
         {/* Left Side: Status Icon & Title */}
         <div className="flex items-start gap-3">
-          {/* Animated Badge Icon */}
+          {/* Status Badge Icon */}
           <div
             className={cn(
-              'w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border shadow-inner text-base',
-              isAccepted && 'bg-emerald-500/20 border-emerald-500/30 text-emerald-300',
-              isWrongAnswer && 'bg-rose-500/20 border-rose-500/30 text-rose-300',
-              isRuntimeError && 'bg-amber-500/20 border-amber-500/30 text-amber-300',
-              isTLE && 'bg-yellow-500/20 border-yellow-500/30 text-yellow-300'
+              'w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border shadow-inner',
+              isAccepted && 'bg-emerald-500/20 border-emerald-500/30 text-emerald-400',
+              isWrongAnswer && 'bg-rose-500/20 border-rose-500/30 text-rose-400',
+              isRuntimeError && 'bg-amber-500/20 border-amber-500/30 text-amber-400',
+              isTLE && 'bg-yellow-500/20 border-yellow-500/30 text-yellow-400'
             )}
           >
-            {isAccepted && <span>🏆</span>}
-            {isWrongAnswer && <span>💥</span>}
-            {isRuntimeError && <span>🚨</span>}
-            {isTLE && <span>⏱️</span>}
+            {isAccepted && <CheckCircle2 className="w-5 h-5" />}
+            {isWrongAnswer && <XCircle className="w-5 h-5" />}
+            {isRuntimeError && <AlertTriangle className="w-5 h-5" />}
+            {isTLE && <Clock className="w-5 h-5" />}
           </div>
 
           <div className="flex flex-col gap-0.5">
-            {/* Status Headline with Creative Emojis */}
+            {/* Status Headline */}
             <div className="flex items-center gap-2 flex-wrap">
               <span className="font-bold text-sm tracking-tight text-white flex items-center gap-1.5">
-                {isAccepted && '🎉 🚀 Accepted! Flawless Solution! 🏆 💎'}
-                {isWrongAnswer && '💥 ❌ Wrong Answer! Test Case Failed 🧐 🔍'}
-                {isRuntimeError && '🚨 ⚡ Runtime Exception! Execution Failed 🛑 💣'}
-                {isTLE && '⏱️ ⏳ Time Limit Exceeded (15,000ms)! 🐢 🛑'}
+                {banner.status}
+              </span>
+              <span className="text-[11px] font-mono text-neutral-400">
+                • {banner.latencyMs}ms
               </span>
             </div>
 
@@ -114,14 +123,13 @@ export default function SubmissionBanner({
               {isAccepted && (
                 <>
                   All <span className="font-semibold text-emerald-300">{banner.passedCases}</span> of{' '}
-                  <span className="font-semibold text-emerald-300">{banner.totalCases}</span> test cases passed flawlessly in{' '}
-                  <span className="font-mono text-emerald-300 font-bold">{banner.latencyMs}ms</span>!
+                  <span className="font-semibold text-emerald-300">{banner.totalCases}</span> test cases passed successfully.
                 </>
               )}
               {isWrongAnswer && (
                 <>
                   Passed <span className="font-semibold text-rose-300">{banner.passedCases}</span> of{' '}
-                  <span className="font-semibold text-rose-300">{banner.totalCases}</span> test cases (⚡ {banner.latencyMs}ms).{' '}
+                  <span className="font-semibold text-rose-300">{banner.totalCases}</span> test cases.{' '}
                   <span className="font-medium text-white">Output mismatch on Test Case {failingIdx + 1}.</span>
                 </>
               )}
@@ -130,7 +138,7 @@ export default function SubmissionBanner({
               )}
               {isTLE && (
                 <>
-                  Execution timed out after 15 seconds. Please inspect your loops and recursion logic.
+                  Execution timed out after 15,000ms. Please inspect loops and recursive calls.
                 </>
               )}
             </p>
@@ -138,37 +146,34 @@ export default function SubmissionBanner({
             {/* Diagnostic edge case hints */}
             {isWrongAnswer && (
               <div className="mt-1 flex items-center gap-1.5 text-[11px] text-rose-300/85 font-mono">
-                <span>💡</span>
-                <span>Inspect expected vs your output in Case {failingIdx + 1} below to diagnose the bug! 🛠️</span>
+                <span>Inspect expected versus actual output on Test Case {failingIdx + 1} below to debug.</span>
               </div>
             )}
             {isRuntimeError && (
               <div className="mt-1 flex items-center gap-1.5 text-[11px] text-amber-300/85 font-mono">
-                <span>💡</span>
-                <span>Inspect full stack trace and line numbers in the Console tab 📋</span>
+                <span>Inspect full stack trace and line numbers in the Console tab.</span>
               </div>
             )}
             {isTLE && (
               <div className="mt-1 flex items-center gap-1.5 text-[11px] text-amber-300/85 font-mono">
-                <span>💡</span>
-                <span>Look out for infinite while loops, recursion depth, or O(N²) / O(2^N) complexity 🚀</span>
+                <span>Review loop termination conditions, recursion depth, or algorithmic complexity.</span>
               </div>
             )}
           </div>
         </div>
 
-        {/* Right Side: Badges & Quick Action Buttons */}
+        {/* Right Side: Action Buttons */}
         <div className="flex items-center gap-2 shrink-0 self-end md:self-center">
           {isAccepted && (
             <>
               {onTriggerConfetti && (
                 <button
                   onClick={onTriggerConfetti}
-                  className="px-2.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-200 text-[11px] font-medium transition-all flex items-center gap-1 cursor-pointer hover:scale-105 active:scale-95"
-                  title="Celebrate again!"
+                  className="px-2.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-200 text-[11px] font-medium transition-all flex items-center gap-1.5 cursor-pointer hover:scale-105 active:scale-95"
+                  title="Trigger celebration"
                 >
-                  <Sparkles className="w-3 h-3 text-emerald-400" />
-                  <span>Celebrate 🎉</span>
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Celebrate</span>
                 </button>
               )}
 
@@ -177,7 +182,8 @@ export default function SubmissionBanner({
                   onClick={onRateRecall}
                   className="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-neutral-950 text-[11px] font-bold transition-all shadow-[0_0_15px_rgba(16,185,129,0.4)] flex items-center gap-1.5 cursor-pointer hover:scale-105 active:scale-95"
                 >
-                  <span>Rate Recall 🧠</span>
+                  <BrainCircuit className="w-3.5 h-3.5 text-neutral-950" />
+                  <span>Rate Recall</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               )}
@@ -189,7 +195,7 @@ export default function SubmissionBanner({
               onClick={() => onJumpToCase(failingIdx)}
               className="px-3 py-1.5 rounded-lg bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/40 text-rose-200 text-[11px] font-semibold transition-all flex items-center gap-1.5 cursor-pointer hover:scale-105 active:scale-95"
             >
-              <span>Inspect Case {failingIdx + 1} 🔍</span>
+              <span>Inspect Case {failingIdx + 1}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           )}
@@ -199,8 +205,8 @@ export default function SubmissionBanner({
               onClick={onOpenConsole}
               className="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-200 text-[11px] font-semibold transition-all flex items-center gap-1.5 cursor-pointer hover:scale-105 active:scale-95"
             >
-              <span>View Logs 📋</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <Terminal className="w-3.5 h-3.5" />
+              <span>View Console</span>
             </button>
           )}
         </div>

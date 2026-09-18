@@ -7,6 +7,9 @@ export interface CompanyItem {
   name: string;
   questionCount: number;
   avgFrequency: number;
+  easyCount?: number;
+  mediumCount?: number;
+  hardCount?: number;
 }
 
 export interface CompanyMappingDoc {
@@ -23,8 +26,8 @@ let cachedCompanies: CompanyItem[] | null = null;
 let cachedMappings: CompanyMappingDoc[] | null = null;
 let slugToCompanyMap: Map<string, CompanyItem> | null = null;
 
-export { companyToSlug } from '@/lib/utils/companySlug';
 import { companyToSlug } from '@/lib/utils/companySlug';
+export { companyToSlug };
 
 export function getCompanies(): CompanyItem[] {
   if (!cachedCompanies) {

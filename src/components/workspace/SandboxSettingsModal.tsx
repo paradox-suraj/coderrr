@@ -138,7 +138,7 @@ export default function SandboxSettingsModal({ isOpen, onClose }: SandboxSetting
               className="w-full px-3 py-2 rounded-lg bg-neutral-950 border border-white/10 text-neutral-200 placeholder:text-neutral-600 font-mono text-xs focus:outline-none focus:border-sky-500/50"
             />
             <span className="text-[10px] text-neutral-500">
-              Leave blank to use the default endpoint, or enter your self-hosted instance URL.
+              Leave blank to use the default endpoint, or enter your self-hosted instance URL. (Requests are securely routed through our /api/execute proxy).
             </span>
           </div>
 

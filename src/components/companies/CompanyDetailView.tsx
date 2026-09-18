@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -13,9 +13,12 @@ import {
   Filter,
   ArrowUpDown,
   Sparkles,
+  CheckCircle2,
+  Check,
 } from 'lucide-react';
 import CompanyLogo from '@/components/CompanyLogo';
 import type { CompanyItem, CompanyProblemItem } from '@/lib/data/companies';
+import { getAllSolvedProblemIds } from '@/lib/db';
 
 interface CompanyDetailViewProps {
   company: CompanyItem;
@@ -23,6 +26,14 @@ interface CompanyDetailViewProps {
 }
 
 export default function CompanyDetailView({ company, problems }: CompanyDetailViewProps) {
+  const [solvedIds, setSolvedIds] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    getAllSolvedProblemIds()
+      .then(setSolvedIds)
+      .catch(() => {});
+  }, []);
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState<'ALL' | 'Easy' | 'Medium' | 'Hard'>('ALL');
   const [sortBy, setSortBy] = useState<'frequency-desc' | 'frequency-asc' | 'id-asc' | 'title-asc'>('frequency-desc');
@@ -298,9 +309,16 @@ export default function CompanyDetailView({ company, problems }: CompanyDetailVi
               >
                 {/* Left: ID, Title, Badges */}
                 <div className="flex items-start sm:items-center gap-3 min-w-0">
-                  <span className="font-mono text-xs font-bold text-muted-foreground w-12 shrink-0">
-                    #{problem.id}
-                  </span>
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    {solvedIds.has(problem.id) && (
+                      <span title="Completed">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 fill-emerald-500/20" />
+                      </span>
+                    )}
+                    <span className="font-mono text-xs font-bold text-muted-foreground w-11">
+                      #{problem.id}
+                    </span>
+                  </div>
 
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-1">
@@ -314,6 +332,13 @@ export default function CompanyDetailView({ company, problems }: CompanyDetailVi
                       <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-md border ${difficultyBadge}`}>
                         {problem.difficulty}
                       </span>
+
+                      {solvedIds.has(problem.id) && (
+                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                          <Check className="w-3 h-3 stroke-[3]" />
+                          <span>Solved</span>
+                        </span>
+                      )}
 
                       {problem.isPaidOnly && (
                         <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30">
@@ -366,7 +391,7 @@ export default function CompanyDetailView({ company, problems }: CompanyDetailVi
                     href={`/problem/${problem.id}`}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-secondary/80 hover:bg-primary text-foreground hover:text-primary-foreground text-xs font-semibold border border-border/60 transition-all shadow-xs"
                   >
-                    <span>Solve</span>
+                    <span>{solvedIds.has(problem.id) ? 'Review' : 'Solve'}</span>
                     <ExternalLink className="w-3 h-3" />
                   </Link>
                 </div>

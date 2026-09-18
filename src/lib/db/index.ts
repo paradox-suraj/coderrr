@@ -128,6 +128,12 @@ export async function upsertProblemProgress(progress: UserProgress): Promise<str
   return await db.userProgress.put(progress);
 }
 
+export async function getAllSolvedProblemIds(): Promise<Set<string>> {
+  await ensureDbReady();
+  const records = await db.userProgress.where('status').equals('solved').toArray();
+  return new Set(records.map((r) => r.problemId));
+}
+
 /**
  * Validates that a code string syntactically matches the target programming language.
  * Prevents cross-language contamination when switching tabs or recovering legacy drafts.

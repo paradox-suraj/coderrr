@@ -14,7 +14,6 @@ import {
 import { db, getDueReviews, logSprintCompletion, type UserProgress } from '@/lib/db';
 import { cn } from '@/lib/utils';
 import { SpotlightCard } from '@/components/core/SpotlightCard';
-import { TextShimmer } from '@/components/core/TextShimmer';
 import type { ProblemDoc } from '@/lib/workers/search.worker';
 
 const SPRINT_DURATION_SECONDS = 25 * 60; // 25 minutes Pomodoro sprint
@@ -38,7 +37,7 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
   // 1. Spaced Repetition Due (nextReviewDate <= now)
   // 2. Highest company frequency / priority bucket
   useEffect(() => {
-    async function loadCockpitDeck() {
+    async function loadSprintDeck() {
       let dataset = initialProblems;
       if (!dataset || dataset.length === 0) {
         try {
@@ -64,7 +63,7 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
       const dueReviews = await getDueReviews();
       const dueIds = new Set(dueReviews.map((r) => r.problemId));
 
-      // Build Top 5 ADHD Rule Deck
+      // Build Top 5 Priority Problem Deck
       const dueCards: ProblemDoc[] = [];
       const upcomingCards: ProblemDoc[] = [];
 
@@ -84,7 +83,7 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
       setPrioritizedCards(finalDeck);
     }
 
-    loadCockpitDeck();
+    loadSprintDeck();
   }, [initialProblems]);
 
   // ─── Timer Countdown & Complete Effect ──────────────────────────────────────
@@ -152,7 +151,7 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
 
   return (
     <div className="w-full flex flex-col gap-6">
-      {/* Top Banner: ADHD Sprint Dashboard Header */}
+      {/* Top Banner: Daily Practice Sprint Header */}
       <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-6 p-6 rounded-2xl glass-card relative overflow-hidden shadow-sm">
         {/* Subtle background glow */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/[0.04] rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
@@ -160,20 +159,18 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
         <div className="flex flex-col gap-1.5 max-w-xl z-10">
           <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-400">
             <Zap className="w-4 h-4 fill-emerald-400 text-emerald-400" />
-            <TextShimmer className="text-xs font-semibold uppercase tracking-wider">
-              ADHD Sprint Deck — Zero Cognitive Overload
-            </TextShimmer>
+            <span>Daily Focus Sprint</span>
           </div>
           <h2 className="text-xl md:text-2xl font-bold tracking-tight text-neutral-100">
-            Today&apos;s Focus Quota (Rule of 5)
+            Today&apos;s Focus Queue
           </h2>
           <p className="text-xs md:text-sm text-neutral-400 leading-relaxed">
-            Strict maximum 5 problems surfaced per session. Spaced repetition due reviews are prioritized over top-tier company frequencies.
+            A curated 5-problem queue prioritized by your pending spaced repetition reviews and top company interview frequencies.
           </p>
         </div>
 
         {/* 25-min Pomodoro Sprint Widget */}
-        <div className="flex items-center gap-5 z-10 bg-black/40 p-3.5 rounded-xl border border-white/[0.08] self-start lg:self-auto backdrop-blur-md">
+        <div className="flex items-center gap-5 z-10 bg-black/40 p-3.5 rounded-xl border border-white/10 self-start lg:self-auto backdrop-blur-md">
           {/* Circular SVG Progress */}
           <div className="relative w-28 h-28 flex items-center justify-center shrink-0">
             <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
@@ -181,7 +178,7 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
                 cx="60"
                 cy="60"
                 r={radius}
-                className="stroke-white/[0.06] fill-none"
+                className="stroke-white/10 fill-none"
                 strokeWidth="6"
               />
               <circle
@@ -245,8 +242,8 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
         </div>
       </div>
 
-      {/* 5 Focused Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+      {/* 5 Focused Cards Grid — Adaptive Container with min-w-[240px] and Full Hover Tooltips */}
+      <div className="flex flex-wrap gap-4 w-full">
         {prioritizedCards.map((problem) => {
           const isSolved = completedProblems.has(problem.id);
           const userProg = progressMap[problem.id];
@@ -256,15 +253,16 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
             <SpotlightCard
               key={problem.id}
               className={cn(
-                'group relative transition-all duration-200 hover:-translate-y-0.5',
+                'group relative transition-all duration-200 hover:-translate-y-0.5 border border-white/10 rounded-xl p-4.5',
+                'min-w-[240px] flex-1 basis-full sm:basis-[calc(50%-0.5rem)] lg:basis-[calc(33.333%-0.75rem)] xl:basis-[calc(20%-0.8rem)]',
                 isSolved && 'opacity-70'
               )}
             >
-              <div className="flex flex-col justify-between h-full">
+              <div className="flex flex-col justify-between h-full gap-3">
                 {/* Header Badges */}
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-2.5">
-                    <span className="font-mono text-xs font-semibold text-neutral-500 tabular-nums">
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <span className="font-mono text-xs font-semibold text-neutral-400 tabular-nums">
                       #{problem.id}
                     </span>
                     <div className="flex items-center gap-1.5">
@@ -286,36 +284,43 @@ export default function SprintDeck({ initialProblems = [] }: SprintDeckProps) {
                     </div>
                   </div>
 
-                  {/* Title */}
+                  {/* Title with full hover tooltip */}
                   <Link
                     href={`/problem/${problem.id}`}
-                    className="font-medium text-sm text-neutral-200 group-hover:text-white transition-colors line-clamp-1 block"
+                    className="font-semibold text-sm text-neutral-200 group-hover:text-white transition-colors line-clamp-1 block"
+                    title={problem.title}
                   >
                     {problem.title}
                   </Link>
 
-                  {/* Pattern & Track Details */}
-                  <div className="flex flex-col gap-1 mt-2.5 text-xs text-neutral-400">
-                    <div className="font-medium text-neutral-300 flex items-center gap-1.5 truncate">
+                  {/* Pattern & Track Details with Full-Text Tooltips */}
+                  <div className="flex flex-col gap-1.5 mt-2.5 text-xs text-neutral-400">
+                    <div 
+                      className="font-medium text-neutral-300 flex items-center gap-1.5 truncate cursor-help"
+                      title={`Core Pattern: ${problem.corePattern || 'Standard Pattern'}`}
+                    >
                       <BrainCircuit className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                       <span className="truncate">{problem.corePattern || 'Core Pattern'}</span>
                     </div>
-                    <div className="text-[11px] text-neutral-500 font-mono truncate">
+                    <div 
+                      className="text-[11px] text-neutral-400 font-mono truncate px-2 py-0.5 rounded bg-white/[0.04] border border-white/10 w-fit max-w-full cursor-help"
+                      title={`Track: ${problem.learningTrack}`}
+                    >
                       {problem.learningTrack}
                     </div>
                   </div>
                 </div>
 
                 {/* Card Footer */}
-                <div className="pt-4 mt-3 border-t border-white/[0.06] flex items-center justify-between text-xs">
+                <div className="pt-3 mt-1 border-t border-white/10 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-1 text-[11px] text-neutral-400 font-mono tabular-nums">
                     <Flame className="w-3.5 h-3.5 text-orange-400" />
-                    <span>{problem.companiesCount} orgs</span>
+                    <span>{problem.companiesCount} companies</span>
                   </div>
 
                   <Link
                     href={`/problem/${problem.id}`}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors cursor-pointer"
                   >
                     <span>Solve</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />

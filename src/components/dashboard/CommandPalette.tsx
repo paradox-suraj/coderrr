@@ -82,12 +82,19 @@ export default function CommandPalette() {
         onClick={() => setIsOpen(false)} 
       />
 
-      <div className="w-full max-w-2xl bg-card border border-border/80 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[75vh] ring-1 ring-white/10">
+      <div 
+        role="dialog"
+        aria-modal="true"
+        aria-label="Search problems"
+        className="w-full max-w-2xl bg-card border border-border/80 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[75vh] ring-1 ring-white/10"
+      >
         {/* Search Input Bar */}
         <div className="flex items-center gap-3 px-4 py-3.5 border-b border-border/60 bg-secondary/30">
           <Search className="w-5 h-5 text-muted-foreground shrink-0" />
           <input
             ref={inputRef}
+            id="command-palette-input"
+            aria-label="Search problems"
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -103,6 +110,7 @@ export default function CommandPalette() {
           {query && !isLoading && (
             <button
               onClick={() => setQuery('')}
+              aria-label="Close search"
               className="text-muted-foreground hover:text-foreground p-1"
             >
               <X className="w-4 h-4" />
@@ -125,6 +133,7 @@ export default function CommandPalette() {
                   difficulty: diff === 'All' ? undefined : (diff as any),
                 }))
               }
+              aria-pressed={filters.difficulty === diff || (!filters.difficulty && diff === 'All')}
               className={cn(
                 'px-2.5 py-1 rounded-full font-medium transition-colors text-[11px]',
                 (filters.difficulty === diff || (!filters.difficulty && diff === 'All'))
@@ -143,7 +152,7 @@ export default function CommandPalette() {
         </div>
 
         {/* Results List */}
-        <div className="overflow-y-auto divide-y divide-border/30 p-2">
+        <div role="listbox" aria-label="Search results" className="overflow-y-auto divide-y divide-border/30 p-2">
           {results.length === 0 && !isLoading && (
             <div className="py-12 text-center text-muted-foreground text-sm">
               <Layers className="w-8 h-8 mx-auto mb-2 opacity-40" />
@@ -156,6 +165,8 @@ export default function CommandPalette() {
             return (
               <div
                 key={problem.id}
+                role="option"
+                aria-selected={isSelected}
                 onClick={() => navigateToProblem(problem.id)}
                 onMouseEnter={() => setSelectedIndex(index)}
                 className={cn(
@@ -195,7 +206,7 @@ export default function CommandPalette() {
                   {problem.companiesCount > 0 && (
                     <span className="text-[11px] font-mono text-muted-foreground flex items-center gap-1 bg-secondary px-2 py-0.5 rounded-md">
                       <Flame className="w-3 h-3 text-orange-400" />
-                      {problem.companiesCount} orgs
+                      {problem.companiesCount} companies
                     </span>
                   )}
                   <ArrowRight className={cn('w-4 h-4', isSelected ? 'text-primary' : 'text-muted-foreground/40')} />
@@ -208,7 +219,7 @@ export default function CommandPalette() {
         {/* Footer info */}
         <div className="flex items-center justify-between px-4 py-2 border-t border-border/40 bg-secondary/30 text-[11px] text-muted-foreground font-mono">
           <span>Navigate with ↑ ↓ • Select with ↵</span>
-          <span>AlgoJeet Worker BM25</span>
+          <span>Indexed BM25 Search</span>
         </div>
       </div>
     </div>

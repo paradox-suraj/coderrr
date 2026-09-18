@@ -1,36 +1,161 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AlgoJeet Pro
+
+> **Local-First Technical Interview Preparation Platform**  
+> Practice 3,350+ real LeetCode problems cross-referenced across 650+ tech companies with in-browser execution, company frequency analytics, and spaced repetition.
+
+---
+
+## Overview
+
+**AlgoJeet Pro** is a modern, high-performance coding interview workbench engineered for developers preparing for technical rounds at top technology companies. 
+
+Unlike traditional platforms that rely heavily on server roundtrips, AlgoJeet Pro is built **local-first**: all problems, solutions, notes, and Python/JavaScript code execution run directly inside your browser via WebAssembly (Pyodide) and IndexedDB (Dexie).
+
+---
+
+## Screenshots
+
+### 1. Daily Focus Dashboard & Retention Queue
+Targeted practice dashboard featuring Pomodoro focus timer, active retention queue, and curated algorithmic tracks.
+
+![AlgoJeet Pro Dashboard](screenshots/dashboard.png)
+
+### 2. In-Browser Code Workspace & Execution Harness
+Split-pane Monaco editor with client-side WebAssembly execution (Pyodide Python 3 / Web Worker JavaScript), instant test case runner, and spaced repetition rating.
+
+![AlgoJeet Pro Workspace](screenshots/workspace.png)
+
+### 3. Company Problem Directory & Frequency Analytics
+Filter and explore interview question frequencies across 654 top technology companies with frequency distributions and overlap comparator.
+
+![AlgoJeet Pro Company Directory](screenshots/companies.png)
+
+---
+
+## Core Features
+
+- **3,358 Curated Problems**: Comprehensive problem descriptions, constraints, examples, and edge cases across 10 structured learning tracks (Two Pointers, Sliding Window, Trees & Graphs, Dynamic Programming, Greedy, Design, etc.).
+- **654 Company Archives**: Real frequency ratings for questions asked by Google, Meta, Amazon, Microsoft, Apple, Netflix, Citadel, Stripe, Uber, and hundreds more.
+- **Company Overlap Comparator**: Compare 2–5 target companies to find the highest-yield intersection problems, maximizing interview prep ROI.
+- **In-Browser Code Execution**:
+  - **Python 3**: Runs client-side via Pyodide (WebAssembly) with custom test harness assertion normalization.
+  - **JavaScript**: Executes in isolated Web Workers.
+  - **C++ & Java**: Supported via a resilient server-side execution pipeline with circuit breakers, rate limiting, and Piston sandboxing.
+- **Spaced Repetition (SM-2)**: Automatically schedules reviews based on your recall quality ratings (Again, Hard, Good, Easy) to lock patterns into long-term memory.
+- **Daily Focus Sprint**: 25-minute Pomodoro focus timer with a curated 5-problem queue prioritized by due reviews and company frequencies.
+- **Strict Interview Mode**: Optional timer-linked environment that disables copy/cut/paste shortcuts and tracks tab switches to simulate realistic interview conditions.
+- **Local-First & Private**: Progress, code buffers, and notes persist offline in your browser's IndexedDB. Sign in with Clerk to optionally sync across devices via Supabase.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Framework** | [Next.js 15 (App Router)](https://nextjs.org/) + [React 19](https://react.dev/) |
+| **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
+| **Styling** | [Tailwind CSS 4](https://tailwindcss.com/) + Lucide Icons |
+| **Editor** | [Monaco Editor (@monaco-editor/react)](https://microsoft.github.io/monaco-editor/) |
+| **In-Browser Python** | [Pyodide (WebAssembly)](https://pyodide.org/) |
+| **Local Database** | [Dexie.js (IndexedDB)](https://dexie.org/) |
+| **Search Engine** | [Orama](https://oramasearch.com/) client-side search worker |
+| **Visualization** | [Three.js](https://threejs.org/) & [React Three Fiber](https://r3f.docs.pmnd.rs/) |
+| **Authentication** | [Clerk](https://clerk.com/) |
+| **Cloud Sync** | [Supabase Postgres](https://supabase.com/) |
+| **Testing** | [Playwright](https://playwright.dev/) + Node Test Runner |
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Node.js**: `v20.9.0` or higher
+- **Package Manager**: `pnpm` (`v9+` recommended)
+
+### Installation
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/paradox-suraj/coderrr.git algojeet-pro
+   cd algojeet-pro
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   pnpm install
+   ```
+
+3. **Configure environment variables** (optional for local usage):
+   ```bash
+   cp .env.local.example .env.local
+   ```
+   *Note: AlgoJeet Pro works completely offline out-of-the-box with Dexie IndexedDB. Clerk and Supabase variables are only required if you want cross-device cloud sync.*
+
+4. **Start the development server**:
+   ```bash
+   pnpm dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view the application.
+
+---
+
+## Available Scripts
+
+| Command | Description |
+|---|---|
+| `pnpm dev` | Starts Next.js development server with Turbopack |
+| `pnpm build` | Ingests data files and creates optimized production build |
+| `pnpm start` | Runs the production build |
+| `pnpm lint` | Runs ESLint analysis across TypeScript and React code |
+| `pnpm test` | Runs the full unit and integration test suite |
+| `pnpm e2e` | Runs Playwright end-to-end and accessibility test suites |
+| `pnpm ingest` | Re-indexes problems and company mappings from dataset |
+
+---
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|---|---|
+| `⌘K` or `Ctrl+K` | Open global Quick Find / Command Palette |
+| `[` or `⌘B` / `Ctrl+B` | Toggle left navigation sidebar |
+| `Space` | Toggle Pomodoro focus timer (when not typing in editor) |
+| `⌘Enter` or `Ctrl+Enter` | Run current code against test cases in workspace |
+| `Esc` | Close modal or Command Palette |
+
+---
+
+## Project Structure
+
+```
+algojeet-pro/
+├── public/
+│   ├── data/             # Static datasets: problems, companies, mappings, descriptions
+│   └── logos/            # Company logos (SVG & PNG)
+├── src/
+│   ├── app/              # Next.js App Router (pages, API routes, layout)
+│   ├── components/       # UI components: workspace, companies, navigation, canvas
+│   ├── lib/
+│   │   ├── auth/         # Clerk authentication helpers
+│   │   ├── db/           # Dexie IndexedDB schema & SM-2 algorithm
+│   │   ├── execution/    # Piston C++/Java runner, queue & circuit breaker
+│   │   ├── hooks/        # Custom React hooks (timer, strict mode, due count)
+│   │   ├── runners/      # Client-side Python & JavaScript code execution
+│   │   └── workers/      # Pyodide and Orama search Web Workers
+├── scripts/              # Dataset ingestion and utility scripts
+├── supabase/             # Postgres migrations for cloud sync
+└── tests/                # Unit, integration, and test harness suites
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Author
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Created by **[Paradox Suraj](https://www.instagram.com/paradox.suraj/)**
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.

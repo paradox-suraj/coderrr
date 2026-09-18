@@ -36,6 +36,7 @@ export interface PyodideWorkerResult {
   testResults?: PyodideTestCaseResult[];
   error?: string;
   message?: string;
+  memoryUsageMb?: number;
 }
 
 let pyodideInstance: any = null;

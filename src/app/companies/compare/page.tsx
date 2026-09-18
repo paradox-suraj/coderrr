@@ -189,13 +189,13 @@ function ComparatorContent() {
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1">
             <GitCompare className="w-3.5 h-3.5" />
-            <span>ROI Comparator & Overlap Matrix</span>
+            <span>Company Overlap Analysis</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-neutral-100">
-            Target Company Question Intersection
+            Compare Company Problem Sets
           </h1>
           <p className="text-xs sm:text-sm text-neutral-400 mt-1">
-            Calculate high-yield overlap questions asked simultaneously by your target interviewers.
+            Find the highest-yield questions asked across multiple target companies to maximize your preparation efficiency.
           </p>
         </div>
 
@@ -204,7 +204,7 @@ function ComparatorContent() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-xs font-semibold text-neutral-200 border border-white/[0.08] transition-colors self-start cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Return to Cockpit</span>
+          <span>Back to Dashboard</span>
         </Link>
       </div>
 
@@ -244,7 +244,7 @@ function ComparatorContent() {
                 <input
                   value={addCompanyQuery}
                   onChange={(e) => setAddCompanyQuery(e.target.value)}
-                  placeholder="Search orgs..."
+                  placeholder="Search companies..."
                   className="w-full px-3 py-1.5 rounded-lg bg-black/50 border border-white/[0.08] text-xs text-white placeholder:text-neutral-500 focus:outline-none focus:border-emerald-500/50"
                   autoFocus
                 />
