@@ -40,6 +40,11 @@ Structured retention mode scheduling automated review sessions with recall diffi
 
 ![AlgoJeet Pro Spaced Review Mode](screenshots/review.png)
 
+### 6. Strict Interview Simulation Mode & Anti-Cheat Controls
+Simulate realistic technical interview conditions with countdown presets, disabled clipboard shortcuts (copy/cut/paste), blocked context menus, and active tab-switch violation tracking.
+
+![AlgoJeet Pro Strict Interview Mode](screenshots/strict-mode.png)
+
 ---
 
 ## Core Features
