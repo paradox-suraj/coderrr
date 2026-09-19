@@ -5,7 +5,7 @@ Updated before each implementation, per project rules.
 
 ---
 
-## Execution Pipeline (Phase 1)
+## Execution Pipeline
 
 ### As-built (September 2026)
 
@@ -49,16 +49,16 @@ Browser (C++/Java click Run)
 
 ### Rollback Plan
 
-If Phase 1 must be reverted:
+If execution pipeline changes must be reverted:
 
-1. `git revert <sha-of-phase-1-commit>`
+1. Revert target commit with `git revert <commit-sha>`
 2. Push to `main` — CI/CD will rebuild.
-3. The old blocking `route.ts` will restore automatically.
+3. The previous execution routes will restore automatically.
 4. No database migration is needed (result store is in-memory only).
 
 ---
 
-## Rate Limiting (Phase 1 + Phase 3)
+## Rate Limiting
 
 Two-window sliding limiter per key:
 
@@ -71,7 +71,7 @@ Implemented in-memory (`src/lib/rateLimit.ts`). Resets on process restart — ac
 
 ---
 
-## Observability (Phase 2)
+## Observability
 
 **Structured JSON logging**: every API route emits JSON log lines with:
 - `ts` — ISO 8601 timestamp
@@ -88,7 +88,7 @@ Implemented in-memory (`src/lib/rateLimit.ts`). Resets on process restart — ac
 
 ---
 
-## Data Durability (Phase 6)
+## Data Durability
 
 ### Sync Architecture
 
@@ -121,7 +121,7 @@ Run monthly:
 
 ---
 
-## Deployment (Phase 5)
+## Deployment
 
 **CI**: GitHub Actions (`.github/workflows/ci-cd.yml`)
 - Jobs: lint → typecheck → test → build (all must pass before merge to `main`)
@@ -135,7 +135,7 @@ Run monthly:
 
 ---
 
-## Sitemap & SEO (Phase 7)
+## Sitemap & SEO
 
 - `src/app/sitemap.ts` — full sitemap: 654 company pages + top 500 problems + static routes.
 - `src/app/robots.ts` — allows all crawlers, disallows `/api/` and auth pages.
@@ -143,7 +143,7 @@ Run monthly:
 
 ---
 
-## Accessibility (Phase 7)
+## Accessibility
 
 WCAG 2.1 Level AA compliance enforced via:
 - `e2e/a11y.spec.ts` — Playwright + `@axe-core/playwright` audit on 7 pages.

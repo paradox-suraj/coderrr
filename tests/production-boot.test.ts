@@ -9,7 +9,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log('🧪 Testing Production Build Routes Manifest Integrity (CRIT-01)...');
+console.log('🧪 Testing Production Build Routes Manifest Integrity...');
 
 const manifestPath = path.resolve(__dirname, '../.next/routes-manifest.json');
 

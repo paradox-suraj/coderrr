@@ -9,7 +9,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log("🧪 Testing Safari Storage Persistence & Eviction Warning (MED-02)...");
+console.log("🧪 Testing Safari Storage Persistence & Eviction Warning...");
 
 // 1. Verify src/lib/storage/persistence.ts exists
 const persistenceModulePath = path.resolve(__dirname, "../src/lib/storage/persistence.ts");

@@ -9,7 +9,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log("🧪 Testing Client Bundle Size & Static Dataset Isolation (HIGH-01)...");
+console.log("🧪 Testing Client Bundle Size & Static Dataset Isolation...");
 
 // 1. Verify src/app/companies/compare/page.tsx does not import large JSON datasets statically
 const comparePagePath = path.resolve(__dirname, "../src/app/companies/compare/page.tsx");

@@ -19,7 +19,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log('🧪 Testing Data Loss Prevention, Specialized Error Handling & Portability (CRIT-02)...');
+console.log('🧪 Testing Data Loss Prevention, Specialized Error Handling & Portability...');
 
 async function testComprehensiveDataSafety() {
   // ── Step 1: Seed Initial User Data ──────────────────────────────────────────
@@ -154,10 +154,10 @@ async function testComprehensiveDataSafety() {
 
   await targetDb.delete();
 
-  console.log('\n🎉 ALL CRIT-02 Zero-Destruction & Data Portability Gates PASSED!\n');
+  console.log('\n🎉 ALL Zero-Destruction & Data Portability Gates PASSED!\n');
 }
 
 testComprehensiveDataSafety().catch((err) => {
-  console.error('CRIT-02 Test Failure:', err);
+  console.error('Data Safety Test Failure:', err);
   process.exit(1);
 });

@@ -9,7 +9,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log("🧪 Testing Memory Metrics Integrity & Fake Measurement Elimination (MED-01)...");
+console.log("🧪 Testing Memory Metrics Integrity & Telemetry Precision...");
 
 // 1. Verify usePyodide.ts has no hardcoded memory metrics
 const pyodideHookPath = path.resolve(__dirname, "../src/lib/workers/usePyodide.ts");

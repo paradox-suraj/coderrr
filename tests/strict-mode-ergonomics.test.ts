@@ -5,7 +5,7 @@ import {
   formatSimulationWarning,
 } from '../src/lib/hooks/useStrictInterviewMode';
 
-console.log('🧪 Testing LOW-01: Strict Interview Mode Reframing & Ergonomics...');
+console.log('🧪 Testing Strict Interview Mode Ergonomics & Simulation Controls...');
 
 // 1. Test Grace Period & Debounced Focus Switching
 console.log('Test 1: Focus switch grace period verification (>= 500ms)');
@@ -86,4 +86,4 @@ assert.ok(!clipMsg.toLowerCase().includes('violation'), 'Message must not contai
 assert.ok(clipMsg.toLowerCase().includes('simulation') || clipMsg.toLowerCase().includes('hackerrank'), 'Message should explain simulation context');
 console.log('✅ Reframed non-punitive messaging verified');
 
-console.log('\n🎉 ALL LOW-01 ERGONOMICS TESTS PASSED!');
+console.log('\n🎉 ALL STRICT INTERVIEW MODE ERGONOMICS TESTS PASSED!');

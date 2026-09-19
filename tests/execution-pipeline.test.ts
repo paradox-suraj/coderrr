@@ -1,5 +1,5 @@
 /**
- * Unit tests — Execution Pipeline (Phase 1)
+ * Unit tests — Execution Pipeline
  *
  * Tests:
  *   1. CircuitBreaker — state transitions, OPEN fast-fail, HALF_OPEN probe

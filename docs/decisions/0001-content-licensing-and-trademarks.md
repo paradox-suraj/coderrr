@@ -3,7 +3,6 @@
 - **Status**: Proposed / Pending Owner Selection
 - **Deciders**: Engineering Lead, Product Owner / Repository Maintainer
 - **Date**: 2026-09-18
-- **Finding Reference**: MED-03
 
 ---
 

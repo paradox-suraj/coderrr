@@ -13,7 +13,7 @@
  *     2. Poll GET /api/execute/:jobId every 1 s until done/failed/timeout (30 s)
  *     3. Assert final status is 'done' or 'failed' (never a silent hang)
  *
- * Acceptance criteria (from Phase 1):
+ * Acceptance criteria:
  *   - p95 time-to-result < 15 s
  *   - HTTP error rate (non-429, non-503) < 1%
  *   - Zero hung polls (status never 'pending' after 30 s)

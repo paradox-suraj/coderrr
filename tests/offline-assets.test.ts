@@ -9,7 +9,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log('🧪 Testing Offline Self-Hosted Runtime Assets & Config (CRIT-03)...');
+console.log('🧪 Testing Offline Self-Hosted Runtime Assets & Config...');
 
 // 1. Verify Pyodide local assets exist and are populated
 const pyodideDir = path.resolve(__dirname, '../public/pyodide');

@@ -9,7 +9,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log("🧪 Testing Piston Configuration & Dead Endpoint Elimination (HIGH-02)...");
+console.log("🧪 Testing Piston Configuration & Dead Endpoint Elimination...");
 
 // 1. Verify src/lib/execution/queue.ts does not fall back to unauthenticated emkc.org
 const queuePath = path.resolve(__dirname, "../src/lib/execution/queue.ts");

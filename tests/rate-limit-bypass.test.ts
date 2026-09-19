@@ -8,7 +8,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log('🧪 Testing Rate Limit Bypass Vulnerability (HIGH-03)...');
+console.log('🧪 Testing Rate Limit Bypass Vulnerability...');
 
 // Helper to simulate endpoint key derivation in current code vs fixed code
 function deriveKeyPreFix(headers: Record<string, string>): string {
@@ -65,4 +65,4 @@ assert(
   `Post-fix gate: Forged x-user-id MUST NOT bypass rate limit! Blocked requests: ${postFixBlockedCount}/20`
 );
 
-console.log('🎉 HIGH-03 Rate Limit Bypass Prevention Verified!');
+console.log('🎉 Rate Limit Bypass Prevention Verified!');

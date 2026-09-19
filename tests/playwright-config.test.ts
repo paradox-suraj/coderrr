@@ -9,7 +9,7 @@ function assert(condition: boolean, message: string) {
   console.log(`✅ ${message}`);
 }
 
-console.log('🧪 Testing Playwright Configuration Port Derivation (LOW-02)...');
+console.log('🧪 Testing Playwright Configuration Port Derivation...');
 
 const configPath = path.resolve(__dirname, '../playwright.config.ts');
 
