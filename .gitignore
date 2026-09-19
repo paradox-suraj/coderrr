@@ -45,3 +45,4 @@ test_crop.png
 # local agent and assistant skills
 .agents/
 skills-lock.json
+.env*
