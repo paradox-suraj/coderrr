@@ -1,7 +1,12 @@
 # AlgoJeet Pro
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-algojeet--pro.vercel.app-0070F3?style=for-the-badge&logo=vercel&logoColor=white)](https://algojeet-pro.vercel.app)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/paradox-suraj/coderrr/ci-cd.yml?branch=main&style=for-the-badge&logo=github)](https://github.com/paradox-suraj/coderrr/actions)
+
 > **Local-First Technical Interview Preparation Platform**  
 > Practice 3,350+ real LeetCode problems cross-referenced across 650+ tech companies with in-browser execution, company frequency analytics, and spaced repetition.
+
+🔗 **Live Link**: [https://algojeet-pro.vercel.app](https://algojeet-pro.vercel.app)
 
 ---
 
@@ -110,7 +115,7 @@ Simulate realistic technical interview conditions with countdown presets, disabl
    ```bash
    pnpm dev
    ```
-   Open [http://localhost:3000](http://localhost:3000) to view the application.
+   Open [http://localhost:3000](http://localhost:3000) to view the application or access the live deployment at [https://algojeet-pro.vercel.app](https://algojeet-pro.vercel.app).
 
 ---
 
