@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Server, Key, Check, Copy, AlertTriangle, Cpu, Terminal, RotateCcw } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -10,10 +11,15 @@ interface SandboxSettingsModalProps {
 }
 
 export default function SandboxSettingsModal({ isOpen, onClose }: SandboxSettingsModalProps) {
+  const [mounted, setMounted] = useState(false);
   const [pistonUrl, setPistonUrl] = useState('');
   const [pistonKey, setPistonKey] = useState('');
   const [savedSuccess, setSavedSuccess] = useState(false);
   const [copiedDocker, setCopiedDocker] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (isOpen && typeof window !== 'undefined') {
@@ -23,7 +29,7 @@ export default function SandboxSettingsModal({ isOpen, onClose }: SandboxSetting
     }
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   const handleSave = () => {
     if (typeof window !== 'undefined') {
@@ -68,16 +74,16 @@ export default function SandboxSettingsModal({ isOpen, onClose }: SandboxSetting
     setTimeout(() => setCopiedDocker(false), 2000);
   };
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-150">
+  return createPortal(
+    <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150 overflow-y-auto">
       <div
         className="fixed inset-0"
         onClick={onClose}
       />
 
-      <div className="relative w-full max-w-lg rounded-2xl bg-neutral-900 border border-white/10 shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
+      <div className="relative w-full max-w-lg rounded-2xl bg-neutral-900 border border-white/10 shadow-2xl overflow-hidden z-10 flex flex-col max-h-[85vh] my-auto">
         {/* Modal Header */}
-        <div className="p-4 border-b border-white/[0.08] flex items-center justify-between bg-neutral-950/50">
+        <div className="p-4 border-b border-white/[0.08] flex items-center justify-between bg-neutral-950/80 shrink-0">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400">
               <Server className="w-4 h-4" />
@@ -100,7 +106,7 @@ export default function SandboxSettingsModal({ isOpen, onClose }: SandboxSetting
         </div>
 
         {/* Modal Body */}
-        <div className="p-5 overflow-y-auto flex flex-col gap-4 text-xs">
+        <div className="p-5 overflow-y-auto flex-1 flex flex-col gap-4 text-xs">
           {/* Important Upstream Notice Banner */}
           <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 flex flex-col gap-1.5">
             <div className="flex items-center gap-2 font-semibold text-amber-300">
@@ -186,7 +192,7 @@ export default function SandboxSettingsModal({ isOpen, onClose }: SandboxSetting
         </div>
 
         {/* Modal Footer */}
-        <div className="p-3.5 border-t border-white/[0.08] flex items-center justify-between bg-neutral-950/50">
+        <div className="p-3.5 border-t border-white/[0.08] flex items-center justify-between bg-neutral-950/80 shrink-0">
           <button
             type="button"
             onClick={handleReset}
@@ -215,6 +221,7 @@ export default function SandboxSettingsModal({ isOpen, onClose }: SandboxSetting
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
