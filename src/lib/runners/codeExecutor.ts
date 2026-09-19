@@ -406,28 +406,6 @@ export async function executeCodeUniversal(
 
       const elapsedMs = () => Math.round((performance.now() - startTime) * 10) / 10;
 
-      if (submitRes.status === 429) {
-        return {
-          stdout: '',
-          stderr: 'Rate Limit Exceeded: You are sending too many requests. Please slow down and try again later.',
-          executionTimeMs: elapsedMs(),
-          passed: false,
-          submissionStatus: 'Runtime Error',
-          error: 'Rate limit',
-        };
-      }
-
-      if (submitRes.status === 503) {
-        return {
-          stdout: '',
-          stderr: 'Service Unavailable: The sandbox is temporarily busy. Please retry in a few seconds.',
-          executionTimeMs: elapsedMs(),
-          passed: false,
-          submissionStatus: 'Runtime Error',
-          error: 'Queue full',
-        };
-      }
-
       if (!submitRes.ok) {
         let errMsg = `HTTP ${submitRes.status}`;
         let isUnconfigured = false;
@@ -437,17 +415,29 @@ export async function executeCodeUniversal(
           isUnconfigured = errBody.configured === false;
         } catch { /* ignore */ }
 
+        if (submitRes.status === 429) {
+          return {
+            stdout: '',
+            stderr: 'Rate Limit Exceeded: You are sending too many requests. Please slow down and try again later.',
+            executionTimeMs: elapsedMs(),
+            passed: false,
+            submissionStatus: 'Runtime Error',
+            error: 'Rate limit',
+          };
+        }
+
         if (isUnconfigured || submitRes.status === 401) {
           return {
             stdout: '',
             stderr: [
-              `⚠️ Cloud Sandbox Runner Not Configured (${errMsg}):`,
+              `⚠️ Cloud Sandbox Runner Not Configured:`,
+              errMsg,
               ``,
               `📌 Why this happened:`,
-              `C++ and Java require a configured Piston execution backend. The default public Piston cluster (emkc.org) disabled unauthenticated public access.`,
+              `C++ and Java require a backend execution runner (Piston). The default public Piston cluster (emkc.org) disabled unauthenticated public access.`,
               ``,
               `🚀 How to solve & run your code immediately:`,
-              `1. Switch to Python 3 or JavaScript:`,
+              `1. Switch to Python 3 or JavaScript (Recommended):`,
               `   Both execute 100% locally in your browser via WebAssembly (Pyodide) and Web Workers. Zero server needed, offline capable, and never rate-limited or blocked!`,
               ``,
               `2. Self-Host Piston Locally (Free, 1-Line Docker Command):`,
@@ -462,6 +452,17 @@ export async function executeCodeUniversal(
             passed: false,
             submissionStatus: 'Runtime Error',
             error: isUnconfigured ? 'Remote runner not configured' : 'Piston 401 Unauthorized',
+          };
+        }
+
+        if (submitRes.status === 503) {
+          return {
+            stdout: '',
+            stderr: 'Service Unavailable: The sandbox is temporarily busy. Please retry in a few seconds.',
+            executionTimeMs: elapsedMs(),
+            passed: false,
+            submissionStatus: 'Runtime Error',
+            error: 'Queue full',
           };
         }
 
