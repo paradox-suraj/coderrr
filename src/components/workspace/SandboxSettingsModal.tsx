@@ -60,7 +60,7 @@ export default function SandboxSettingsModal({ isOpen, onClose }: SandboxSetting
     }, 900);
   };
 
-  const dockerCommand = 'docker run -d -p 2000:2000 ghcr.io/engineer-man/piston';
+  const dockerCommand = 'docker run --privileged -v piston_data:/piston -d -p 2000:2000 --name piston_api ghcr.io/engineer-man/piston';
 
   const handleCopyDocker = () => {
     navigator.clipboard.writeText(dockerCommand);

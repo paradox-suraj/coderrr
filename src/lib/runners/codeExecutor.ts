@@ -396,6 +396,92 @@ export async function executeCodeUniversal(
     const POLL_INTERVAL_MS = 1_000;
     const POLL_TIMEOUT_MS = 30_000;
 
+    // Check if client configured a custom local or cloud Piston endpoint (e.g. http://localhost:2000/api/v2/execute)
+    const customPistonUrl = typeof window !== 'undefined' ? localStorage.getItem('algojeet_piston_url') : null;
+    const customPistonKey = typeof window !== 'undefined' ? localStorage.getItem('algojeet_piston_key') : null;
+
+    if (customPistonUrl) {
+      try {
+        const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+        if (customPistonKey) headers['Authorization'] = customPistonKey;
+
+        const pistonConfig = language === 'java'
+          ? { language: 'java', version: '15.0.2', fileName: 'Main.java' }
+          : { language: 'cpp', version: '10.2.0', fileName: 'main.cpp' };
+
+        const response = await fetch(customPistonUrl, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({
+            language: pistonConfig.language,
+            version: pistonConfig.version,
+            files: [{ name: pistonConfig.fileName, content: code }],
+          }),
+        });
+
+        const elapsedMs = () => Math.round((performance.now() - startTime) * 10) / 10;
+
+        if (!response.ok) {
+          const errText = await response.text().catch(() => 'unknown');
+          throw new Error(`Custom Runner HTTP ${response.status}: ${errText.slice(0, 200)}`);
+        }
+
+        const raw = await response.json();
+        const compile = raw.compile || {};
+        const run = raw.run || {};
+        const stdout = run.stdout || '';
+        const stderr = [compile.stderr, run.stderr].filter(Boolean).join('\n');
+        const passed = run.code === 0 && !compile.stderr;
+        const elapsed = elapsedMs();
+
+        const testCases = options?.testCases || [];
+        const testResults = testCases.map((tc, idx) => {
+          const actual = stdout.trim();
+          const expected = tc.expectedOutput.trim();
+          const casePassed = passed && (actual.includes(expected) || actual === expected);
+          return {
+            caseId: tc.id || `case-${idx + 1}`,
+            passed: casePassed,
+            input: tc.input,
+            expectedOutput: tc.expectedOutput,
+            actualOutput: actual || (compile.stderr ? '[Compile Error]' : '[No Output]'),
+            stdout,
+            stderr,
+            executionTimeMs: elapsed,
+            error: compile.stderr || run.stderr,
+          };
+        });
+
+        const allPassed = passed && (testResults.length === 0 || testResults.every((t) => t.passed));
+        const submissionStatus = allPassed
+          ? 'Accepted'
+          : compile.stderr
+          ? 'Compile Error'
+          : run.stderr
+          ? 'Runtime Error'
+          : 'Wrong Answer';
+
+        return {
+          stdout,
+          stderr,
+          executionTimeMs: elapsed,
+          passed: allPassed,
+          testResults: testResults.length > 0 ? testResults : undefined,
+          submissionStatus,
+          error: stderr ? (compile.stderr ? 'Compilation Error' : 'Runtime Error') : undefined,
+        };
+      } catch (err: any) {
+        return {
+          stdout: '',
+          stderr: `Custom Runner Error (${customPistonUrl}):\n${err.message || String(err)}\n\nPlease ensure your local Docker container is running: docker ps`,
+          executionTimeMs: Math.round((performance.now() - startTime) * 10) / 10,
+          passed: false,
+          submissionStatus: 'Runtime Error',
+          error: err.message,
+        };
+      }
+    }
+
     try {
       // ── 1. Enqueue the job ────────────────────────────────────────────────
       const submitRes = await fetch('/api/execute', {

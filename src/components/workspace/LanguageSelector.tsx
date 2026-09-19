@@ -21,9 +21,14 @@ export default function LanguageSelector({
   const [isOpen, setIsOpen] = React.useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
   const [pistonConfigured, setPistonConfigured] = React.useState<boolean>(true);
+  const [hasCustomRunner, setHasCustomRunner] = React.useState<boolean>(false);
   const currentConfig = LANGUAGE_CONFIGS[currentLanguage];
 
   React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setHasCustomRunner(Boolean(localStorage.getItem('algojeet_piston_url')));
+    }
+
     fetch('/api/health/execution')
       .then((r) => r.json())
       .then((data) => {
@@ -32,9 +37,9 @@ export default function LanguageSelector({
         }
       })
       .catch(() => {});
-  }, []);
+  }, [isSettingsOpen]);
 
-  const isCurrentUnconfigured = currentConfig.runtimeType !== 'wasm' && !pistonConfigured;
+  const isCurrentUnconfigured = currentConfig.runtimeType !== 'wasm' && !pistonConfigured && !hasCustomRunner;
 
   return (
     <div className="relative inline-block text-left">
@@ -69,7 +74,7 @@ export default function LanguageSelector({
           ) : (
             <Cloud className="w-3 h-3" />
           )}
-          <span>{isCurrentUnconfigured ? 'Setup Needed' : currentConfig.runtimeLabel}</span>
+          <span>{isCurrentUnconfigured ? 'Setup Needed' : hasCustomRunner ? 'Local Runner' : currentConfig.runtimeLabel}</span>
         </span>
 
         {/* Sandbox Settings Trigger for Cloud Runners */}
